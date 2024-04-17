@@ -10,7 +10,7 @@
  
           </ul>
           <div class="d-flex m-4" role="search">
-              <a class="nav-link active" aria-current="page" href="">Ingresar</a>
+              <a class="nav-link active" aria-current="page" href="login.php">Ingresar</a>
           </div>
           <div class="d-flex m-4" role="search">
             <a class="nav-link active" aria-current="page" href="#">Registro</a>

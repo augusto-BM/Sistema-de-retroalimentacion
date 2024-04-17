@@ -17,8 +17,8 @@
   <div class="contenedor">
 
     <?php
-      @include '../components/header.php'
-    ?>
+      @include '../components/header.php'?>
+<link rel="stylesheet" href="css/header.css" >
 
     <div class="form-container">
       
