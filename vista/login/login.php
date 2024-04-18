@@ -1,5 +1,5 @@
   <?php
-
+    @include '../../controlador/controlador-login/controlador-login.php'
   ?>
 
   <!DOCTYPE html>
@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="../css/components/header.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
@@ -18,22 +19,18 @@
 
     <?php
       @include '../components/header.php'?>
-<link rel="stylesheet" href="css/header.css" >
+   <link rel="stylesheet" href="css/header.css" >
 
     <div class="form-container">
       
       <form action="" method="post" class="formulario" id="formulario">
           <h3 class="titulo-Formulario">INICIAR SESION</h3>
           <?php
-              /* if(isset($error)){
+              if(isset($error)){
                   foreach($error as $error){
                       echo '<span class="error-msg">'.$error.'</span>';
                   };
-              }else if($errorr){
-                  foreach($errorr as $errorr){
-                      echo '<span class="error-msg">'.$errorr.'</span>';
-                  };
-              }; */
+              }
           ?>
       
     <!-- Grupo: Correo Electronico -->
@@ -57,7 +54,7 @@
               <i class="formulario__validacion-estado fas fa-times-circle circulo-error"></i>
               <i class="fa-solid fa-key"></i>
 
-                        <!-- <i class="fa-regular fa-envelope fa-xl iconos"></i> -->
+              <!-- <i class="fa-regular fa-envelope fa-xl iconos"></i> -->
                                    
               <p class="formulario__input-error">La contraseña tiene que ser de 3 a 12 dígitos.</p>
             </div>
@@ -67,9 +64,10 @@
         </div>
       </form>
     </div>      
-  </div>
-  <?php
+   </div>
+   <?php
       @include '../components/footer.php'
     ?>
-</body>
-</html>
+    <script src="./login.js"></script>
+   </body>
+   </html>
