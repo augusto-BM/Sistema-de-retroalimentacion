@@ -1,7 +1,4 @@
-<footer>
-    <div class="container ">
-      <div class="row">
-        <div class="col-lg-4">
+<div class="col-lg-4">
           <h3>Enlaces</h3>
           <ul>
             <li><a href="#">Inicio</a></li>
