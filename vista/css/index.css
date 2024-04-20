@@ -11,4 +11,25 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold; 
 }
-
+.body{
+    margin: 0;
+    padding: 0;
+}
+.contenedor-imagen{
+  position: relative;
+  width: 100%;
+}
+.titulo text center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+.titulo text center h1{
+  font-size: 2em;
+}
+.texto text center p{
+  font-size: 1.2em;
+}
