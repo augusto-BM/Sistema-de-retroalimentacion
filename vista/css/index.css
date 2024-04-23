@@ -33,3 +33,14 @@
 .texto text center p{
   font-size: 1.2em;
 }
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Opcional: Fondo semitransparente */
+  color: white; /* Opcional: Color del texto */
+  padding: 20px; /* Opcional: Espaciado interno */
+  font-family: Tahoma, sans-serif;
+}
