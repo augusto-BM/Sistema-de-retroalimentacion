@@ -1,7 +1,6 @@
 <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="../../index.html"><img src="../images/logo.png" width="350px" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -10,10 +9,7 @@
  
           </ul>
           <div class="d-flex m-4" role="search">
-              <a class="nav-link active" aria-current="page" href="../login/login.php">Ingresar</a>
-          </div>
-          <div class="d-flex m-4" role="search">
-            <a class="nav-link active" aria-current="page" href="../login/registro.php">Registro</a>
+            <a class="nav-link active" aria-current="page" href="../../login/logout.php">Cerrar sesiòn</a>
           </div>
         </div>
       </div>

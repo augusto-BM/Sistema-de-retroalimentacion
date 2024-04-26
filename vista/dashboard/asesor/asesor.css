@@ -9,13 +9,16 @@
   .btn-primary {
     background-color: #007bff; /* Color de fondo */
     color: #fff; /* Color de texto */
+    cursor: pointer;
   }
   
   /* Estilo para el botón secundario */
   .btn-secondary {
     background-color: #6c757d; /* Color de fondo */
     color: #fff; /* Color de texto */
+    cursor: pointer;
   }
   .container-footer {
     margin-top:30rem; /* Agrega un margen superior al footer */
+    
   }  

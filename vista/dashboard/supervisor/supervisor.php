@@ -1,6 +1,10 @@
-
 <?php
+session_start();
+@include '../../../modelo/conexion.php';
 
+if(!isset($_SESSION['supervisor_name'])){
+   header('location:../../login/login.php');
+}
 ?>
 
 
@@ -10,27 +14,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Supervisor</title>
-  <link rel="stylesheet" href="supervisor.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="supervisor.css">
+    <link rel="stylesheet" href="../css/components/header.css">
+  <link rel="stylesheet" href="../../css/components/header.css" >
+  <link rel="stylesheet" href="../../css/components/footer.css" >
+    <link rel="stylesheet" href="./login.css">
+    <script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
+<?php @include '../../components/cerrarSesion.php'?>
 <div class="container">
-<h1>Hola soy supervisor</h1>
+<h1>Hola soy supervisor <?php echo $_SESSION['supervisor_name'] ?></h1>
 <div class="container-boton">
  <button type="button" class="btn btn-primary">Crear examen</button>
  <button type="button" class="btn btn-secondary">Examenes pendientes</button>
  <button type="button" class="btn btn-success">Ver resultados</button>
- <button type="button" class="btn btn-success">Ver resultados de asesores</button>
+ <button type="button" class="btn btn-success-1">Ver resultados de asesores</button>
 </div>
 
 </div>
-<footer>
-    <div class="container-footer ">
-      <div class="row">
-        <div class="col-lg-4">
-          <span class="copyright"> Sistema de evaluación de   &copy; <a   href="https://imfcacontacto.com/" target="_blank">IMFCA CONTACTO</a> 2024</span>
-      </div>
-    </div>
-    </div>
-  </footer>
+<?php
+      @include '../../components/footer.php'?>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

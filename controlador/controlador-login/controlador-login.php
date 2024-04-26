@@ -16,36 +16,37 @@ if(isset($_POST['submit'])){
    $correo_colaborador = " SELECT * FROM login WHERE usuario = '$email'";
    $contra_colaboradoor = " SELECT * FROM login WHERE contraseña = '$password' ";
 
+   $select_colaborador = "SELECT * FROM colaborador";
+
    //GUARDAMOS COMO RESULTADO LA SENTENCIA DE LA "BUSQUEDA" Y  LA "CONEXION" 
    $result = mysqli_query($conn, $select);
 
    $result_correo_colaborador = mysqli_query($conn, $correo_colaborador);
    $result_contra_colaborador = mysqli_query($conn, $contra_colaboradoor);
-
+   
+   $result_colaborador = mysqli_query($conn, $select_colaborador);
 
    //HACEMOS VALIDACIONES SI EXISTE MAS DE CERO  RESULTADOS SIGNIFICA QUE SI HAY USUARIOS EN LA BBDD
-   if(mysqli_num_rows($result) > 0){
+   if(mysqli_num_rows($result) > 0 && mysqli_num_rows($result_colaborador) > 0){
 
       //INGRESAMOS A LOS CAMPOS DEL RESULTADO EN ESTE CASO PERTENECE A LA TABLA LOGIN
       $row = mysqli_fetch_array($result);
+      $row_colaborador = mysqli_fetch_array($result_colaborador);
 
       if($row['id_rol'] == $rol_backoffice){
-        $_SESSION['user_name'] = $row['nombre'];
-        $_SESSION['id_login'] = $row['id_colaborador'];
-        echo "<script> alert('Login backoffice exitoso')</script>";
+        $_SESSION['backoffice_name'] = $row_colaborador['nombre'];
+        $_SESSION['id_login'] = $row_colaborador['id_colaborador'];
         header('location:../dashboard/backoffice/backoffice.php');
 
       } else if($row['id_rol'] == $rol_supervisor){
-        $_SESSION['user_name'] = $row['nombre'];
+        $_SESSION['supervisor_name'] = $row_colaborador['nombre'];
         $_SESSION['id_login'] = $row['id_colaborador'];
-        echo "<script> alert('Login supervisor exitoso')</script>";
         header('location:../dashboard/supervisor/supervisor.php');
       }
 
       else if($row['id_rol'] == $rol_asesor){
-        $_SESSION['user_name'] = $row['nombre'];
-        $_SESSION['id_login'] = $row['id_colaborador'];
-        echo "<script> alert('Login asesor exitoso')</script>";
+        $_SESSION['asesor_name'] = $row_colaborador['nombre'];
+        $_SESSION['id_login'] = $row_colaborador['id_colaborador'];
         header('location:../dashboard/asesor/asesor.php');
       }
    } else{
