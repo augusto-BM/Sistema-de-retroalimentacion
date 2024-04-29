@@ -25,36 +25,36 @@ if(!isset($_SESSION['asesor_name'])){
   <?php @include '../../components/cerrarSesion.php'?>
 
   <div class="container">
-  <table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">Nombre de examen</th>
-      <th scope="col">Dia</th>
-      <th scope="col">Fecha</th>
-      <th scope="col">Nota</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Primer examen</th>
-      <td>Lunes</td>
-      <td>29/04/2024</td>
-      <td>18</td>
-    </tr>
-    <tr>
-      <th scope="row">Segundo examen</th>
-      <td>Martes</td>
-      <td>07/05/2024</td>
-      <td>14</td>
-    </tr>
-    <tr>
-    <th scope="row">Tercer examen</th>
-      <td>Miercoles</td>
-      <td>15/05/2024</td>
-      <td>16</td>
-    </tr>
-  </tbody>
-</table>
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Nombre de examen</th>
+        <th scope="col">Dia</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Nota</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Primer examen</th>
+        <td>Lunes</td>
+        <td>29/04/2024</td>
+        <td>18</td>
+      </tr>
+      <tr>
+        <th scope="row">Segundo examen</th>
+        <td>Martes</td>
+        <td>07/05/2024</td>
+        <td>14</td>
+      </tr>
+      <tr>
+      <th scope="row">Tercer examen</th>
+        <td>Miercoles</td>
+        <td>15/05/2024</td>
+        <td>16</td>
+      </tr>
+    </tbody>
+  </table>
   </div>
   <?php @include '../../components/footer.php'?>
 

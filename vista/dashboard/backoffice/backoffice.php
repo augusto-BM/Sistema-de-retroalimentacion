@@ -1,6 +1,7 @@
 <?php
 session_start();
 @include '../../../modelo/conexion.php';
+@include '../../../controlador/controlador-crud-backoffice/listar-examenes.php';
 
 if(!isset($_SESSION['backoffice_name'])){
    header('location:../../login/login.php');
@@ -35,6 +36,38 @@ if(!isset($_SESSION['backoffice_name'])){
  <button type="button" class="btn btn-primary">Crear examen</button>
  <button type="button" class="btn btn-secondary">Ver resultados</button>
  <button type="button" class="btn btn-success">Imprimir resultados</button>
+
+ <div class="">
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">id creador examen</th>
+        <th scope="col">id tipo rol</th>
+        <th scope="col">Nombre de examen</th>
+        <th scope="col">Dia</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Nota</th>
+        <th scope="col">Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+        <?php
+          // Iterar sobre los datos y mostrarlos en la tabla
+          foreach ($datos as $fila) {
+              echo "<tr>";
+              echo "<td>{$fila['id_colaborador_creador']}</td>";
+              echo "<td>{$fila['id_rol_destino']}</td>";
+              echo "<td>{$fila['titulo']}</td>";
+              echo "<td>{$fila['dia']}</td>";
+              echo "<td>{$fila['fecha_creacion']}</td>";
+              echo "<td>{$fila['nota']}</td>";
+              echo "<td>{$fila['estado']}</td>";
+              echo "</tr>";
+                }
+        ?>
+    </tbody>
+  </table>
+  </div>
 </div>
 <?php @include '../../components/footer.php'?>
 
