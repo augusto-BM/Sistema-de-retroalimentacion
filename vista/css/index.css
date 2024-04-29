@@ -16,14 +16,6 @@
   margin:0; padding:0;
 }
 
-.contenedor{
-  
-}
-
-.contenedor-imagen{
-  position: relative;
-  width: 100%;
-}
 .titulo text center{
   position: absolute;
   top: 50%;
@@ -44,8 +36,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Opcional: Fondo semitransparente */
   color: white; /* Opcional: Color del texto */
   padding: 20px; /* Opcional: Espaciado interno */
-  font-family: Tahoma, sans-serif;
+  font-family: "Trebuchet MS", sans-serif;
 }
