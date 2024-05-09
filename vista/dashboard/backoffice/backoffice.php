@@ -27,17 +27,18 @@ if(!isset($_SESSION['backoffice_name'])){
 <body>
 <?php @include '../../components/cerrarSesion.php'?>
 
-<div class="container">
- <h1>Hola soy backoffice <?php echo $_SESSION['backoffice_name'] ?></h1>
+
  <?php
       @include '../components/header.php'?>
    <link rel="stylesheet" href="css/header.css" >
-
- <button type="button" class="btn btn-primary">Crear examen</button>
+<div class="container">
+<h1>Hola soy backoffice <?php echo $_SESSION['backoffice_name'] ?></h1>
+ <a href="../backoffice/crud/backofficeCrearExamen.php"> <button type="button" class="btn btn-primary">Crear examen</button></a>
  <button type="button" class="btn btn-secondary">Ver resultados</button>
  <button type="button" class="btn btn-success">Imprimir resultados</button>
-
- <div class="">
+ </div>
+ 
+ <div class="container">
     <table class="table table-bordered">
     <thead>
       <tr>
