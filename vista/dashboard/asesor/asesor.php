@@ -16,8 +16,10 @@ if(!isset($_SESSION['asesor_name'])){
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="asesor.css">
+    <link rel="stylesheet" href="../css/components/header.css">
     <link rel="stylesheet" href="../../css/components/header.css" >
     <link rel="stylesheet" href="../../css/components/footer.css" >
+    <link rel="stylesheet" href="./login.css">
     <script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
 </head>
 
@@ -26,12 +28,8 @@ if(!isset($_SESSION['asesor_name'])){
 
   <div class="container">
   <h1>Hola soy asesor <?php echo $_SESSION['asesor_name'] ?></h1>
-  <div class="d-flex m-4" role="search">
-    <a class="btn btn-primary" href="../asesor/examenesPendientes.php">Examenes pendientes</a>
-  </div>
-  <div class="d-flex m-4" role="search">
-    <a class="btn btn-secondary" href="../asesor/verResultados.php">Ver resultados</a>
-  </div>
+  <a href="examenesPendientes.php"><button type="button" class="btn btn-primary">Examenes Pendientes</button></a>
+  <a href="verResultados.php"><button type="button" class="btn btn-secondary">Ver Resultados</button></a>
 
   </div>
   <?php @include '../../components/footer.php'?>
