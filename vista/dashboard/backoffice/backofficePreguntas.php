@@ -36,87 +36,63 @@ if(!isset($_SESSION['backoffice_name'])){
  <button type="button" class="btn btn-success">Imprimir resultados</button>
 
 </div>
-  <div class="row">
-<span class="title1" style="margin-left:40%;font-size:30px;"><b>Detalles del examen</b></span><br /><br />
- <div class="col-md-3"></div><div class="col-md-6">   <form class="form-horizontal title1" name="form" action="update.php?q=addquiz"  method="POST">
-<fieldset>
-
-
+<div class="form-group">
+  <label class="col-md-12 control-label" for="qns'.$i.' "></label>  
+  <div class="col-md-12">
+  <textarea rows="3" cols="5" name="qns'.$i.'" class="form-control" placeholder="Escribe la pregunta número '.$i.' acá..."></textarea>  
+  </div>
+</div>
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-12 control-label" for="name"></label>  
+  <label class="col-md-12 control-label" for="'.$i.'1"></label>  
   <div class="col-md-12">
-  <input id="name" name="name" placeholder="Ingrese el título del Quiz" class="form-control input-md" type="text" required>
+  <input id="'.$i.'1" name="'.$i.'1" placeholder="Ingresa la opción a" class="form-control input-md" type="text">
     
   </div>
 </div>
-
-
-
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-12 control-label" for="total"></label>  
+  <label class="col-md-12 control-label" for="'.$i.'2"></label>  
   <div class="col-md-12">
-  <input id="total" name="total" placeholder="Ingrese el número total de preguntas" class="form-control input-md" type="number" required>
+  <input id="'.$i.'2" name="'.$i.'2" placeholder="Ingresa la opción b" class="form-control input-md" type="text">
     
   </div>
 </div>
-
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-12 control-label" for="right"></label>  
+  <label class="col-md-12 control-label" for="'.$i.'3"></label>  
   <div class="col-md-12">
-  <input id="right" name="right" placeholder="Ingrese el número de marcas en la respuesta correcta" class="form-control input-md" min="0" type="number" required>
+  <input id="'.$i.'3" name="'.$i.'3" placeholder="Ingresa la opción c" class="form-control input-md" type="text">
     
   </div>
 </div>
-
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-12 control-label" for="wrong"></label>  
+  <label class="col-md-12 control-label" for="'.$i.'4"></label>  
   <div class="col-md-12">
-  <input id="wrong" name="wrong" placeholder="Ingrese el número de marcas en la respuesta incorrecta sin signo" class="form-control input-md" min="0" type="number" required>
+  <input id="'.$i.'4" name="'.$i.'4" placeholder="Ingresa la opción d" class="form-control input-md" type="text">
     
   </div>
 </div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-12 control-label" for="time"></label>  
-  <div class="col-md-12">
-  <input id="time" name="time" placeholder="Ingrese el límite de tiempo para la prueba en minutos" class="form-control input-md" min="1" type="number" required>
+<br />
+<b>Escoge la respuesta correcta</b>:<br/>
+<select id="ans'.$i.'" name="ans'.$i.'" placeholder="Escoge la respuesta correcta " class="form-control input-md" >
+   <option value="a">Seleccione la respuesta a la pregunta '.$i.'</option>
+  <option value="a">option a</option>
+  <option value="b">option b</option>
+  <option value="c">option c</option>
+  <option value="d">option d</option> </select><br /><br />'; 
+ 
     
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-12 control-label" for="tag"></label>  
-  <div class="col-md-12">
-  <input id="tag" name="tag" placeholder="Ingrese una etiqueta para que puedan buscar el examen" class="form-control input-md" type="text" required>
-    
-  </div>
-</div>
-
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-12 control-label" for="desc"></label>  
-  <div class="col-md-12">
-  <textarea rows="8" cols="8" name="desc" class="form-control" placeholder="Escribe una descripción acá..." required></textarea>  
-  </div>
-</div>
-
-
-<div class="form-group">
+echo '<div class="form-group">
   <label class="col-md-12 control-label" for=""></label>
   <div class="col-md-12"> 
-    <a href="../backoffice/backofficePreguntas.php"><input  type="submit" style="margin-left:45%" class="btn btn-primary" value="Enviar" class="btn btn-primary"/></a>
+    <input  type="submit" style="margin-left:45%" class="btn btn-primary" value="Enviar" class="btn btn-primary"/>
   </div>
 </div>
 
 </fieldset>
-</form></div>
+</form></div>';
 
 </div>
 <?php @include '../../components/footer.php'?>
