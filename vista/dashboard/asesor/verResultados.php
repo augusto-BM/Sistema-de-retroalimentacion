@@ -18,6 +18,7 @@ if(!isset($_SESSION['asesor_name'])){
     <link rel="stylesheet" href="asesor.css">
     <link rel="stylesheet" href="../../css/components/header.css" >
     <link rel="stylesheet" href="../../css/components/footer.css" >
+    <link rel="stylesheet" href="tabla.css">
     <script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
 </head>
 
@@ -36,19 +37,19 @@ if(!isset($_SESSION['asesor_name'])){
     </thead>
     <tbody>
       <tr>
-        <th scope="row">Primer examen</th>
+        <td scope="row">Primer examen</td>
         <td>Lunes</td>
         <td>29/04/2024</td>
         <td>18</td>
       </tr>
       <tr>
-        <th scope="row">Segundo examen</th>
+        <td scope="row">Segundo examen</td>
         <td>Martes</td>
         <td>07/05/2024</td>
         <td>14</td>
       </tr>
       <tr>
-      <th scope="row">Tercer examen</th>
+      <td scope="row">Tercer examen</td>
         <td>Miercoles</td>
         <td>15/05/2024</td>
         <td>16</td>
