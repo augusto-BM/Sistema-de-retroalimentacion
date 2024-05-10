@@ -40,3 +40,6 @@
   padding: 20px; /* Opcional: Espaciado interno */
   font-family: "Trebuchet MS", sans-serif;
 }
+.container-carrusel{
+  position: relative;
+}
