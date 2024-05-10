@@ -1,6 +1,8 @@
 .table th {
     color: red;
 }
-.container {
-    margin-top: 50px; 
+.container-table{
+    margin-top: 25px; 
+    margin-left: 75px;
+    margin-right: 75px;
   }
