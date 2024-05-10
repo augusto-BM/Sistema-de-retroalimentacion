@@ -44,19 +44,19 @@ if(!isset($_SESSION['asesor_name'])){
         <td scope="row">Primer examen</td>
         <td>Lunes</td>
         <td>29/04/2024</td>
-        <td>18</td>
+        <td class="nota">18</td>
       </tr>
       <tr>
         <td scope="row">Segundo examen</td>
         <td>Martes</td>
         <td>07/05/2024</td>
-        <td>14</td>
+        <td class="nota">14</td>
       </tr>
       <tr>
       <td scope="row">Tercer examen</td>
         <td>Miercoles</td>
         <td>15/05/2024</td>
-        <td>16</td>
+        <td class="nota">16</td>
       </tr>
     </tbody>
   </table>
