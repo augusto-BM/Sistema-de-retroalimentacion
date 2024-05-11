@@ -22,6 +22,7 @@ if(!isset($_SESSION['backoffice_name'])){
   <link rel="stylesheet" href="css/header.css" >
     <link rel="stylesheet" href="./login.css">
     <script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
+    <script src="../../backoffice/backoffice.js"></script>
 </head>
 
 <body>
@@ -31,7 +32,18 @@ if(!isset($_SESSION['backoffice_name'])){
   
    <div class="container">
    <h1>Hola soy backoffice <?php echo $_SESSION['backoffice_name'] ?></h1>
- <a href="../crud/backofficeCrearExamen.php"><button type="button" class="btn btn-primary">Crear examen</button></a>
+   <div class="dropdown">
+
+<button onclick="toggleDropdown()" class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" aria-expanded="false">
+  Exámen
+</button>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+<div class="btn-group-vertical">
+  <li><a class="dropdown-item" href="../../backoffice/crud/backofficeCrearExamen.php">Agregar examen</a></li>
+  <li><a class="dropdown-item" href="../../backoffice/crud/backofficeEditarExamen.php">Eliminar examen</a></li>
+  </div>
+</ul>
+</div>
  <button type="button" class="btn btn-secondary">Ver resultados</button>
  <button type="button" class="btn btn-success">Imprimir resultados</button>
 
@@ -57,16 +69,16 @@ if(!isset($_SESSION['backoffice_name'])){
         <td><button class="btn-delete"><i class="fa fa-trash"></i> Eliminar</button></td>
       </tr>
       <tr>
-        <td scope="row">Segundo examen</td>
-        <td>Prueba002</td>
+        <td scope="row">002</td>
+        <td>Prueba02</td>
         <td>07/05/2024</td>
         <td>Carlos</td>
         <td>10</td>
         <td><button class="btn-delete"><i class="fa fa-trash"></i> Eliminar</button></td>
       </tr>
       <tr>
-      <td scope="row">Tercer examen</td>
-        <td>Miercoles</td>
+      <td scope="row">003</td>
+        <td>Prueba03</td>
         <td>15/05/2024</td>
         <td>Juan</td>
         <td>6</td>

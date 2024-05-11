@@ -40,7 +40,7 @@ if(!isset($_SESSION['backoffice_name'])){
 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 <div class="btn-group-vertical">
   <li><a class="dropdown-item" href="../../backoffice/crud/backofficeCrearExamen.php">Agregar examen</a></li>
-  <li><a class="dropdown-item" href="#">Eliminar examen</a></li>
+  <li><a class="dropdown-item" href="../../backoffice/crud/backofficeEditarExamen.php">Eliminar examen</a></li>
   </div>
 </ul>
 </div>
