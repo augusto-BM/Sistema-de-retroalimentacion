@@ -22,6 +22,7 @@ if(!isset($_SESSION['backoffice_name'])){
   <link rel="stylesheet" href="css/header.css" >
     <link rel="stylesheet" href="./login.css">
     <script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
+    <script src="../../backoffice/backoffice.js"></script>
 </head>
 
 <body>
@@ -31,7 +32,18 @@ if(!isset($_SESSION['backoffice_name'])){
   
    <div class="container">
    <h1>Hola soy backoffice <?php echo $_SESSION['backoffice_name'] ?></h1>
- <a href="../crud/backofficeCrearExamen.php"><button type="button" class="btn btn-primary">Crear examen</button></a>
+   <div class="dropdown">
+
+<button onclick="toggleDropdown()" class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" aria-expanded="false">
+  Exámen
+</button>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+<div class="btn-group-vertical">
+  <li><a class="dropdown-item" href="../../backoffice/crud/backofficeCrearExamen.php">Agregar examen</a></li>
+  <li><a class="dropdown-item" href="#">Eliminar examen</a></li>
+  </div>
+</ul>
+</div>
  <button type="button" class="btn btn-secondary">Ver resultados</button>
  <button type="button" class="btn btn-success">Imprimir resultados</button>
 
