@@ -28,3 +28,8 @@
   .container-footer {
     margin-top:30rem; /* Agrega un margen superior al footer */
   }  
+  .table th{
+    color:red;
+  }
+
+  
