@@ -2,6 +2,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
 <link rel="stylesheet" href="../css/components/header.css">
   <link rel="stylesheet" href="../../css/components/header.css" >
+  <link rel="stylesheet" href="../../../css/components/header.css" >
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,7 +18,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Hola </a>
                 </div>
                 <div class="d-flex m-4" role="search">
-                    <a class="nav-link active" aria-current="page" href="../../../vista/login/logout.php">Cerrar sesión</a>
+                    <a class="nav-link active" aria-current="page" href="../../../login/logout.php">Cerrar sesión</a>
                 </div>
             </div>
         </div>
