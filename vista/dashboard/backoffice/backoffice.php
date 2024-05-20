@@ -47,7 +47,7 @@ if(!isset($_SESSION['backoffice_name'])){
   </ul>
 </div>
   <a href="verResultadosBackoffice.php"><button type="button" class="btn btn-secondary">Ver resultados</button></a>
-  <a href="#"><button type="button" class="btn btn-success">Imprimir resultados</button></a>
+  <a href="imprimirResultados.php"><button type="button" class="btn btn-success">Imprimir resultados</button></a>
  </div>
  
  <div class="container">
