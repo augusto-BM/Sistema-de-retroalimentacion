@@ -25,8 +25,10 @@ if(!isset($_SESSION['asesor_name'])){
   <?php @include '../../components/cerrarSesion.php'?>
   <div class="container">
   <h1>Hola soy asesor <?php echo $_SESSION['asesor_name'] ?></h1>
+  <div class="container-button">
   <a href="examenesPendientes.php"><button type="button" class="btn btn-primary">Examenes Pendientes</button></a>
   <a href="verResultados.php"><button type="button" class="btn btn-secondary">Ver Resultados</button></a>
+</div>
 </div>
   <div class="container">
   <h1>No tienes examenes pendientes <?php echo $_SESSION['asesor_name'] ?></h1>

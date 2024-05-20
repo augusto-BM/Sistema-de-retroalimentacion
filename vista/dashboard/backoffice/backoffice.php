@@ -34,6 +34,7 @@ if(!isset($_SESSION['backoffice_name'])){
    <link rel="stylesheet" href="css/header.css" >
 <div class="container">
 <h1>Hola soy backoffice <?php echo $_SESSION['backoffice_name'] ?></h1>
+<div class="container-button">
 <div class="dropdown">
 
   <button onclick="toggleDropdown()" class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" aria-expanded="false" data-toggle="dropdown">
@@ -49,7 +50,7 @@ if(!isset($_SESSION['backoffice_name'])){
   <a href="verResultadosBackoffice.php"><button type="button" class="btn btn-secondary">Ver resultados</button></a>
   <a href="imprimirResultados.php"><button type="button" class="btn btn-success">Imprimir resultados</button></a>
  </div>
- 
+ </div>
  <div class="container">
     <table class="table table-bordered">
     <thead>

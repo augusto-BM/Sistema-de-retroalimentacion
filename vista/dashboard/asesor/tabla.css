@@ -1,11 +1,6 @@
 .table th {
     color: blue;
 }
-.container-table{
-    margin-top: 25px; 
-    margin-left: 75px;
-    margin-right: 75px;
-}
 .table {
     .nota{
     color: green;

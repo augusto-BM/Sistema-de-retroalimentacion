@@ -19,8 +19,8 @@ if(!isset($_SESSION['supervisor_name'])){
     <link rel="stylesheet" href="../css/components/header.css">
   <link rel="stylesheet" href="../../../css/components/header.css">
   <link rel="stylesheet" href="../../css/components/footer.css">
-  <link rel="stylesheet" href="css/header.css" >
     <link rel="stylesheet" href="./login.css">
+
     <script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
 </head>
 
@@ -31,12 +31,12 @@ if(!isset($_SESSION['supervisor_name'])){
   
    <div class="container">
    <h1>Hola soy supervisor <?php echo $_SESSION['supervisor_name'] ?></h1>
+   <div class="container-button">
  <a href="../crud/supervisorCrearExamen.php"><button type="button" class="btn btn-primary">Crear examen</button></a>
  <button type="button" class="btn btn-secondary">Examenes pendientes</button>
  <button type="button" class="btn btn-success">Ver resultados</button>
  <button type="button" class="btn btn-success-1">Ver resultados de asesores</button>
 </div>
-
 </div>
   <div class="row">
 <span class="title1" style="margin-left:40%;font-size:30px;"><b>Detalles del examen</b></span><br /><br />
