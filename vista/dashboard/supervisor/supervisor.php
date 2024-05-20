@@ -27,12 +27,12 @@ if(!isset($_SESSION['supervisor_name'])){
 <body>
 <?php @include '../../components/cerrarSesion.php'?>
 <div class="container">
-<h1>Hola soy supervisor <?php echo $_SESSION['supervisor_name'] ?></h1>
+<h1>Hola soy supervisor</h1>
 <div class="container-button">
- <a href="../supervisor/crud/supervisorCrearExamen.php"><button type="button" class="btn btn-primary">Crear examen</button></a>
+ <a href="crud/supervisorCrearExamen.php"><button type="button" class="btn btn-primary">Crear examen</button></a>
  <a href="supervisorExamenesPendientes.php"><button type="button" class="btn btn-secondary">Examenes pendientes</button></a>
- <button type="button" class="btn btn-success">Ver resultados</button>
- <button type="button" class="btn btn-success-1">Ver resultados de asesores</button>
+ <a href="supervisorVerResultados.php"><button type="button" class="btn btn-success">Ver resultados</button></a>
+ <a href="supervisorVerResultadosAsesores.php"><button type="button" class="btn btn-success-1">Ver resultados de asesores</button></a>
 </div>
 
 </div>

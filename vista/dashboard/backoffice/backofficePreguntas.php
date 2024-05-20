@@ -30,7 +30,7 @@ if(!isset($_SESSION['backoffice_name'])){
  
   
    <div class="container">
-   <h1>Hola soy backoffice <?php echo $_SESSION['backoffice_name'] ?></h1>
+   <h1>Hola soy backoffice</h1>
  <a href="../crud/backofficeCrearExamen.php"><button type="button" class="btn btn-primary">Crear examen</button></a>
  <button type="button" class="btn btn-secondary">Ver resultados</button>
  <button type="button" class="btn btn-success">Imprimir resultados</button>

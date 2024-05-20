@@ -33,7 +33,7 @@ if(!isset($_SESSION['backoffice_name'])){
       @include '../components/header.php'?>
    <link rel="stylesheet" href="css/header.css" >
 <div class="container">
-<h1>Hola soy backoffice <?php echo $_SESSION['backoffice_name'] ?></h1>
+<h1>Hola soy backoffice</h1>
 <div class="container-button">
 <div class="dropdown">
 

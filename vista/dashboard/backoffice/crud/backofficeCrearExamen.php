@@ -30,7 +30,7 @@ if(!isset($_SESSION['backoffice_name'])){
  
   
    <div class="container">
-   <h1>Hola soy backoffice <?php echo $_SESSION['backoffice_name'] ?></h1>
+   <h1>Hola soy backoffice</h1>
    <div class="container-button">
    <div class="dropdown">
 
