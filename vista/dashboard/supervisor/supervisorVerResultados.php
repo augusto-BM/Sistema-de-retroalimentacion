@@ -15,12 +15,14 @@ if(!isset($_SESSION['supervisor_name'])){
   <title>Supervisor</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="supervisor.css">
+
     <link rel="stylesheet" href="../css/components/header.css">
   <link rel="stylesheet" href="../../css/components/header.css" >
   <link rel="stylesheet" href="../../css/components/footer.css" >
     <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="supervisor.css">
     <script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
+    <script src="supervisor.js"></script>
 </head>
 
 <body>
