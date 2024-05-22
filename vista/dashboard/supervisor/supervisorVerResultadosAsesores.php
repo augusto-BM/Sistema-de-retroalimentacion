@@ -19,7 +19,7 @@ if(!isset($_SESSION['supervisor_name'])){
     <link rel="stylesheet" href="../css/components/header.css">
   <link rel="stylesheet" href="../../css/components/header.css" >
   <link rel="stylesheet" href="../../css/components/footer.css" >
-    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="../../login/login.css">
     <link rel="stylesheet" href="supervisor.css">
     <script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
     <script src="supervisor.js"></script>
@@ -30,10 +30,21 @@ if(!isset($_SESSION['supervisor_name'])){
 <div class="container">
   <h1>Hola soy supervisor</h1>
   <div class="container-button">
-  <a href="crud/supervisorCrearExamen.php"><button type="button" class="btn btn-primary">Crear examen</button></a>
+  <div class="dropdown">
+
+<button onclick="toggleDropdown()" class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" aria-expanded="false" data-toggle="dropdown">
+  Exámen
+</button>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+<div class="btn-group-vertical">
+  <li><a class="dropdown-item" href="./crud/supervisorCrearExamen.php">Agregar examen</a></li>
+  <li><a class="dropdown-item" href="./crud/supervisorEditarExamen.php">Eliminar examen</a></li>
+  </div>
+</ul>
+</div>
  <a href="supervisorExamenesPendientes.php"><button type="button" class="btn btn-secondary">Examenes pendientes</button></a>
  <a href="supervisorVerResultados.php"><button type="button" class="btn btn-success">Ver resultados</button></a>
- <a href="supervisorVerResultadosAsesores.php"><button type="button" class="btn btn-success-1">Ver resultados de asesores</button></a>
+ <a href="supervisorVerResultadosAsesores.php"><button type="button" class="btn btn-danger">Ver resultados de asesores</button></a>
 </div>
 </div>
   <div class="container">

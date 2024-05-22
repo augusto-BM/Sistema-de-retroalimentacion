@@ -21,21 +21,6 @@
     color: #fff; /* Color de texto */
     cursor: pointer;
   }
-  .verResulAsesores {
-    background-color: #6c757d ; /* Color de fondo */
-    color: #fff ; /* Color de texto */
-    cursor: pointer ;
-  }
-
-  .verResulAsesores :hover {
-    background-color: #007bff !important; /* Color de fondo */
-  }
-  .container-footer {
-    margin-top:30rem; /* Agrega un margen superior al footer */
-  } 
-  .container-button{
-    padding-bottom: 20px;
-  }
   .dropdown {
     position: relative;
     display: inline-block;

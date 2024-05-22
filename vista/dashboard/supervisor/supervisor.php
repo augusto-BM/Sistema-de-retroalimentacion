@@ -38,14 +38,14 @@ if(!isset($_SESSION['supervisor_name'])){
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
   <div class="btn-group-vertical">
-    <li><a class="dropdown-item" >Agregar examen</a></li>
-    <li><a class="dropdown-item" >Eliminar examen</a></li>
+    <li><a class="dropdown-item" href="./crud/supervisorCrearExamen.php">Agregar examen</a></li>
+    <li><a class="dropdown-item" href="./crud/supervisorEditarExamen.php">Eliminar examen</a></li>
     </div>
   </ul>
 </div>
  <a href="supervisorExamenesPendientes.php"><button type="button" class="btn btn-secondary">Examenes pendientes</button></a>
  <a href="supervisorVerResultados.php"><button type="button" class="btn btn-success">Ver resultados</button></a>
- <a href="supervisorVerResultadosAsesores.php"><button type="button" class="btn btn-sucess verResulAsesores">Ver resultados de asesores</button></a>
+ <a href="supervisorVerResultadosAsesores.php"><button type="button" class="btn btn-danger" >Ver resultados de asesores</button></a>
 </div>
 
 </div>

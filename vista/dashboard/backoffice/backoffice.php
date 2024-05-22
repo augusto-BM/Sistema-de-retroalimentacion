@@ -35,6 +35,7 @@ if(!isset($_SESSION['backoffice_name'])){
 <div class="container">
 <h1>Hola soy backoffice</h1>
 <div class="container-button">
+
 <div class="dropdown">
 
   <button onclick="toggleDropdown()" class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" aria-expanded="false" data-toggle="dropdown">
