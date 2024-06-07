@@ -36,16 +36,19 @@ if(isset($_POST['submit'])){
 
       if ($row['id_rol'] == $rol_backoffice) {
          $_SESSION['backoffice_name'] = $row_colaborador['nombre'];
+         $_SESSION['backoffice_lastname'] = $row_colaborador['apellido'];
          $_SESSION['id_login'] = $row['id_colaborador'];
          $_SESSION['role'] = 'backoffice';
          header('location:../dashboard/backoffice/backoffice.php');
      } else if ($row['id_rol'] == $rol_supervisor) {
          $_SESSION['supervisor_name'] = $row_colaborador['nombre'];
+         $_SESSION['supervisor_lastname'] = $row_colaborador['apellido'];
          $_SESSION['id_login'] = $row_colaborador['id_colaborador']; // Usar el ID del colaborador del resultado del login
-         $_SESSION['role'] = 'supervisor';
+         $_SESSION['role'] ='supervisor';
          header('location:../dashboard/supervisor/supervisor.php');
      } else if ($row['id_rol'] == $rol_asesor) {
          $_SESSION['asesor_name'] = $row_colaborador['nombre'];
+         $_SESSION['asesor_lastname'] = $row_colaborador['apellido'];
          $_SESSION['id_login'] = $row_colaborador['id_colaborador']; // Usar el ID del colaborador del resultado del login
          $_SESSION['role'] = 'asesor';
          header('location:../dashboard/asesor/asesor.php');

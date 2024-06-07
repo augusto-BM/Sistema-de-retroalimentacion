@@ -1,11 +1,4 @@
-<?php
-session_start();
-@include '../../../modelo/conexion.php';
 
-if(!isset($_SESSION['backoffice_name'])){
-   header('location:../../login/login.php');
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,63 +29,62 @@ if(!isset($_SESSION['backoffice_name'])){
  <button type="button" class="btn btn-success">Imprimir resultados</button>
 
 </div>
-<div class="form-group">
-  <label class="col-md-12 control-label" for="qns'.$i.' "></label>  
-  <div class="col-md-12">
-  <textarea rows="3" cols="5" name="qns'.$i.'" class="form-control" placeholder="Escribe la pregunta número '.$i.' acá..."></textarea>  
-  </div>
-</div>
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-12 control-label" for="'.$i.'1"></label>  
-  <div class="col-md-12">
-  <input id="'.$i.'1" name="'.$i.'1" placeholder="Ingresa la opción a" class="form-control input-md" type="text">
-    
-  </div>
-</div>
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-12 control-label" for="'.$i.'2"></label>  
-  <div class="col-md-12">
-  <input id="'.$i.'2" name="'.$i.'2" placeholder="Ingresa la opción b" class="form-control input-md" type="text">
-    
-  </div>
-</div>
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-12 control-label" for="'.$i.'3"></label>  
-  <div class="col-md-12">
-  <input id="'.$i.'3" name="'.$i.'3" placeholder="Ingresa la opción c" class="form-control input-md" type="text">
-    
-  </div>
-</div>
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-12 control-label" for="'.$i.'4"></label>  
-  <div class="col-md-12">
-  <input id="'.$i.'4" name="'.$i.'4" placeholder="Ingresa la opción d" class="form-control input-md" type="text">
-    
-  </div>
-</div>
-<br />
-<b>Escoge la respuesta correcta</b>:<br/>
-<select id="ans'.$i.'" name="ans'.$i.'" placeholder="Escoge la respuesta correcta " class="form-control input-md" >
-   <option value="a">Seleccione la respuesta a la pregunta '.$i.'</option>
-  <option value="a">option a</option>
-  <option value="b">option b</option>
-  <option value="c">option c</option>
-  <option value="d">option d</option> </select><br /><br />'; 
- 
-    
-echo '<div class="form-group">
-  <label class="col-md-12 control-label" for=""></label>
-  <div class="col-md-12"> 
-    <input  type="submit" style="margin-left:45%" class="btn btn-primary" value="Enviar" class="btn btn-primary"/>
-  </div>
-</div>
+<?php
+session_start();
+@include '../../../modelo/conexion.php';
 
-</fieldset>
-</form></div>';
+if(!isset($_SESSION['backoffice_name'])){
+   header('location:../../login/login.php');
+}
+
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Procesar los detalles del examen enviado aquí
+    // ...
+    // Luego, mostrar los campos de entrada para las preguntas
+    $total_questions = $_POST['total']; // Obtener el número total de preguntas del formulario
+    
+    // Mostrar los campos de entrada para cada pregunta
+    echo '<div class="row">';
+    echo '<span class="title1" style="margin-left:40%;font-size:30px;"><b>Detalles del examen</b></span><br /><br />';
+    echo '<div class="col-md-3"></div><div class="col-md-6">';
+    echo '<form class="form-horizontal title1" name="form" method="POST">';
+    echo '<fieldset>';
+
+    for($i = 1; $i <= $total_questions; $i++) {
+        echo '<div class="form-group">';
+        echo '<label class="col-md-12 control-label" for="qns'.$i.'">Pregunta '.$i.'</label>';
+        echo '<div class="col-md-12">';
+        echo '<textarea rows="3" cols="5" name="qns'.$i.'" class="form-control" placeholder="Escribe la pregunta número '.$i.' acá..." required></textarea>';
+        echo '</div>';
+        echo '</div>';
+
+        // Aquí puedes mostrar los campos de entrada para las opciones de la pregunta
+        // ...
+
+        // También puedes mostrar un campo de selección para la respuesta correcta
+        // ...
+    }
+
+    // Agregar un botón de envío para enviar las preguntas
+    echo '<div class="form-group">';
+    echo '<label class="col-md-12 control-label" for=""></label>';
+    echo '<div class="col-md-12">'; 
+    echo '<input type="submit" style="margin-left:45%" class="btn btn-primary" value="Enviar preguntas" class="btn btn-primary"/>';
+    echo '</div>';
+    echo '</div>';
+
+    echo '</fieldset>';
+    echo '</form>';
+    echo '</div>';
+    echo '</div>';
+} else {
+    // Si no se ha enviado el formulario de detalles del examen, mostrar ese formulario
+    // ...
+}
+?>
+
+<!-- El resto de tu HTML sigue aquí -->
+
 
 </div>
 <?php @include '../../components/footer.php'?>

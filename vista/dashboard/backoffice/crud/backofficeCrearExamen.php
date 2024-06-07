@@ -50,7 +50,7 @@ if(!isset($_SESSION['backoffice_name'])){
 </div>
   <div class="row">
 <span class="title1" style="margin-left:40%;font-size:30px;"><b>Detalles del examen</b></span><br /><br />
- <div class="col-md-3"></div><div class="col-md-6">   <form class="form-horizontal title1" name="form" action="update.php?q=addquiz"  method="POST">
+ <div class="col-md-3"></div><div class="col-md-6">   <form class="form-horizontal title1" name="form" action="../backofficePreguntas.php"  method="POST">
 <fieldset>
 
 
