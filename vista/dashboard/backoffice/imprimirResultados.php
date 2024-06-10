@@ -27,7 +27,7 @@ if(!isset($_SESSION['backoffice_name'])){
 </head>
 
 <body>
-<?php @include '../../components/cerrarSesion.php'?>
+<?php @include '../../../vista/components/cerrarSesion.php'?>
 
 
  <?php

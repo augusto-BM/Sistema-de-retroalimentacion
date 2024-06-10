@@ -25,10 +25,7 @@ if(!isset($_SESSION['backoffice_name'])){
 </head>
 
 <body>
-<?php @include 'cerrarSesiónCrud.php'?>
-
- 
-  
+<?php include '../../../../vista/components/cerrarSesion.php'?>
    <div class="container">
    <h1>Hola soy backoffice</h1>
    <div class="container-button">
@@ -48,6 +45,7 @@ if(!isset($_SESSION['backoffice_name'])){
 <a href="../imprimirResultados.php"><button type="button" class="btn btn-success">Imprimir resultados</button></a>
 </div>
 </div>
+
   <div class="row">
 <span class="title1" style="margin-left:40%;font-size:30px;"><b>Detalles del examen</b></span><br /><br />
  <div class="col-md-3"></div><div class="col-md-6">   <form class="form-horizontal title1" name="form" action="../backofficePreguntas.php"  method="POST">

@@ -19,6 +19,8 @@ if(!isset($_SESSION['supervisor_name'])){
   <link rel="stylesheet" href="../../../css/components/header.css">
   <link rel="stylesheet" href="../../../css/components/footer.css">
     <link rel="stylesheet" href="../../../login/login.css">
+    <link rel="stylesheet" href="../../../login/login.css">
+
 
     <script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
     <script src="../supervisor.js"></script>
