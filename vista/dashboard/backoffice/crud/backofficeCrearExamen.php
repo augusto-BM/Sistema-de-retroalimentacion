@@ -26,6 +26,8 @@ if(!isset($_SESSION['backoffice_name'])){
 
 <body>
 <?php include '../../../../vista/components/cerrarSesion.php'?>
+
+
    <div class="container">
    <h1>Hola soy backoffice</h1>
    <div class="container-button">
@@ -129,7 +131,7 @@ if(!isset($_SESSION['backoffice_name'])){
 </form></div>
 
 </div>
-<?php @include '../../components/footer.php'?>
+<?php @include '../../../components/footer.php'?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

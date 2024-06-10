@@ -53,7 +53,7 @@ if(!isset($_SESSION['supervisor_name'])){
 </div>
   <div class="row">
 <span class="title1" style="margin-left:40%;font-size:30px;"><b>Detalles del examen</b></span><br /><br />
- <div class="col-md-3"></div><div class="col-md-6">   <form class="form-horizontal title1" name="form" action="update.php?q=addquiz"  method="POST">
+ <div class="col-md-3"></div><div class="col-md-6">   <form class="form-horizontal title1" name="form" action="../supervisorPreguntas.php"  method="POST">
 <fieldset>
 
 
@@ -126,7 +126,7 @@ if(!isset($_SESSION['supervisor_name'])){
 <div class="form-group">
   <label class="col-md-12 control-label" for=""></label>
   <div class="col-md-12"> 
-    <input  type="submit" style="margin-left:45%" class="btn btn-primary" value="Enviar" class="btn btn-primary"/>
+    <a href="../supervisorPreguntas.php"><input  type="submit" style="margin-left:45%" class="btn btn-primary" value="Enviar" class="btn btn-primary"/></a>
   </div>
 </div>
 
