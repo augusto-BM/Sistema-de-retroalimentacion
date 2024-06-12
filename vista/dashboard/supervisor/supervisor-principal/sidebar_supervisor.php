@@ -7,7 +7,7 @@
     <div>
         <div class="nombre-pagina">
             <ion-icon id="cloud" name="cloud-outline"></ion-icon>
-            <span>GENERAL</span>
+            <span>SUPERVISOR</span>
         </div>
         <!-- <button class="boton">
                 <ion-icon name="add-outline"></ion-icon>
@@ -30,13 +30,11 @@
                     <div class="dropdown">
                         
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            Datos Principales
+                            Examen
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Clases</a></li>
-                            <li><a class="dropdown-item" href="#">Cursos</a></li>
-                            <li><a class="dropdown-item" href="#">Backoffice</a></li>
-                            <li><a class="dropdown-item" href="#">Supervisores</a></li>
+                            <li><a class="dropdown-item" href="#">Agregar examen</a></li>
+                            <li><a class="dropdown-item" href="#">Eliminar examen</a></li>
                             
                         </ul>
                     </div>
@@ -44,13 +42,19 @@
                 <li>
                     <a href="#">
                         <ion-icon name="paper-plane-outline"></ion-icon>
-                        <span>Relacion</span>
+                        <span>Examenes Pendientes</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <ion-icon name="star-outline"></ion-icon>
-                        <span>Banco de preguntas</span>
+                        <span>Ver resultados</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <ion-icon name="star-outline"></ion-icon>
+                        <span>Ver resultados de asesores</span>
                     </a>
                 </li>
             </ul>
