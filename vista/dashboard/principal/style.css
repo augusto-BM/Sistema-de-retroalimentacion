@@ -176,10 +176,26 @@ ul{
     border-radius: 10px;
     color: var(--color-texto-menu);
 }
+.barra-lateral .navegacion .dropdown button{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 10px;
+    color: var(--color-texto-menu);
+    font-size: 12px;
+}
 .barra-lateral .navegacion a span{
     font-size: 12px;
 }
-.barra-lateral .navegacion a:hover{
+.barra-lateral .navegacion li:hover{
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
+    border-radius: 10px;
+    margin-right: 5px;
+}
+.barra-lateral .navegacion .dropdown:hover{
     background-color: var(--color-menu-hover);
     color: var(--color-menu-hover-texto);
 }

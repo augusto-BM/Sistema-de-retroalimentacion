@@ -8,7 +8,7 @@ if(isset($_POST['submit'])){
    $password = $_POST['password']; // No hashear la contraseña proporcionada
   
    //TIPOS DE ROLES:
-   $rol_backoffice = 1;       $rol_supervisor = 2;      $rol_asesor = 3;
+   $rol_backoffice = 1;       $rol_supervisor = 2;      $rol_asesor = 3;           $rol_general = 4;
 
    //SENTENCIA PARA BUSCAR EL USUARIO Y CONTRASEÑA DE LA BASE DE DATOS
    $select = "SELECT * FROM login WHERE usuario = '$email' && contraseña = '$password' ";
@@ -52,7 +52,12 @@ if(isset($_POST['submit'])){
          $_SESSION['id_login'] = $row_colaborador['id_colaborador']; // Usar el ID del colaborador del resultado del login
          $_SESSION['role'] = 'asesor';
          header('location:../dashboard/asesor/asesor.php');
-     }
+     } else if ($row['id_rol'] == $rol_general) {
+      $_SESSION['general_name'] = "GENERAL";
+      $_SESSION['id_login'] = 4;
+      $_SESSION['role'] = 'general';
+      header('location:../dashboard/principal/principal.php');
+  }
      
    } else{
     if((trim($_POST['email']) === '') and (trim($_POST['password']) === '')){

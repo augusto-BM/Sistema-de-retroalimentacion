@@ -1,10 +1,19 @@
+<?php
+session_start();
+@include '../../../modelo/conexion.php';
+
+if(!isset($_SESSION['general_name'])){
+   header('location:../../login/login.php');
+}
+$nombre_sesion = $_SESSION['general_name'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADMINISTRADOR - PRINCIPAL</title>
+    <title>ADMINISTRADOR - <?php echo $nombre_sesion; ?></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
 ">
     <link rel="stylesheet" href="./style.css">
@@ -13,7 +22,7 @@
 <body>
     <?php @include './php-principal/sidebar.php' ?>
     <main>
-        <h1>Dashboard</h1>
+        <h1>Dashboard - <?php echo $nombre_sesion; ?></h1>
         <div class="row m-3">
     <div class="col-sm-3">
         <div class="card bg-primary">
@@ -27,7 +36,7 @@
         <div class="card bg-info">
             <div class="card-body">
                 <h5 class="card-title">5</h5>
-                <p class="card-text">Clases</p>
+                <p class="card-text">Tematicas</p>
             </div>
         </div>
     </div>
@@ -53,7 +62,7 @@
         <div class="card bg-warning">
             <div class="card-body">
                 <h5 class="card-title">3</h5>
-                <p class="card-text">Cursos</p>
+                <p class="card-text">Campañas</p>
             </div>
         </div>
     </div>
