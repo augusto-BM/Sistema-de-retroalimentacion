@@ -99,7 +99,7 @@ $nombre_sesion = $_SESSION['general_name'];
                 <div class="btn-add d-flex gap-3 align-items-center">
 
                     <!-- *** MODAL PARA CREAR EMPRESAS ***-->
-                    <?php @include './crud-empresas/modal_crear_empresas.php' ?>
+                    <?php @include './php-datosPrincipales/crud-empresas/modal_crear_empresas.php' ?>
                     <!-- *************************************** -->
 
                     <div class="btn-postulantes-desactivos">
