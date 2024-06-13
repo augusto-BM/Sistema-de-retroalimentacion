@@ -1,4 +1,12 @@
+<?php
+session_start();
+@include '../../../modelo/conexion.php';
 
+if(!isset($_SESSION['supervisor_name'])){
+   header('location:../../login/login.php');
+}
+$nombre_sesion = $_SESSION['supervisor_name'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

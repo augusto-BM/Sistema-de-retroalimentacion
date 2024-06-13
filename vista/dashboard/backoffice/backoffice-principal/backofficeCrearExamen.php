@@ -1,23 +1,34 @@
+<?php
+session_start();
+@include '../../../modelo/conexion.php';
 
+if(!isset($_SESSION['backoffice_name'])){
+   header('location:../../login/login.php');
+}
+$nombre_sesion = $_SESSION['backoffice_name'];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supervisor</title>
+    <title>Backoffice</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../principal/style.css">
 </head>
 
 <body>
-<?php @include '../supervisor-principal/sidebar_supervisor.php'?>
+<?php
+      @include './sidebar_backoffice.php'?>
+
 <main>
-   <h1>Hola soy supervisor</h1>
+   <h1>Hola soy backoffice</h1>
 
   <div class="row">
 <span class="title1" style="margin-left:29%;font-size:30px;"><b>Detalles del examen</b></span><br /><br />
- <div class="col-md-3"></div><div class="col-md-6">   <form class="form-horizontal title1" name="form" action="../supervisorPreguntas.php"  method="POST">
+ <div class="col-md-3"></div><div class="col-md-6">   <form class="form-horizontal title1" name="form" action="../backofficePreguntas.php"  method="POST">
 <fieldset>
 
 
@@ -41,38 +52,12 @@
   </div>
 </div>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-12 control-label" for="right"></label>  
-  <div class="col-md-12">
-  <input id="right" name="right" placeholder="Ingrese el número de marcas en la respuesta correcta" class="form-control input-md" min="0" type="number" required>
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-12 control-label" for="wrong"></label>  
-  <div class="col-md-12">
-  <input id="wrong" name="wrong" placeholder="Ingrese el número de marcas en la respuesta incorrecta sin signo" class="form-control input-md" min="0" type="number" required>
-    
-  </div>
-</div>
 
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-12 control-label" for="time"></label>  
   <div class="col-md-12">
   <input id="time" name="time" placeholder="Ingrese el límite de tiempo para la prueba en minutos" class="form-control input-md" min="1" type="number" required>
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-12 control-label" for="tag"></label>  
-  <div class="col-md-12">
-  <input id="tag" name="tag" placeholder="Ingrese una etiqueta para que puedan buscar el examen" class="form-control input-md" type="text" required>
     
   </div>
 </div>
@@ -90,7 +75,7 @@
 <div class="form-group">
   <label class="col-md-12 control-label" for=""></label>
   <div class="col-md-12"> 
-    <a href="../supervisorPreguntas.php"><input  type="submit" style="margin-left:45%" class="btn btn-primary" value="Enviar" class="btn btn-primary"/></a>
+    <a href="../backoffice/backofficePreguntas.php"><input  type="submit" style="margin-left:45%" class="btn btn-primary" value="Enviar" class="btn btn-primary"/></a>
   </div>
 </div>
 

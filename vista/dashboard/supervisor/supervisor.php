@@ -5,56 +5,101 @@ session_start();
 if(!isset($_SESSION['supervisor_name'])){
    header('location:../../login/login.php');
 }
+$nombre_sesion = $_SESSION['supervisor_name'];
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Supervisor</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="../css/components/header.css">
-  <link rel="stylesheet" href="../../css/components/header.css" >
-  <link rel="stylesheet" href="../../css/components/footer.css" >
-    <link rel="stylesheet" href="./login.css">
-    <link rel="stylesheet" href="supervisor.css">
-    <script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
-    <script src="supervisor.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMINISTRADOR - PRINCIPAL</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+">
+    <link rel="stylesheet" href="../principal/style.css">
 </head>
 
 <body>
-<?php @include '../../components/cerrarSesion.php'?>
-<div class="container">
-<h1>Hola soy supervisor</h1>
-<div class="container-button">
-<div class="dropdown">
-
-  <button onclick="toggleDropdown()" class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" aria-expanded="false" data-toggle="dropdown">
-    Exámen
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-  <div class="btn-group-vertical">
-    <li><a class="dropdown-item" href="./crud/supervisorCrearExamen.php">Agregar examen</a></li>
-    <li><a class="dropdown-item" href="./crud/supervisorEditarExamen.php">Eliminar examen</a></li>
+    <?php @include './supervisor-principal/sidebar_supervisor.php' ?>
+    <main>
+        <h1>Dashboard supervisor</h1>
+        <div class="row m-3">
+    <div class="col-sm-3">
+        <div class="card bg-primary">
+            <div class="card-body">
+                <h5 class="card-title">3</h5>
+                <p class="card-text">cedes</p>
+            </div>
+        </div>
     </div>
-  </ul>
+    <div class="col-sm-3">
+        <div class="card bg-info">
+            <div class="card-body">
+                <h5 class="card-title">5</h5>
+                <p class="card-text">Clases</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-success">
+            <div class="card-body">
+                <h5 class="card-title">8</h5>
+                <p class="card-text">Supervisores</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-danger">
+            <div class="card-body">
+                <h5 class="card-title">27</h5>
+                <p class="card-text">Asesores</p>
+            </div>
+        </div>
+    </div>
 </div>
- <a href="supervisorExamenesPendientes.php"><button type="button" class="btn btn-secondary">Examenes pendientes</button></a>
- <a href="supervisorVerResultados.php"><button type="button" class="btn btn-success">Ver resultados</button></a>
- <a href="supervisorVerResultadosAsesores.php"><button type="button" class="btn btn-danger" >Ver resultados de asesores</button></a>
+<div class="row m-3">
+    <div class="col-sm-3">
+        <div class="card bg-warning">
+            <div class="card-body">
+                <h5 class="card-title">3</h5>
+                <p class="card-text">Cursos</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-success">
+            <div class="card-body">
+                <h5 class="card-title">7</h5>
+                <p class="card-text">Preguntas</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-primary">
+            <div class="card-body">
+                <h5 class="card-title">12</h5>
+                <p class="card-text">Resultados</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-info">
+            <div class="card-body">
+                <h5 class="card-title">52</h5>
+                <p class="card-text">Usuarios</p>
+            </div>
+        </div>
+    </div>
 </div>
 
-</div>
-<?php
-      @include '../../components/footer.php'?>
+    </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../principal/script.js"></script>
 </body>
+
 </html>

@@ -1,3 +1,12 @@
+<?php
+session_start();
+@include '../../../modelo/conexion.php';
+
+if(!isset($_SESSION['backoffice_name'])){
+   header('location:../../login/login.php');
+}
+$nombre_sesion = $_SESSION['backoffice_name'];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +21,7 @@
 
 <body>
 <?php
-      @include '../backoffice-principal/sidebar_backoffice.php'?>
+      @include './sidebar_backoffice.php'?>
 
 <main>
    <h1>Hola soy backoffice</h1>

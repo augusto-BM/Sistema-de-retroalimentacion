@@ -21,7 +21,7 @@
             <p><sub>Menu Principal</sub></p>
             <ul>
                 <li>
-                    <a id="inbox" href="#">
+                    <a id="inbox" href="../supervisor/supervisor.php">
                         <ion-icon name="mail-unread-outline"></ion-icon>
                         <span>Inicio</span>
                     </a>
@@ -33,26 +33,26 @@
                             Examen
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Agregar examen</a></li>
-                            <li><a class="dropdown-item" href="#">Eliminar examen</a></li>
+                            <li><a class="dropdown-item" href="./supervisorCrearExamen.php">Agregar examen</a></li>
+                            <li><a class="dropdown-item" href="./supervisorEditarExamen.php">Eliminar examen</a></li>
                             
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../supervisor/supervisorExamenesPendientes.php">
                         <ion-icon name="paper-plane-outline"></ion-icon>
                         <span>Examenes Pendientes</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../supervisor/supervisorVerResultados.php">
                         <ion-icon name="star-outline"></ion-icon>
                         <span>Ver resultados</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../supervisor/supervisorVerResultadosAsesores.php">
                         <ion-icon name="star-outline"></ion-icon>
                         <span>Ver resultados de asesores</span>
                     </a>
@@ -107,7 +107,6 @@
                 </div>
             </div>
         </div>
-
         <div class="usuario">
             <img src="/Jhampier.jpg" alt="">
             <div class="info-usuario">
