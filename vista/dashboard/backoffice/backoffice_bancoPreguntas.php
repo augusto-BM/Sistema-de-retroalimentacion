@@ -24,20 +24,18 @@ $nombre_sesion = $_SESSION['backoffice_name'];
 <?php
       @include './backoffice-principal/sidebar_backoffice.php'?>
         <main>
-<h1>Resultados de examenes</h1>
+<h1>Banco de preguntas</h1>
 <div>
   <div class="container">
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Examen</th>
-        <th scope="col">Campaña</th>
-        <th scope="col">Creador</th>
-        <th scope="col">Total Preguntas</th>
-        <th scope="col">Hora</th>
-        <th scope="col">Fecha</th>
         <th scope="col"></th>
+        <th scope="col">#</th>
+        <th scope="col">Campaña</th>
+        <th scope="col">Preguntas</th>
+        <th scope="col">Fecha Creacion</th>
+        <th scope="col">Accion</th>
       </tr>
     </thead>
     <tbody>
@@ -47,8 +45,6 @@ $nombre_sesion = $_SESSION['backoffice_name'];
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
-        <td></td>
         <td class="">Ver</td>
       </tr>
       <tr>
@@ -57,14 +53,10 @@ $nombre_sesion = $_SESSION['backoffice_name'];
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
-        <td></td>
         <td class="">Ver</td>
       </tr>
       <tr>
       <td scope="row"></td>
-        <td></td>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>

@@ -27,27 +27,15 @@
                     </a>
                 </li>
                 <li>
-                    <div class="dropdown">
-                        
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            Examen
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="./backofficeCrearExamen.php">Agregar exámen</a></li>
-                            <li><a class="dropdown-item" href="./backofficeEditarExamen.php">Eliminar exámen</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="../backoffice/verResultadosBackoffice.php">
+                    <a href="../backoffice/backoffice_bancoPreguntas.php">
                         <ion-icon name="paper-plane-outline"></ion-icon>
-                        <span>Ver resultados</span>
+                        <span>Banco de preguntas</span>
                     </a>
                 </li>
                 <li>
-                    <a href="../backoffice/imprimirResultados.php">
+                    <a href="../backoffice/backofficelistaExamenes.php">
                         <ion-icon name="star-outline"></ion-icon>
-                        <span>Imprimir resultados</span>
+                        <span>Examen</span>
                     </a>
                 </li>
             </ul>
@@ -56,26 +44,9 @@
             <p><sub>Reportes</sub></p>
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="../backoffice/verResultadosBackoffice.php">
                         <ion-icon name="document-text-outline"></ion-icon>
                         <span>Resultado de examenes</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="seccion">
-            <p><sub>Administrador</sub></p>
-            <ul>
-                <li>
-                    <a href="#">
-                        <ion-icon name="mail-unread-outline"></ion-icon>
-                        <span>Administrador de usuarios</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <ion-icon name="star-outline"></ion-icon>
-                        <span>Configuracion</span>
                     </a>
                 </li>
             </ul>

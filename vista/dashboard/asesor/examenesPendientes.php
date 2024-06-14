@@ -22,10 +22,92 @@ $nombre_sesion = $_SESSION['asesor_name'];
 <body>
   <?php @include './asesor-principal/sidebar-asesor.php'?>
   <main>
-  <h1>Hola soy asesor</h1>
+  <h1>Examenes pendientes</h1>
   <div class="container">
-  <h1>No tienes examenes pendientes</h1>
+  <div class="row m-3">
+    <div class="col-sm-3">
+        <div class="card bg-primary">
+            <div class="card-body">
+                <h5 class="card-title">Campaña</h5>
+                <p class="card-text">energía</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-info">
+            <div class="card-body">
+                <h5 class="card-title">Tematica</h5>
+                <p class="card-text">capa energia</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-success">
+            <div class="card-body">
+                <h5 class="card-title">Fecha</h5>
+                <p class="card-text">13/06/2024</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-danger">
+            <div class="card-body">
+                <h5 class="card-title">Hora</h5>
+                <p class="card-text">17:49</p>
+            </div>
+        </div>
+    </div>
+</div>
   </div>
+  <div class="container">
+  <!-- Content here -->
+  <h4>Lista de examenes</h4>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre del examen</th>
+      <th scope="col">Campaña</th>
+      <th scope="col">Creador</th>
+      <th scope="col">Número de preguntas</th>
+      <th scope="col">Tiempo</th>
+      <th scope="col">Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Primer examen</td>
+      <td>energia</td>
+      <td>Jose</td>
+      <td>10</td>
+      <td>30 min</td>
+      <td><button>Tomar examen</button></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Segundo examen</td>
+      <td>luz</td>
+      <td>Carlos</td>
+      <td>8</td>
+      <td>30 min</td>
+      <td><button>Tomar examen</button></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Tercer examen</td>
+      <td>energia</td>
+      <td>Maria</td>
+      <td>10</td>
+      <td>30 min</td>
+      <td><button>Tomar examen</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
 
   </main>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

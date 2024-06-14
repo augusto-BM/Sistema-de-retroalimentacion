@@ -23,8 +23,26 @@ $nombre_sesion = $_SESSION['backoffice_name'];
 <?php
       @include './backoffice-principal/sidebar_backoffice.php'?>
 <main>
-   <h1>Hola soy backoffice</h1>
-
+   <h1>Detalles de preguntas</h1>
+   <div class="container">
+   <div class="row">
+    <div class="col-sm-3">
+        <div class="card bg-primary">
+            <div class="card-body">
+                <h5 class="card-title">Campañas</h5>
+                <p class="card-text">energia</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-info">
+            <div class="card-body">
+                <h5 class="card-title">Creador</h5>
+                <p class="card-text">Sebastian Rodriguez</p>
+            </div>
+        </div>
+    </div>
+    </div>
 <?php
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
   // Procesar los detalles del examen enviado aquí

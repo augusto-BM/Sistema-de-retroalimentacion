@@ -24,8 +24,34 @@ $nombre_sesion = $_SESSION['asesor_name'];
 <?php  @include './asesor-principal/sidebar-asesor.php' ?>
 
   <main>
-  <h1>Hola soy asesor</h1>
-
+  <h1>Dashboard ASESOR</h1>
+  <div class="container">
+        <table class="table" style="background-color: white">
+  <thead>
+    <tr>
+      <th colspan="2" class="text-left" >Información del Colaborador</th>
+    </tr>
+    </thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th>Mateo</th>
+    </tr>
+  <tbody>
+    <tr>
+      <th scope="row">Genero</th>
+      <td>Masculino</td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td>mateoasesor@gmail.com</td>
+    </tr>
+    <tr>
+      <th scope="row">Campaña</th>
+      <td>energia</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
   </main>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

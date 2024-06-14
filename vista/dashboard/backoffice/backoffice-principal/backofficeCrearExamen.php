@@ -24,7 +24,26 @@ $nombre_sesion = $_SESSION['backoffice_name'];
       @include './sidebar_backoffice.php'?>
 
 <main>
-   <h1>Hola soy backoffice</h1>
+   <h1>Agregar Examen</h1>
+   <div class="container">
+   <div class="row">
+    <div class="col-sm-3">
+        <div class="card bg-primary">
+            <div class="card-body">
+                <h5 class="card-title">Campañas</h5>
+                <p class="card-text">energia</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-info">
+            <div class="card-body">
+                <h5 class="card-title">Creador</h5>
+                <p class="card-text">Sebastian Rodriguez</p>
+            </div>
+        </div>
+    </div>
+    </div>
 
   <div class="row">
 <span class="title1" style="margin-left:29%;font-size:30px;"><b>Detalles del examen</b></span><br /><br />
@@ -82,6 +101,7 @@ $nombre_sesion = $_SESSION['backoffice_name'];
 </fieldset>
 </form></div>
 
+</div>
 </div>
 </main>
 

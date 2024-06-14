@@ -26,34 +26,38 @@ $nombre_sesion = $_SESSION['supervisor_name'];
     <table class="table table-bordered">
     <thead>
       <tr>
+        <td scope="row">#</td>
         <th scope="col">Nombre de examen</th>
+        <th scope="col">Campaña</th>
         <th scope="col">Nombre de asesor</th>
-        <th scope="col">Dia</th>
         <th scope="col">Fecha</th>
         <th scope="col">Nota</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td scope="row">Primer examen</td>
+        <td></td>
+        <td>Primer examen</td>
+        <td>energia</td>
         <td>Jose Suarez</td>
-        <td>Lunes</td>
         <td>29/04/2024</td>
-        <td class="nota">18</td>
+        <td>18</td>
       </tr>
       <tr>
-        <td scope="row">Segundo examen</td>
-        <td>Carlos Martinez</td>
-        <td>Martes</td>
-        <td>07/05/2024</td>
-        <td class="nota">14</td>
+      <td></td>
+        <td>Primer examen</td>
+        <td>energia</td>
+        <td>Sergio Aguero</td>
+        <td>29/04/2024</td>
+        <td>12</td>
       </tr>
       <tr>
-      <td scope="row">Tercer examen</td>
-      <td>Brenda Flores</td>
-        <td>Miercoles</td>
-        <td>15/05/2024</td>
-        <td class="nota">16</td>
+      <td></td>
+        <td>Primer examen</td>
+        <td>energia</td>
+        <td>Daniel Espinoza</td>
+        <td>29/04/2024</td>
+        <td>15</td>
       </tr>
     </tbody>
   </table>

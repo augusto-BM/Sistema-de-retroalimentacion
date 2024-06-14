@@ -350,6 +350,9 @@ main.min-main{
     }
     
 }
-
+.table tbody td {
+    border-left: none;
+  }
+  
 
 

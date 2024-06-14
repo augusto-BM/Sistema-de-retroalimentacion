@@ -26,18 +26,12 @@
                         <span>Inicio</span>
                     </a>
                 </li>
+                
                 <li>
-                    <div class="dropdown">
-                        
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            Examen
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="./supervisorCrearExamen.php">Agregar examen</a></li>
-                            <li><a class="dropdown-item" href="./supervisorEditarExamen.php">Eliminar examen</a></li>
-                            
-                        </ul>
-                    </div>
+                    <a href="../supervisor/supervisor_bancoPreguntas.php">
+                        <ion-icon name="star-outline"></ion-icon>
+                        <span>Banco de Preguntas</span>
+                    </a>
                 </li>
                 <li>
                     <a href="../supervisor/supervisorExamenesPendientes.php">
@@ -46,47 +40,25 @@
                     </a>
                 </li>
                 <li>
-                    <a href="../supervisor/supervisorVerResultados.php">
+                    <a href="../supervisor/supervisor_listaExamenes.php">
                         <ion-icon name="star-outline"></ion-icon>
-                        <span>Ver resultados</span>
+                        <span>Examenes</span>
                     </a>
                 </li>
-                <li>
-                    <a href="../supervisor/supervisorVerResultadosAsesores.php">
-                        <ion-icon name="star-outline"></ion-icon>
-                        <span>Ver resultados de asesores</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="seccion">
+                <div class="seccion">
             <p><sub>Reportes</sub></p>
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="../supervisor/supervisorVerResultadosAsesores.php">
                         <ion-icon name="document-text-outline"></ion-icon>
                         <span>Resultado de examenes</span>
                     </a>
                 </li>
             </ul>
         </div>
-        <div class="seccion">
-            <p><sub>Administrador</sub></p>
-            <ul>
-                <li>
-                    <a href="#">
-                        <ion-icon name="mail-unread-outline"></ion-icon>
-                        <span>Administrador de usuarios</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <ion-icon name="star-outline"></ion-icon>
-                        <span>Configuracion</span>
-                    </a>
-                </li>
             </ul>
         </div>
+        
     </nav>
 
 
