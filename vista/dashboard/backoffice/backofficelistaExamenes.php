@@ -27,7 +27,7 @@ $nombre_sesion = $_SESSION['backoffice_name'];
 
 <h1>Datos de examenes</h1>
 <div class="container">
-<a href="./backoffice-principal/backofficeCrearExamen.php"><button class="btn" style="background-color: blue; color: white; float: right">Agregar examen</button></a>
+<a href="./crud-examenes/backofficeCrearExamen.php"><button class="btn" style="background-color: blue; color: white; float: right">Agregar examen</button></a>
 <div>
   
   <table class="table table-bordered">

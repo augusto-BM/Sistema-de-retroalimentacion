@@ -21,7 +21,7 @@ $nombre_sesion = $_SESSION['backoffice_name'];
 
 <body>
 <?php
-      @include './sidebar_backoffice.php'?>
+      @include '../backoffice-principal/sidebar_backoffice.php'?>
 
 <main>
    <h1>Agregar Examen</h1>
@@ -110,4 +110,4 @@ $nombre_sesion = $_SESSION['backoffice_name'];
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../principal/script.js"></script>
 </body>
-</html>
+</html

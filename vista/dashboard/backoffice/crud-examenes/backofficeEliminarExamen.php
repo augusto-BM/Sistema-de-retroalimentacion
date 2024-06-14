@@ -24,7 +24,7 @@ $nombre_sesion = $_SESSION['backoffice_name'];
       @include './sidebar_backoffice.php'?>
 
 <main>
-   <h1>Hola soy backoffice</h1>
+   <h1>Eliminar examen</h1>
  <div class="container">
     <table class="table table-bordered">
     <thead>

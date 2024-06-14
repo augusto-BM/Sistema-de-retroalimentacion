@@ -23,7 +23,7 @@ $nombre_sesion = $_SESSION['supervisor_name'];
   <main>
  
   <h1>Datos de examenes</h1>
-  <a href="./supervisor-principal/supervisorCrearExamen.php"><button class="btn" style="background-color: blue; color: white; float: right">Agregar examen</button></a>
+  <a href="./crud-supervisor/supervisorCrearExamen.php"><button class="btn" style="background-color: blue; color: white; float: right">Agregar examen</button></a>
 <div>
   
   <table class="table table-bordered">

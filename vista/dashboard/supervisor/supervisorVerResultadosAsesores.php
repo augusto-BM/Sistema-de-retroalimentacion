@@ -20,7 +20,7 @@ $nombre_sesion = $_SESSION['supervisor_name'];
 <body>
 <?php @include './supervisor-principal/sidebar_supervisor.php'?>
 <main>
-  <h1>Hola soy supervisor</h1>
+  <h1>Resultados de asesores</h1>
 
   <div class="container">
     <table class="table table-bordered">
