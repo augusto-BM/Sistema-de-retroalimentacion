@@ -6,6 +6,7 @@ if(!isset($_SESSION['supervisor_name'])){
    header('location:../../login/login.php');
 }
 $nombre_sesion = $_SESSION['supervisor_name'];
+$id_login = $_SESSION['id_login'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -18,7 +19,19 @@ $nombre_sesion = $_SESSION['supervisor_name'];
 </head>
 
 <body>
+<?php
+  $sql_supervisor = "SELECT usuario from login WHERE id_login = $id_login ";
+  $resultado = mysqli_query($conn, $sql_supervisor);
+  if ($resultado && mysqli_num_rows($resultado) > 0) {
+    while ($fila = mysqli_fetch_assoc($resultado)) {
+  ?>
 <?php @include './supervisor-principal/sidebar_supervisor.php'?>
+<?php
+    }
+  }
+  mysqli_free_result($resultado);
+  mysqli_close($conn);
+?>
 <main>
   <h1>Resultados de asesores</h1>
 

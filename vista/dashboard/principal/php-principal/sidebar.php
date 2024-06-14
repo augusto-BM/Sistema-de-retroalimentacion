@@ -9,10 +9,14 @@
             <ion-icon id="cloud" name="cloud-outline"></ion-icon>
             <span>GENERAL</span>
         </div>
-        <!-- <button class="boton">
-                <ion-icon name="add-outline"></ion-icon>
-                <span>Create new</span>
-            </button> -->
+        <div class="usuario">
+            <img src="/Jhampier.jpg" alt="">
+            <div class="info-usuario">
+                <div class="nombre-email">
+                    <span class="email">general@gmail.com</span>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="linea mb-3"></div>
 
@@ -22,7 +26,7 @@
             <ul>
                 <li>
                     <a id="inbox" href="./principal.php">
-                        <ion-icon name="mail-unread-outline"></ion-icon>
+                        <ion-icon name="home-outline"></ion-icon>
                         <span>Inicio</span>
                     </a>
                 </li>
@@ -56,7 +60,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <ion-icon name="star-outline"></ion-icon>
+                        <ion-icon name="copy-outline"></ion-icon>
                         <span>Banco de preguntas</span>
                     </a>
                 </li>
@@ -78,13 +82,13 @@
             <ul>
                 <li>
                     <a href="#">
-                        <ion-icon name="mail-unread-outline"></ion-icon>
+                        <ion-icon name="people-outline"></ion-icon>
                         <span>Administrador de usuarios</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <ion-icon name="star-outline"></ion-icon>
+                        <ion-icon name="settings-outline"></ion-icon>
                         <span>Configuracion</span>
                     </a>
                 </li>
@@ -92,33 +96,13 @@
         </div>
     </nav>
 
-
-
     <div>
         <div class="linea"></div>
 
         <div class="modo-oscuro">
             <div class="info">
-                <ion-icon name="moon-outline"></ion-icon>
-                <span>Modo Dark</span>
-            </div>
-            <div class="switch">
-                <div class="base">
-                    <div class="circulo">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="usuario">
-            <img src="/Jhampier.jpg" alt="">
-            <div class="info-usuario">
-                <div class="nombre-email">
-                    <span class="nombre">General</span>
-                    <span class="email">general@gmail.com</span>
-                </div>
-                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                <ion-icon name="log-in-outline"></ion-icon>
+                <a href="../../login/logout.php">Cerrar sesion</a>
             </div>
         </div>
     </div>

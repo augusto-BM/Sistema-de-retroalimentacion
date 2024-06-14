@@ -6,9 +6,10 @@ if(!isset($_SESSION['general_name'])){
    header('location:../../login/login.php');
 }
 $nombre_sesion = $_SESSION['general_name'];
+$id_login = $_SESSION['id_login'];
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">

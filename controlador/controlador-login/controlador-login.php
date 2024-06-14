@@ -11,12 +11,21 @@ if(isset($_POST['submit'])){
    $rol_backoffice = 1;       $rol_supervisor = 2;      $rol_asesor = 3;           $rol_general = 4;
 
    //SENTENCIA PARA BUSCAR EL USUARIO Y CONTRASEÑA DE LA BASE DE DATOS
-   $select = "SELECT * FROM login WHERE usuario = '$email' && contraseña = '$password' ";
+   $select = "SELECT 
+                  login.id_login AS id_login,
+                  login.id_rol AS id_rol,
+                  login.usuario AS usuario,
+                  login.contraseña AS contraseña,
+                  colaborador.nombre AS nombre 
+               FROM 
+                  login
+               LEFT JOIN 
+                  colaborador ON login.id_colaborador = colaborador.id_colaborador
+               WHERE usuario = '$email' && contraseña = '$password' ";
 
    $correo_colaborador = " SELECT * FROM login WHERE usuario = '$email'";
    $contra_colaboradoor = " SELECT * FROM login WHERE contraseña = '$password' ";
 
-   $select_colaborador = "SELECT * FROM colaborador";
 
    //GUARDAMOS COMO RESULTADO LA SENTENCIA DE LA "BUSQUEDA" Y  LA "CONEXION" 
    $result = mysqli_query($conn, $select);
@@ -24,37 +33,35 @@ if(isset($_POST['submit'])){
    $result_correo_colaborador = mysqli_query($conn, $correo_colaborador);
    $result_contra_colaborador = mysqli_query($conn, $contra_colaboradoor);
    
-   $result_colaborador = mysqli_query($conn, $select_colaborador);
 
    //HACEMOS VALIDACIONES SI EXISTE MAS DE CERO  RESULTADOS SIGNIFICA QUE SI HAY USUARIOS EN LA BBDD
-   if(mysqli_num_rows($result) > 0 && mysqli_num_rows($result_colaborador) > 0){
+   if(mysqli_num_rows($result) > 0 /* && mysqli_num_rows($result_colaborador) > 0 */){
 
       //INGRESAMOS A LOS CAMPOS DEL RESULTADO EN ESTE CASO PERTENECE A LA TABLA LOGIN
       $row = mysqli_fetch_array($result);
-      $row_colaborador = mysqli_fetch_array($result_colaborador);
-
+      /* $row_colaborador = mysqli_fetch_array($result_colaborador); */
 
       if ($row['id_rol'] == $rol_backoffice) {
-         $_SESSION['backoffice_name'] = $row_colaborador['nombre'];
-         $_SESSION['backoffice_lastname'] = $row_colaborador['apellido'];
-         $_SESSION['id_login'] = $row['id_colaborador'];
+         $_SESSION['backoffice_name'] = $row['nombre'];
+         $_SESSION['id_login'] = $row['id_login'];
          $_SESSION['role'] = 'backoffice';
          header('location:../dashboard/backoffice/backoffice.php');
+
      } else if ($row['id_rol'] == $rol_supervisor) {
-         $_SESSION['supervisor_name'] = $row_colaborador['nombre'];
-         $_SESSION['supervisor_lastname'] = $row_colaborador['apellido'];
-         $_SESSION['id_login'] = $row_colaborador['id_colaborador']; // Usar el ID del colaborador del resultado del login
+         $_SESSION['supervisor_name'] = $row['nombre'];
+         $_SESSION['id_login'] = $row['id_login'];
          $_SESSION['role'] ='supervisor';
          header('location:../dashboard/supervisor/supervisor.php');
+
      } else if ($row['id_rol'] == $rol_asesor) {
-         $_SESSION['asesor_name'] = $row_colaborador['nombre'];
-         $_SESSION['asesor_lastname'] = $row_colaborador['apellido'];
-         $_SESSION['id_login'] = $row_colaborador['id_colaborador']; // Usar el ID del colaborador del resultado del login
+         $_SESSION['asesor_name'] = $row['nombre'];
+         $_SESSION['id_login'] = $row['id_login'];
          $_SESSION['role'] = 'asesor';
          header('location:../dashboard/asesor/asesor.php');
+         
      } else if ($row['id_rol'] == $rol_general) {
       $_SESSION['general_name'] = "GENERAL";
-      $_SESSION['id_login'] = 4;
+      $_SESSION['id_login'] = $row['id_login'];
       $_SESSION['role'] = 'general';
       header('location:../dashboard/principal/principal.php');
   }
@@ -77,4 +84,5 @@ if(isset($_POST['submit'])){
      }
  }
 }
+$conn->close();
 ?>

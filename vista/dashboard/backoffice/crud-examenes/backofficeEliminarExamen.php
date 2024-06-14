@@ -6,6 +6,7 @@ if(!isset($_SESSION['backoffice_name'])){
    header('location:../../login/login.php');
 }
 $nombre_sesion = $_SESSION['backoffice_name'];
+$id_login = $_SESSION['id_login'];
 ?>
 
 <!DOCTYPE html>
