@@ -31,7 +31,7 @@
                     </a>
                 </li>
                 <li>
-                    <a id="inbox" href="../asesor/examenesPendientes.php">
+                    <a id="inbox" href="../asesor/lista_examenesPendientes.php">
                         <ion-icon name="document-outline"></ion-icon>
                         <span>Examen</span>
                     </a>
