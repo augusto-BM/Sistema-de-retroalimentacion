@@ -21,8 +21,7 @@ $id_login = $_SESSION['id_login'];
 </head>
 
 <body>
-<?php
-      @include './sidebar_backoffice.php'?>
+<?php @include '../backoffice-principal/sidebar_backoffice_copy.php' ?>
 
 <main>
    <h1>Eliminar examen</h1>

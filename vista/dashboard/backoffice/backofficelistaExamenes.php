@@ -45,43 +45,63 @@ $id_login = $_SESSION['id_login'];
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th scope="col"></th>
-              <th scope="col">#</th>
-              <th scope="col">Nombre de examen</th>
+              <th scope="col" style="display: none;">id</th>
+              <th scope="col">Tema</th>
               <th scope="col">Campaña</th>
-              <th scope="col">Total Preguntas</th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Preguntas</th>
               <th scope="col">Tiempo</th>
-              <th scope="col">Accion</th>
+              <th scope="col">Creado</th>
+              <th scope="col">Empieza</th>
+              <th scope="col">Estado</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td scope="row"></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td class="">Ver</td>
-            </tr>
-            <tr>
-              <td scope="row"></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td class="">Ver</td>
-            </tr>
-            <tr>
-              <td scope="row"></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td class="">Ver</td>
-            </tr>
+            <?php
+              @include '../../../modelo/conexion.php';
+              $sql = "SELECT 
+                        examenes.id_tematica AS id_examen,
+                        examenes.id_tematica AS id_tematica,
+                        examenes.id_rol_destino AS id_rol_destino,
+                        examenes.cantidad_preguntas AS cantidad_preguntas,
+                        examenes.duracion_examen AS duracion_examen,
+                        examenes.fecha_creacion AS fecha_creacion,
+                        examenes.fecha_realizacion AS fecha_realizacion,
+                        examenes.estado AS estado,
+                        tematica.nombre_tematica AS nombre_tematica,
+                        rol.tipo_rol AS tipo_rol,
+                        campaña.nombre_campaña AS nombre_campaña
+                      FROM examenes
+                      INNER JOIN tematica ON examenes.id_tematica = tematica.id_tematica
+                      INNER JOIN rol ON examenes.id_rol_destino = rol.id_rol
+                      INNER JOIN campaña ON tematica.id_campaña = campaña.id_campaña";
+
+              $resultado = mysqli_query($conn, $sql);
+              if ($resultado && mysqli_num_rows($resultado) > 0) {
+                while ($fila = mysqli_fetch_assoc($resultado)) {
+            ?>
+                <tr>
+                  <td style="display: none;"><?php echo $fila['id_examen']; ?></td>
+                  <td><?php echo $fila['nombre_tematica']; ?></td>
+                  <td><?php echo $fila['nombre_campaña']; ?></td>
+                  <td><?php echo $fila['tipo_rol']; ?></td>
+                  <td><?php echo $fila['cantidad_preguntas']; ?></td>
+                  <td><?php echo $fila['duracion_examen']; ?></td>
+                  <td><?php echo $fila['fecha_creacion']; ?></td>
+                  <td><?php echo $fila['fecha_realizacion']; ?></td>
+                  <td>
+                    <button style="width: 100px;" class="btn <?php echo ($fila['estado'] == 'activo') ? 'btn-success' : 'btn-danger'; ?> estadoBtn" onclick="cambiarEstado(this)" data-id="<?php echo $fila['id_examen']; ?>">
+                      <?php echo ($fila['estado'] == 'activo') ? 'Activo' : 'Inactivo'; ?>
+                    </button>
+                  </td>
+                </tr>
+            <?php
+              }
+            }
+            mysqli_free_result($resultado);
+            mysqli_close($conn);
+
+            ?>
           </tbody>
         </table>
       </div>

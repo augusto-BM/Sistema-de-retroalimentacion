@@ -44,39 +44,47 @@ $id_login = $_SESSION['id_login'];
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th scope="col"></th>
-              <th scope="col">#</th>
-              <th scope="col">Campaña</th>
-              <th scope="col">Preguntas</th>
-              <th scope="col">Fecha Creacion</th>
-              <th scope="col">Accion</th>
+              <th scope="col">id</th>
+              <th scope="col">examen</th>
+              <th scope="col">pregunta</th>
+              <th scope="col">opcion 1</th>
+              <th scope="col">opcion 2</th>
+              <th scope="col">opcion 3</th>
+              <th scope="col">opcion 4</th>
+              <th scope="col">opcion 5</th>
+              <th scope="col">Respuesta correcta</th>
+              <th scope="col">Puntaje</th>
             </tr>
           </thead>
           <tbody>
+          <?php
+              @include '../../../modelo/conexion.php';
+              $sql = "SELECT * FROM preguntas";
+
+              $resultado = mysqli_query($conn, $sql);
+              if ($resultado && mysqli_num_rows($resultado) > 0) {
+                while ($fila = mysqli_fetch_assoc($resultado)) {
+            ?>
             <tr>
-              <td scope="row"></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td class="">Ver</td>
+              <td><?php echo $fila['id_pregunta']; ?></td>
+              <td><?php echo $fila['id_examen']; ?></td>
+              <td><?php echo $fila['pregunta_texto']; ?></td>
+              <td><?php echo $fila['opcion_1']; ?></td>
+              <td><?php echo $fila['opcion_2']; ?></td>
+              <td><?php echo $fila['opcion_3']; ?></td>
+              <td><?php echo $fila['opcion_4']; ?></td>
+              <td><?php echo $fila['opcion_5']; ?></td>
+              <td><?php echo $fila['respuesta_correcta']; ?></td>
+              <td><?php echo $fila['puntaje']; ?></td>
+
             </tr>
-            <tr>
-              <td scope="row"></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td class="">Ver</td>
-            </tr>
-            <tr>
-              <td scope="row"></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td class="">Ver</td>
-            </tr>
+            <?php
+              }
+            }
+            mysqli_free_result($resultado);
+            mysqli_close($conn);
+
+            ?>
           </tbody>
         </table>
       </div>
