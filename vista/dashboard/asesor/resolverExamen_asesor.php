@@ -79,7 +79,7 @@ $id_login = $_SESSION['id_login'];
         </div>
         <div class="buttons">
             <button class="restart">Repetir</button>
-            <button class="quit">Salir</button>
+            <a href="./lista_examenesPendientes.php"><button class="quit">Salir</button></a>
         </div>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

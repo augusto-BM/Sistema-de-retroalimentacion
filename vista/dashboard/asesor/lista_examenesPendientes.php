@@ -96,7 +96,7 @@ $id_login = $_SESSION['id_login'];
       <td>Jose</td>
       <td>10</td>
       <td>30 min</td>
-      <td><a href="./resolverExamen.php"><button>Tomar examen</button></a></td>
+      <td><a href="./resolverExamen_asesor.php"><button>Tomar examen</button></a></td>
     </tr>
     <tr>
       <th scope="row">2</th>
@@ -105,7 +105,7 @@ $id_login = $_SESSION['id_login'];
       <td>Carlos</td>
       <td>8</td>
       <td>30 min</td>
-      <td><a href="./resolverExamen.php"><button>Tomar examen</button></a></td>
+      <td><a href="./resolverExamen_asesor.php"><button>Tomar examen</button></a></td>
     </tr>
     <tr>
       <th scope="row">3</th>
@@ -114,7 +114,7 @@ $id_login = $_SESSION['id_login'];
       <td>Maria</td>
       <td>10</td>
       <td>30 min</td>
-      <td><a href="./resolverExamen.php"><button>Tomar examen</button></a></td>
+      <td><a href="./resolverExamen_asesor.php"><button>Tomar examen</button></a></td>
     </tr>
   </tbody>
 </table>
