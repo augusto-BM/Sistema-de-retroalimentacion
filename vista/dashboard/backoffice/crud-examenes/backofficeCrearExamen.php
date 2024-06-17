@@ -108,6 +108,15 @@ $id_login = $_SESSION['id_login'];
               <div class="form-group">
                 <label class="col-md-12 control-label" for="total"></label>
                 <div class="col-md-12">
+                  <label for="total">Titulo del examen</label>
+                  <input id="titulo" name="titulo" placeholder="Ingrese el titulo del examen" class="form-control input-md" type="text" required>
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-12 control-label" for="total"></label>
+                <div class="col-md-12">
                   <label for="total">Cantidad de preguntas</label>
                   <input id="total" name="total" placeholder="Ingrese el número total de preguntas" class="form-control input-md" type="number" required>
                 </div>
