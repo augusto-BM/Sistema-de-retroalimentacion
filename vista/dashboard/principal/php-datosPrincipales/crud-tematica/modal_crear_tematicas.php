@@ -10,14 +10,14 @@
                 <div class="modal-body">
                     <div class="card">
                         <div class="card-body">
-                            <form method="POST" action="../../../controlador/controlador-principal/controlador-agregarEmpesas.php" enctype="multipart/form-data">
+                            <form method="POST" action="../../../controlador/controlador-principal/controlador-agregartematica.php" enctype="multipart/form-data">
                                 <div class="">
-                                    <div class="nombre-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Tematica:</label></div>
-                                    <input type="text" class="form-control" id="nombre_sede" name="nombre_sede" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
+                                    <div class="nombre-tematica" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Tematica:</label></div>
+                                    <input type="text" class="form-control" id="nombre-tematica" name="nombre-tematica" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
                                 </div>
                                 <div class="">
-                                    <div class="nombre-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">Campaña:</label></div>
-                                    <input type="text" class="form-control" id="lugar_sede" name="lugar_sede" style="margin-bottom: 5px;" oninput="soloLetras(this)">
+                                    <div class="nombre-tematica" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">Campaña:</label></div>
+                                    <input type="text" class="form-control" id="nombre-campaña" name="nombre-campaña" style="margin-bottom: 5px;" oninput="soloLetras(this)">
                                 </div>
 
                                 <div class="modal-footer d-flex justify-content-center">
