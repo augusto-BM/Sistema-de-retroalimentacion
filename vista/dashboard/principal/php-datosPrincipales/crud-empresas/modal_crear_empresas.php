@@ -10,14 +10,34 @@
                 <div class="modal-body">
                     <div class="card">
                         <div class="card-body">
-                            <form method="POST" action="../../../controlador/controlador-principal/controlador-agregarEmpesas.php" enctype="multipart/form-data">
+                            <form method="POST" action="../../../controlador/controlador-principal/controlador-agregarempresa.php" enctype="multipart/form-data">
                                 <div class="">
-                                    <div class="nombre-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Sede:</label></div>
-                                    <input type="text" class="form-control" id="nombre_sede" name="nombre_sede" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
+                                    <div class="razonsocial-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Razon Social:</label></div>
+                                    <input type="text" class="form-control" id="razon_social" name="razon_social" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
                                 </div>
                                 <div class="">
-                                    <div class="nombre-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">Lugar:</label></div>
-                                    <input type="text" class="form-control" id="lugar_sede" name="lugar_sede" style="margin-bottom: 5px;" oninput="soloLetras(this)">
+                                    <div class="rucempresa-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">RUC EMPRESA:</label></div>
+                                    <input type="text" class="form-control" id="ruc_empresa" name="ruc_empresa" style="margin-bottom: 5px;" oninput="soloLetras(this)">
+                                </div>
+                                <div class="">
+                                    <div class="direccion-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">DIRECCIÓN:</label></div>
+                                    <input type="text" class="form-control" id="'direccion-empresa" name="direccion-empresa" style="margin-bottom: 5px;" oninput="soloLetras(this)">
+                                </div>
+                                <div class="">
+                                    <div class="ubicacion-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">UBICACIÓN:</label></div>
+                                    <input type="text" class="form-control" id="ubicacion" name="ubicacion" style="margin-bottom: 5px;" oninput="soloLetras(this)">
+                                </div>
+                                <div class="">
+                                    <div class="celular-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">CELULAR:</label></div>
+                                    <input type="text" class="form-control" id="celular-empresa" name="celular-empresa" style="margin-bottom: 5px;" oninput="soloLetras(this)">
+                                </div>
+                                <div class="">
+                                    <div class="estado-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">ESTADO:</label></div>
+                                    <input type="text" class="form-control" id="estado-empresa" name="estado-empresa" style="margin-bottom: 5px;" oninput="soloLetras(this)">
+                                </div>
+                                <div class="">
+                                    <div class="fecharegistro-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">FECHA DE REGISTRO:</label></div>
+                                    <input type="text" class="form-control" id="fecha_registro" name="fecha_registro" style="margin-bottom: 5px;" oninput="soloLetras(this)">
                                 </div>
 
                                 <div class="modal-footer d-flex justify-content-center">
