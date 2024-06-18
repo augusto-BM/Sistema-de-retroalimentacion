@@ -10,30 +10,38 @@
                 <div class="modal-body">
                     <div class="card">
                         <div class="card-body">
-                            <form method="POST" action="../../../controlador/controlador-principal/controlador-agregarEmpesas.php" enctype="multipart/form-data">
+                            <form method="POST" action="../../../controlador/controlador-principal/controlador-agregarasesor.php" enctype="multipart/form-data">
                                 <div class="">
-                                    <div class="nombre-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Nombre:</label></div>
-                                    <input type="text" class="form-control" id="nombre_sede" name="nombre_sede" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
+                                    <div class="nombre-asesor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Nombre:</label></div>
+                                    <input type="text" class="form-control" id="nombre_asesor" name="nombre_asesor" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
                                 </div>
                                 <div class="">
-                                    <div class="nombre-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Apellido:</label></div>
-                                    <input type="text" class="form-control" id="nombre_sede" name="nombre_sede" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
+                                    <div class="apellido_asesor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Apellido:</label></div>
+                                    <input type="text" class="form-control" id="apellido_asesor" name="apellido_asesor" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
                                 </div>
                                 <div class="">
-                                    <div class="nombre-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">Celular:</label></div>
-                                    <input type="text" class="form-control" id="lugar_sede" name="lugar_sede" style="margin-bottom: 5px;" oninput="soloLetras(this)">
+                                    <div class="celular-asesor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">Celular:</label></div>
+                                    <input type="text" class="form-control" id="celular-asesor" name="celular-asesor" style="margin-bottom: 5px;" oninput="soloLetras(this)">
                                 </div>
                                 <div class="">
-                                    <div class="nombre-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Fecha nacimiento:</label></div>
-                                    <input type="text" class="form-control" id="nombre_sede" name="nombre_sede" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
+                                    <div class="fecnac-asesor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Fecha nacimiento:</label></div>
+                                    <input type="text" class="form-control" id="fecnac-asesor" name="fecnac-asesor" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
                                 </div>
                                 <div class="">
-                                    <div class="nombre-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Empresa:</label></div>
-                                    <input type="text" class="form-control" id="nombre_sede" name="nombre_sede" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
+                                    <div class="empresa-asesor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Empresa:</label></div>
+                                    <input type="text" class="form-control" id="empresa-asesor" name="empresa-asesor" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
                                 </div>
                                 <div class="">
-                                    <div class="nombre-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Tematica:</label></div>
-                                    <input type="text" class="form-control" id="nombre_sede" name="nombre_sede" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
+                                    <div class="tematica-asesor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Tematica:</label></div>
+                                    <input type="text" class="form-control" id="tematica-asesor" name="tematica-asesor" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
+                                </div>
+                                <div class="">
+                                    <div class="usuario-asesor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Usuario:</label></div>
+                                    <input type="text" class="form-control" id="usuario-asesor" name="usuario-asesor" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
+                                </div>
+                                <div class="">
+                                    <div class="contraseña-asesor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Contraseña:</label></div>
+                                    <input type="text" class="form-control" id="contraseña-asesor" name="contraseña-asesor" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
                                 </div>
                                 <div class="modal-footer d-flex justify-content-center">
                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>

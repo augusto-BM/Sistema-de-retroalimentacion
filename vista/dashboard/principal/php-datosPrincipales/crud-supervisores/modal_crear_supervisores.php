@@ -12,28 +12,28 @@
                         <div class="card-body">
                             <form method="POST" action="../../../controlador/controlador-principal/controlador-agregarEmpesas.php" enctype="multipart/form-data">
                                 <div class="">
-                                    <div class="nombre-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Nombre:</label></div>
-                                    <input type="text" class="form-control" id="nombre_sede" name="nombre_sede" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
+                                    <div class="nombre-supervisor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Nombre:</label></div>
+                                    <input type="text" class="form-control" id="nombre-supervisor" name="nombre-supervisor" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
                                 </div>
                                 <div class="">
-                                    <div class="nombre-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Apellido:</label></div>
-                                    <input type="text" class="form-control" id="nombre_sede" name="nombre_sede" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
+                                    <div class="apellido-supervisor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Apellido:</label></div>
+                                    <input type="text" class="form-control" id="apellido-supervisor" name="apellido-supervisor" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
                                 </div>
                                 <div class="">
-                                    <div class="nombre-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">Celular:</label></div>
-                                    <input type="text" class="form-control" id="lugar_sede" name="lugar_sede" style="margin-bottom: 5px;" oninput="soloLetras(this)">
+                                    <div class="celular-supervisor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">Celular:</label></div>
+                                    <input type="text" class="form-control" id="celular-supervisor" name="celular-supervisor" style="margin-bottom: 5px;" oninput="soloLetras(this)">
                                 </div>
                                 <div class="">
-                                    <div class="nombre-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Fecha nacimiento:</label></div>
-                                    <input type="text" class="form-control" id="nombre_sede" name="nombre_sede" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
+                                    <div class="fecnac-supervisor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Fecha nacimiento:</label></div>
+                                    <input type="text" class="form-control" id="fecnac-supervisor" name="fecnac-supervisor" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
                                 </div>
                                 <div class="">
-                                    <div class="nombre-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Empresa:</label></div>
-                                    <input type="text" class="form-control" id="nombre_sede" name="nombre_sede" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
+                                    <div class="empresa-supervisor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Empresa:</label></div>
+                                    <input type="text" class="form-control" id="empresa-supervisor" name="empresa-supervisor" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
                                 </div>
                                 <div class="">
-                                    <div class="nombre-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Campaña:</label></div>
-                                    <input type="text" class="form-control" id="nombre_sede" name="nombre_sede" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
+                                    <div class="campaña-supervisor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Campaña:</label></div>
+                                    <input type="text" class="form-control" id="campaña-supervisor" name="campaña-supervisor" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
                                 </div>
                                 <div class="modal-footer d-flex justify-content-center">
                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
