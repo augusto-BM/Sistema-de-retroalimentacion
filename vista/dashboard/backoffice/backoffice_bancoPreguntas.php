@@ -52,8 +52,8 @@ $id_login = $_SESSION['id_login'];
           <thead>
             <tr style="text-align: center;">
               <th scope="col" style="display: none;">id</th>
-              <th scope="col">examen</th>
-              <th scope="col"></th>
+              <th scope="col">Examen</th>
+              <th scope="col">Preguntas</th>
             </tr>
           </thead>
           <tbody>
@@ -69,6 +69,7 @@ $id_login = $_SESSION['id_login'];
                   <td class="user_id" style="display: none;"><?php echo $fila['id_examen']; ?></td>
                   <td><?php echo $fila['titulo']; ?></td>
                   <td class="">
+                    <a href="" class=" btn-crear me-0"><i class="fas fa-plus" style="color: #488204;"></i></a>
                     <a href="" class=" btn-ver me-0"><i class="far fa-eye" style="color: #2E59EA;"></i></a>
                     <a href="" class="btn-editar ms-0"><i class="fas fa-edit" style="color: #C6C210;"></i></a>
                   </td>
@@ -92,6 +93,7 @@ $id_login = $_SESSION['id_login'];
   <script src="../principal/script.js"></script>
 
   <script src="./backoffice-js/verPreguntasExamenSeleccionado.js"></script>
+  <script src="./backoffice-js/crearPreguntasExamenSeleccionado.js"></script>
 </body>
 
 </html>
