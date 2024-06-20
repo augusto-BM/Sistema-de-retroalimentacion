@@ -1,6 +1,6 @@
 <?php
-session_start();
-@include '../../../modelo/conexion.php';
+    session_start();
+    @include '../../../modelo/conexion.php';
 
 if(!isset($_SESSION['asesor_name'])){
    header('location:../../login/login.php');
@@ -19,6 +19,7 @@ $id_login = $_SESSION['id_login'];
     <!-- FontAweome CDN Link for Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="./asesor.css">
+    <script src="./questions.php"></script>
 </head>
 <body>
     <!-- start Quiz button -->
@@ -88,5 +89,6 @@ $id_login = $_SESSION['id_login'];
     <script src="../principal/script.js"></script>
     <script src="./questions.js"></script>
     <script src="./scripts.js"></script>
+    <script src="./questions.php"></script>
 </body>
 </html>
