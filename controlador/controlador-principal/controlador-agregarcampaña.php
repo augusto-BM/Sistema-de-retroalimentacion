@@ -1,4 +1,5 @@
 <?php 
+session_start();
 // Verificar si se recibió el formulario
 if(isset($_POST['submit'])) {
     // Incluir archivo de conexión
@@ -35,8 +36,8 @@ if(isset($_POST['submit'])) {
     }
 
     // Liberar resultado y cerrar conexión
-    mysqli_free_result($result_empresa);
-    mysqli_close($conn);
+    /* mysqli_free_result($result_empresa);
+    mysqli_close($conn); */
     header("Location: ../../vista/dashboard/principal/campañas.php");
 }
 ?>

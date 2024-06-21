@@ -101,6 +101,8 @@ $nombre_sesion = $_SESSION['general_name'];
                     <?php @include './php-datosPrincipales/crud-campañas/modal_crear_campañas.php' ?>
                     <!-- *************************************** -->
 
+                    <?php  @include './php-principal/modal_alerta_exitoso_conSession.php';?>
+
                     <div class="btn-postulantes-desactivos">
                         <a href="" class="btn-verDesactivo"><i class="fas fa-eye-slash me-5 h4"></i></a>
                     </div>
@@ -128,7 +130,7 @@ $nombre_sesion = $_SESSION['general_name'];
                     <tbody>
                         <?php
                         include '../../../modelo/conexion.php';
-                        @include './php-principal/modal_alerta_registroexistos.php';
+                        
                         $sql = "SELECT  
                                     campaña.id_campaña as id_campaña,
                                     campaña.nombre_campaña as nombreCampaña, 
