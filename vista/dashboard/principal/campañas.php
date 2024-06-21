@@ -62,6 +62,8 @@ $nombre_sesion = $_SESSION['general_name'];
 
     <!-- SCRIPT AJAX - VER INFORMACION DE TODOS LAS EMPRESAS DESACTIVOS -->
     <script src="./js-principal/verInformacionTablaModalEmpresasNoSeleccionado.js"></script>
+    <script src="./php-principal/modal_alerta_registroexistos.php"></script>
+
 
 
 </head>
@@ -87,7 +89,7 @@ $nombre_sesion = $_SESSION['general_name'];
         <div class="container-fluid px">
 
             <!-- ***** MODAL DE ALERTA DE PROCESO EXITOSO USANDO SESSION Y SWEET ALERT2 ***** -->
-            <?php @include './php-principal/modal_alerta_exitoso_conSession.php' ?>
+
 
             <!-- EMPEZAR TABLA DE LISTA DE CAMPAÑAS -->
             <div class="student-list-header d-flex justify-content-between align-items-center py-2">
@@ -126,6 +128,7 @@ $nombre_sesion = $_SESSION['general_name'];
                     <tbody>
                         <?php
                         include '../../../modelo/conexion.php';
+                        @include './php-principal/modal_alerta_registroexistos.php';
                         $sql = "SELECT  
                                     campaña.id_campaña as id_campaña,
                                     campaña.nombre_campaña as nombreCampaña, 
@@ -163,6 +166,5 @@ $nombre_sesion = $_SESSION['general_name'];
         </div>
         <!-- end contentpage -->
     </main>
-
 </body>
 </html>

@@ -7,6 +7,9 @@ if (!isset($_SESSION['supervisor_name'])) {
 }
 $nombre_sesion = $_SESSION['supervisor_name'];
 $id_login = $_SESSION['id_login'];
+
+$sql_examenes = "SELECT * FROM examenes WHERE id_rol_destino = 2";
+$resultado = mysqli_query($conn, $sql_examenes);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -20,57 +23,46 @@ $id_login = $_SESSION['id_login'];
 </head>
 
 <body>
-  <?php
-  $sql_supervisor = "SELECT usuario from login WHERE id_login = $id_login ";
-  $resultado = mysqli_query($conn, $sql_supervisor);
-  if ($resultado && mysqli_num_rows($resultado) > 0) {
-    while ($fila = mysqli_fetch_assoc($resultado)) {
-  ?>
       <?php @include './supervisor-principal/sidebar_supervisor.php' ?>
-  <?php
-    }
-  }
-  mysqli_free_result($resultado);
-  mysqli_close($conn);
-  ?>
   <main>
-
     <h1>Examenes pendientes</h1>
     <div class="container">
-      <div class="row m-3">
-        <div class="col-sm-3">
-          <div class="card bg-primary">
-            <div class="card-body">
-              <h5 class="card-title">Campaña</h5>
-              <p class="card-text">energía</p>
-            </div>
-          </div>
+        <div class="row m-3">
+                <div class="col-sm-3">
+                    <div class="card bg-primary">
+                        <div class="card-body">
+                            <h5 class="card-title">Campaña</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card bg-info">
+                        <div class="card-body">
+                            <h5 class="card-title">Tematica</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card bg-success">
+                        <div class="card-body">
+                            <h5 class="card-title">Fecha</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card bg-danger">
+                        <div class="card-body">
+                            <h5 class="card-title">Hora</h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <?php
+            ?>
         </div>
-        <div class="col-sm-3">
-          <div class="card bg-info">
-            <div class="card-body">
-              <h5 class="card-title">Tematica</h5>
-              <p class="card-text">capa energia</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="card bg-success">
-            <div class="card-body">
-              <h5 class="card-title">Fecha</h5>
-              <p class="card-text">13/06/2024</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="card bg-danger">
-            <div class="card-body">
-              <h5 class="card-title">Hora</h5>
-              <p class="card-text">17:49</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div class="container">
       <!-- Content here -->
@@ -78,47 +70,36 @@ $id_login = $_SESSION['id_login'];
       <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre del examen</th>
-            <th scope="col">Campaña</th>
-            <th scope="col">Creador</th>
-            <th scope="col">Número de preguntas</th>
-            <th scope="col">Tiempo</th>
-            <th scope="col">Acción</th>
+          <th scope="col">#</th>
+                <th scope="col">Campaña</th>
+                <th scope="col">Creador</th>
+                <th scope="col">Número de preguntas</th>
+                <th scope="col">Tiempo</th>
+                <th scope="col">Acción</th>
           </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Primer examen</td>
-            <td>energia</td>
-            <td>Jose</td>
-            <td>10</td>
-            <td>30 min</td>
-            <td><button>Tomar examen</button></td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Segundo examen</td>
-            <td>luz</td>
-            <td>Carlos</td>
-            <td>8</td>
-            <td>30 min</td>
-            <td><button>Tomar examen</button></td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Tercer examen</td>
-            <td>energia</td>
-            <td>Maria</td>
-            <td>10</td>
-            <td>30 min</td>
-            <td><button>Tomar examen</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
+            </thead>
+            <tbody>
+            <?php
+            // Reiniciar el cursor de la consulta para recorrer los resultados de nuevo
+            mysqli_data_seek($resultado, 0);
+            $contador = 1;
+            while ($fila = mysqli_fetch_assoc($resultado)) {
+                ?>
+                <tr>
+                    <th scope="row"><?php echo $contador; ?></th>
+                    <td><?php echo htmlspecialchars($fila['titulo']); ?></td>
+                    <td><?php echo htmlspecialchars($fila['id_colaborador_creador']); ?></td>
+                    <td><?php echo htmlspecialchars($fila['cantidad_preguntas']); ?></td>
+                    <td><?php echo htmlspecialchars($fila['duracion_examen']); ?></td>
+                    <td><a href="./resolverExamen_supervisor.php?id_examen=<?php echo $fila['id_examen']; ?>"><button
+                                    class="btn btn-primary">Tomar examen</button></a></td>
+                </tr>
+                <?php
+                $contador++;
+            }
+            ?>
+            </tbody>
+        </table>
     </div>
   </main>
 
@@ -127,5 +108,9 @@ $id_login = $_SESSION['id_login'];
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../principal/script.js"></script>
 </body>
-
 </html>
+<?php
+// No es necesario liberar el resultado aquí si vas a seguir utilizándolo
+// mysqli_free_result($resultado);
+mysqli_close($conn);
+?>

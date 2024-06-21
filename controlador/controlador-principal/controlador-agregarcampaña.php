@@ -1,4 +1,4 @@
-<?php
+<?php 
 // Verificar si se recibió el formulario
 if(isset($_POST['submit'])) {
     // Incluir archivo de conexión
@@ -22,20 +22,22 @@ if(isset($_POST['submit'])) {
         // Ejecutar consulta
         if(mysqli_query($conn, $sql)) {
             // Inserción exitosa, redirigir o mostrar mensaje
-            echo "<script>alert('Campaña agregada correctamente');</script>";
+            $_SESSION['mensaje'] = "Campaña agregada correctamente.";
+
             // Puedes redirigir después de mostrar el mensaje
         } else {
             // Error en la inserción
-            echo "<script>alert('Error al agregar campaña');</script>";
+            $_SESSION['mensaje'] = "Error al agregar campaña.";
         }
     } else {
         // La empresa no existe
-        echo "<script>alert('La empresa no existe');</script>";
+        $_SESSION['mensaje'] = "La empresa no existe";
     }
 
     // Liberar resultado y cerrar conexión
     mysqli_free_result($result_empresa);
     mysqli_close($conn);
+    header("Location: ../../vista/dashboard/principal/campañas.php");
 }
 ?>
 
