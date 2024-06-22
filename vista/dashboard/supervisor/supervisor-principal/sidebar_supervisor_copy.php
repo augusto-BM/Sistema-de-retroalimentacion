@@ -7,7 +7,7 @@
     <div>
         <div class="nombre-pagina">
             <ion-icon name="person-circle-outline"></ion-icon>
-            <span>BACKOFFICE</span>
+            <span>SUPERVISOR</span>
         </div>
         <div class="usuario">
             <img src="/Jhampier.jpg" alt="">
@@ -25,36 +25,44 @@
             <p><sub>Menu Principal</sub></p>
             <ul>
                 <li>
-                    <a id="inbox" href="../../backoffice/backoffice.php">
+                    <a id="inbox" href="../../supervisor/supervisor.php">
                         <ion-icon name="home-outline"></ion-icon>
                         <span>Inicio</span>
                     </a>
                 </li>
+                
                 <li>
-                    <a href="../../backoffice/backoffice_bancoPreguntas.php">
-                        <ion-icon name="copy-outline"></ion-icon>
-                        <span>Banco de preguntas</span>
+                    <a href="../../supervisor/supervisor_bancoPreguntas.php">
+                    <ion-icon name="copy-outline"></ion-icon>
+                        <span>Banco de Preguntas</span>
                     </a>
                 </li>
                 <li>
-                    <a href="../../backoffice/backofficelistaExamenes.php">
+                    <a href="../../supervisor/supervisorExamenesPendientes.php">
+                        <ion-icon name="clipboard-outline"></ion-icon>
+                        <span>Examenes Pendientes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../supervisor/supervisor_listaExamenes.php">
                         <ion-icon name="document-outline"></ion-icon>
-                        <span>Examen</span>
+                        <span>Examenes</span>
                     </a>
                 </li>
-            </ul>
-        </div>
-        <div class="seccion">
+                <div class="seccion">
             <p><sub>Reportes</sub></p>
             <ul>
                 <li>
-                    <a href="../../backoffice/verResultadosBackoffice.php">
+                    <a href="../../supervisor/supervisorVerResultadosAsesores.php">
                         <ion-icon name="document-text-outline"></ion-icon>
                         <span>Resultado de examenes</span>
                     </a>
                 </li>
             </ul>
         </div>
+            </ul>
+        </div>
+        
     </nav>
     <div>
         <div class="linea"></div>
@@ -62,11 +70,9 @@
         <div class="modo-oscuro">
             <div class="info">
                 <ion-icon name="log-in-outline"></ion-icon>
-                <a href="../../../../login/logout.php">Cerrar sesion</a>
+                <a href="../../login/logout.php">Cerrar sesion</a>
             </div>
         </div>
-
-        
     </div>
 
 </div>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Verificar si se recibió el formulario
 if(isset($_POST['submit'])) {
     // Incluir archivo de conexión
