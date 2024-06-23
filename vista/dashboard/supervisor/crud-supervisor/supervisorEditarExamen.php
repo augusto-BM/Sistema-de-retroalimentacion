@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<?php @include '../supervisor-principal/sidebar_supervisor.php'?>
+<?php @include '../supervisor-principal/sidebar_supervisor_copy.php'?>
 <main>
    <h1>Hola soy supervisor</h1>
    

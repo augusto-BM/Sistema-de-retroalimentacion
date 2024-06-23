@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Incluir archivo de conexión a la base de datos
 include '../../modelo/conexion.php';
 
@@ -36,11 +37,11 @@ if(isset($_POST['submit'])) {
             if(mysqli_query($conn, $sql2)) {
                 // Confirmar la transacción si ambas consultas tienen éxito
                 mysqli_commit($conn);
-                echo "Registro de supervisor y usuario exitoso.";
+                $_SESSION['mensaje'] = "Supervisor y usuario agregado correctamente.";
             } else {
                 // Si falla la segunda consulta, revertir la transacción
                 mysqli_rollback($conn);
-                echo "Error al registrar usuario: " . mysqli_error($conn);
+                $_SESSION['mensaje'] = "Error al registrar usuario: " . mysqli_error($conn);
             }
         } else {
             // Si falla la primera consulta, revertir la transacción

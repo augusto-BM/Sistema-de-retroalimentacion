@@ -103,6 +103,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
   $total_questions = $_POST['total']; // Obtener el número total de preguntas del formulario
   
   // Mostrar los campos de entrada para cada pregunta
+  
   echo '<div class="row">';
   echo '<span class="title1" style="margin-left:40%;font-size:30px;"><b>Detalles del examen</b></span><br /><br />';
   echo '<div class="col-md-3"></div><div class="col-md-6">';
