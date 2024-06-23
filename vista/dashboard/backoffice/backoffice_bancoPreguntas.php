@@ -46,6 +46,9 @@ $id_login = $_SESSION['id_login'];
     <!--  MODAL PARA VER LAS PREGUNTAS DEL EXAMEN SELECCIONADO  -->
     <?php @include './backoffice-principal/modal_verExamenSeleccionado.php' ?>
     <h1>Banco de preguntas</h1>
+    <a href="backofficePreguntas.php">ACA</a>
+    <a href="prueba.php">PRUEBA</a>
+
     <div>
       <div class="container">
         <table class="table table-bordered">
@@ -79,7 +82,6 @@ $id_login = $_SESSION['id_login'];
             }
             mysqli_free_result($resultado);
             mysqli_close($conn);
-
             ?>
           </tbody>
         </table>

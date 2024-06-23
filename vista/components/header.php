@@ -13,9 +13,9 @@
           <div class="d-flex m-4" role="search">
               <a class="nav-link active" aria-current="page" href="../login/login.php">Ingresar</a>
           </div>
-          <div class="d-flex m-4" role="search">
+          <!-- <div class="d-flex m-4" role="search">
             <a class="nav-link active" aria-current="page" href="../login/registro.php">Registro</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </nav>

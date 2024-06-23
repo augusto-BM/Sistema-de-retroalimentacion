@@ -36,26 +36,65 @@ $id_login = $_SESSION['id_login'];
   mysqli_close($conn);
   ?>
 <main>
-   <h1>Detalles de preguntas</h1>
-   <div class="container">
-   <div class="row">
-    <div class="col-sm-3">
-        <div class="card bg-primary">
-            <div class="card-body">
-                <h5 class="card-title">Campañas</h5>
-                <p class="card-text">energia</p>
+    <div class="container">
+    <div class="row">
+      <span class="title1" style="margin-left:40%;font-size:30px;"><b>Detalles del examen</b></span><br /><br />
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <form class="form-horizontal title1" name="form" method="POST">
+          <fieldset>
+
+          <?php
+          $total_questions = 5;
+
+          // Generar las preguntas dinámicamente
+          for($i = 1; $i <= $total_questions; $i++) {
+          ?>
+            <div class="form-group">
+              <label class="col-md-12 control-label" for="qns<?php echo $i; ?>">Pregunta 1 <?php echo $i; ?></label>
+              <div class="col-md-12">
+                <textarea rows="3" cols="5" name="qns<?php echo $i; ?>" class="form-control" placeholder="Escribe la pregunta número <?php echo $i; ?> acá..." required></textarea>
+              </div>
             </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card bg-info">
-            <div class="card-body">
-                <h5 class="card-title">Creador</h5>
-                <p class="card-text">Sebastian Rodriguez</p>
+
+            <!-- Campos para las opciones de respuesta -->
+            <?php for ($j = 1; $j <= 4; $j++) { ?>
+              <div class="form-group">
+                <label class="col-md-12 control-label" for="<?php echo $i . $j; ?>"></label>
+                <div class="col-md-12">
+                  <input id="<?php echo $i . $j; ?>" name="<?php echo $i . $j; ?>" placeholder="Ingresa la opción <?php echo chr(96 + $j); ?>" class="form-control input-md" type="text">
+                </div>
+              </div>
+            <?php } ?>
+
+            <!-- Selección de la respuesta correcta -->
+            <div class="form-group">
+              <label class="col-md-12 control-label" for="ans<?php echo $i; ?>">Escoge la respuesta correcta para la pregunta <?php echo $i; ?></label>
+              <div class="col-md-12">
+                <select id="ans<?php echo $i; ?>" name="ans<?php echo $i; ?>" placeholder="Escoge la respuesta correcta" class="form-control input-md">
+                  <option value="a">Opción A</option>
+                  <option value="b">Opción B</option>
+                  <option value="c">Opción C</option>
+                  <option value="d">Opción D</option>
+                </select>
+              </div>
             </div>
-        </div>
+
+          <?php } ?>
+
+          <!-- Botón de envío -->
+          <div class="form-group">
+            <label class="col-md-12 control-label" for=""></label>
+            <div class="col-md-12"> 
+              <input type="submit" style="margin-left:45%" class="btn btn-primary" value="Enviar preguntas" class="btn btn-primary"/>
+            </div>
+          </div>
+
+          </fieldset>
+        </form>
+      </div>
     </div>
-    </div>
+  </div>
 <?php
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
   // Procesar los detalles del examen enviado aquí
