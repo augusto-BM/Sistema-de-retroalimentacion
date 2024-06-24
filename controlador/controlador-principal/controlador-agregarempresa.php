@@ -20,16 +20,17 @@ if(isset($_POST['submit'])) {
 
     // Ejecutar consulta
     if(mysqli_query($conn, $sql)) {
-        // Inserción exitosa, redirigir o mostrar mensaje
-        echo "<script>alert('Empresa registrada correctamente');</script>";
-        // Puedes redirigir después de mostrar el mensaje
-        // header('Location: tu_pagina.php');
+        mysqli_commit($conn);
+        $_SESSION['mensaje'] = "Empresa registrada correctamente.";
+
     } else {
         // Error en la inserción
         echo "<script>alert('Error al registrar empresa');</script>";
+        echo "Error: " . mysqli_error($conn);
     }
 
     // Cerrar conexión
     mysqli_close($conn);
+    header("Location: ../../vista/dashboard/principal/empresas.php");
 }
 ?>

@@ -35,10 +35,9 @@ if(isset($_POST['submit'])) {
         $_SESSION['mensaje'] = "La empresa no existe";
     }
 
-    // Liberar resultado y cerrar conexión
-    /* mysqli_free_result($result_empresa);
-    mysqli_close($conn); */
+    mysqli_close($conn);
     header("Location: ../../vista/dashboard/principal/campañas.php");
+
 }
 ?>
 

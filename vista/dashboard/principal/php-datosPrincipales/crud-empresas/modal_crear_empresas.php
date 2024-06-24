@@ -6,6 +6,11 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Agregar Nuevo Empresa</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <?php
+                    $sql_empresa = "SELECT estadoempresa FROM empresa";
+                    $result_empresa = $conn->query($sql_empresa);
+                    $conn->close();?>
+                    
                 </div>
                 <div class="modal-body">
                     <div class="card">
@@ -33,7 +38,10 @@
                                 </div>
                                 <div class="">
                                     <div class="estado-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">ESTADO:</label></div>
-                                    <input type="text" class="form-control" id="estado-empresa" name="estado-empresa" style="margin-bottom: 5px;" oninput="soloLetras(this)">
+                                    <select class="form-select" id="estado-empresa" name="estado-empresa" style="margin-bottom: 5px;" required>
+                                        <option value="ACTIVO">ACTIVO</option>
+                                        <option value="INACTIVO">INACTIVO</option>
+                                    </select>
                                 </div>
                                 <div class="">
                                     <div class="fecharegistro-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">FECHA DE REGISTRO:</label></div>

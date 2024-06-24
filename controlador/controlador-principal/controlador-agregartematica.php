@@ -15,10 +15,8 @@ if(isset($_POST['submit'])) {
 
     // Ejecutar consulta
     if(mysqli_query($conn, $sql)) {
-        // Inserción exitosa, redirigir o mostrar mensaje
-        echo "<script>alert('Temática registrada correctamente');</script>";
-        // Puedes redirigir después de mostrar el mensaje
-        // header('Location: tu_pagina.php');
+        mysqli_commit($conn);
+        $_SESSION['mensaje'] = "Temática registrada correctamente.";
     } else {
         // Error en la inserción
         echo "<script>alert('Error al registrar temática');</script>";
@@ -27,5 +25,6 @@ if(isset($_POST['submit'])) {
 
     // Cerrar conexión
     mysqli_close($conn);
+    header("Location: ../../vista/dashboard/principal/tematica.php");
 }
 ?>

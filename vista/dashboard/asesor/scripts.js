@@ -165,9 +165,13 @@ function showResult(){
     sendResultsToServer();
 }
 function sendResultsToServer() {
+    // Supongamos que obtienes id_colaborador y id_examen de algún lugar
+    const id_colaborador = obtenerIdColaborador(); // Función ficticia para obtener el ID del colaborador actual
+    const id_examen = obtenerIdExamen(); // Función ficticia para obtener el ID del examen actual
+
     const results = {
-        id_colaborador: 123, // Reemplaza con el ID real del colaborador
-        id_examen: 456, // Reemplaza con el ID real del examen
+        id_colaborador: id_colaborador,
+        id_examen: id_examen,
         nota: userScore, // Puntuación obtenida por el usuario
     };
 
@@ -187,6 +191,12 @@ function sendResultsToServer() {
     .catch((error) => {
         console.error('Error al enviar resultados:', error);
     });
+}
+function obtenerIdColaborador() {
+    return 3; 
+}
+function obtenerIdExamen() {
+    return 1; 
 }
 
 function startTimer(time){
