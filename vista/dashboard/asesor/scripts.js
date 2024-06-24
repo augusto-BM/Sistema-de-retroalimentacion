@@ -150,19 +150,43 @@ function showResult(){
     quiz_box.classList.remove("activeQuiz"); //hide quiz box
     result_box.classList.add("activeResult"); //show result box
     const scoreText = result_box.querySelector(".score_text");
+    let mensaje = '';
     if (userScore > 3){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
-        let scoreTag = '<span>Felicitaciones! 🎉, Conseguiste <p>'+ userScore +'</p> de <p>'+ questions.length +'</p></span>';
-        scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
+        mensaje = 'Felicitaciones! 🎉 Has conseguido ' + userScore + ' de ' + questions.length + ' preguntas.';
     }
     else if(userScore > 1){ // if user scored more than 1
-        let scoreTag = '<span>que bien 😎, Conseguiste <p>'+ userScore +'</p> de <p>'+ questions.length +'</p></span>';
-        scoreText.innerHTML = scoreTag;
+        mensaje = 'Bien hecho! 😎 Has conseguido ' + userScore + ' de ' + questions.length + ' preguntas.';
     }
     else{ // if user scored less than 1
-        let scoreTag = '<span>lo siento 😐, Solo conseguiste <p>'+ userScore +'</p> de <p>'+ questions.length +'</p></span>';
-        scoreText.innerHTML = scoreTag;
+        mensaje = 'Lo siento, solo conseguiste ' + userScore + ' de ' + questions.length + ' preguntas.';
     }
+    scoreText.innerHTML = mensaje;
+    sendResultsToServer();
+}
+function sendResultsToServer() {
+    const results = {
+        id_colaborador: 123, // Reemplaza con el ID real del colaborador
+        id_examen: 456, // Reemplaza con el ID real del examen
+        nota: userScore, // Puntuación obtenida por el usuario
+    };
+
+    // Enviar los resultados al servidor
+    fetch('./guardar_resultado.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(results),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Respuesta del servidor:', data);
+        // Aquí podrías manejar la respuesta del servidor si lo necesitas
+    })
+    .catch((error) => {
+        console.error('Error al enviar resultados:', error);
+    });
 }
 
 function startTimer(time){
