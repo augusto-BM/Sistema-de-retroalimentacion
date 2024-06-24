@@ -46,12 +46,13 @@ $id_login = $_SESSION['id_login'];
   ?>
       <?php @include './backoffice-principal/sidebar_backoffice.php' ?>
       <main>
-        <h1>Bienvenido(a) - <?php echo $nombre_sesion; ?></h1>
-        <div class="container">
 
+        <div class="container">
+          <h2>Bienvenido(a) - <?php echo $nombre_sesion; ?></h2>
+          <br>
           <table class="table" style="background-color: white">
             <thead>
-              <tr>
+              <tr class="table-info">
                 <th colspan="2" class="text-left">Información del Colaborador:</th>
               </tr>
               <tr>

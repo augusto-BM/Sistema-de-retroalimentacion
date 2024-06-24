@@ -31,15 +31,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="../backoffice/backoffice_bancoPreguntas.php">
-                        <ion-icon name="copy-outline"></ion-icon>
-                        <span>Banco de preguntas</span>
-                    </a>
-                </li>
-                <li>
                     <a href="../backoffice/backofficelistaExamenes.php">
                         <ion-icon name="document-outline"></ion-icon>
                         <span>Examen</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../backoffice/backoffice_bancoPreguntas.php">
+                        <ion-icon name="copy-outline"></ion-icon>
+                        <span>Banco de preguntas</span>
                     </a>
                 </li>
             </ul>

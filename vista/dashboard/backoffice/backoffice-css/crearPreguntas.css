@@ -8,13 +8,34 @@
   font-family: "Poppins", sans-serif;
 }
 
-body {
+/* body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   overflow: hidden;
   background-color: #efef;
+} */
+
+.backoffice{
+  margin-left: 150px;
+  font-size: 30px !important;
+  font-weight: bolder;
+  color: whitesmoke;
+}
+.backoffice:hover{
+  color: #9A2B2B;
+}
+.regresar{
+  background-color: #9A2B2B; 
+  border-radius: 20px; 
+}
+.regresar:hover{
+  background-color: #4bbf95;  
+}
+.regresar a{
+  color: whitesmoke !important;
+  font-weight: bold;
 }
 
 ::selection {
@@ -215,4 +236,13 @@ body {
 .custom-progress-bar .step .check.active {
   display: block;
   color: #fff;
+}
+
+.custom-progress-bar {
+  display: none;
+}
+
+.btns button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
 }

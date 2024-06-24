@@ -27,7 +27,7 @@ $id_login = $_SESSION['id_login'];
   <!-- CDN - AJAX -->
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
- <!--  SCRIPT AJAX ESTADO EXAMEN -->
+  <!--  SCRIPT AJAX ESTADO EXAMEN -->
   <script src="./backoffice-js/estadoBotonExamenes.js"></script>
 
 </head>
@@ -47,14 +47,16 @@ $id_login = $_SESSION['id_login'];
   mysqli_close($conn);
   ?>
   <main>
-    <h1>Datos de examenes</h1>
+
     <div class="container">
-    <?php @include './backoffice-principal/modal_alerta_exitoso_conSession.php' ?>
+      <?php @include './backoffice-principal/modal_alerta_exitoso_conSession.php' ?>
+      
       <a href="./crud-examenes/backofficeCrearExamen.php"><button class="btn btn-success m-4" style="color: white; float: right">Crear examen</button></a>
+      <h2>Lista de examenes:</h2>
       <div>
         <table class="table table-bordered">
           <thead>
-            <tr style="text-align: center;">
+            <tr style="text-align: center;" class="table-info">
               <th scope="col" style="display: none;">id</th>
               <th scope="col">Tema</th>
               <th scope="col">Titulo</th>
@@ -69,8 +71,8 @@ $id_login = $_SESSION['id_login'];
           </thead>
           <tbody>
             <?php
-              @include '../../../modelo/conexion.php';
-              $sql = "SELECT 
+            @include '../../../modelo/conexion.php';
+            $sql = "SELECT 
                         examenes.id_examen AS id_examen,
                         examenes.id_tematica AS id_tematica,
                         examenes.titulo AS titulo,
@@ -88,9 +90,9 @@ $id_login = $_SESSION['id_login'];
                       INNER JOIN rol ON examenes.id_rol_destino = rol.id_rol
                       INNER JOIN campaña ON tematica.id_campaña = campaña.id_campaña";
 
-              $resultado = mysqli_query($conn, $sql);
-              if ($resultado && mysqli_num_rows($resultado) > 0) {
-                while ($fila = mysqli_fetch_assoc($resultado)) {
+            $resultado = mysqli_query($conn, $sql);
+            if ($resultado && mysqli_num_rows($resultado) > 0) {
+              while ($fila = mysqli_fetch_assoc($resultado)) {
             ?>
                 <tr style="text-align: center;">
                   <td class="user_id" style="display: none;"><?php echo $fila['id_examen']; ?></td>

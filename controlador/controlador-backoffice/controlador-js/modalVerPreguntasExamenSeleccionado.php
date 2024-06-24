@@ -42,11 +42,11 @@ if (isset($_POST['click_btn_ver'])) {
         if (mysqli_num_rows($resultado) == 0) {
             echo '<p>No hay datos disponibles.</p>';
         } else {
-            echo '<p style="text-align: center;">Se encontraron ' . mysqli_num_rows($resultado) . ' preguntas.</p>';
+            echo '<p style="text-align: start;">Se encontraron ' . mysqli_num_rows($resultado) . ' preguntas para este examen.</p>';
         }
-
-    }else {
-        echo '<p style="text-align: center;">No hay preguntas disponibles para este examen</p>';
+    } else {
+        echo '  <div class="alert alert-warning" role="alert">
+                    <p style="text-align: center;">No se ha creado preguntas para este examen</p>
+                </div>';
     }
 }
-?>

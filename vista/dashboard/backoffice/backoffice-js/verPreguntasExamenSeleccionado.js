@@ -7,7 +7,7 @@ $(document).ready(function() {
         //console.log(user_id);
         $.ajax({
             method: "POST",
-            url: '../../../controlador/controlador-backoffice/controlador-js/modalVerExamenSeleccionado.php',
+            url: '../../../controlador/controlador-backoffice/controlador-js/modalVerPreguntasExamenSeleccionado.php',
             data: {
                 'click_btn_ver': true,
                 'user_id': user_id,

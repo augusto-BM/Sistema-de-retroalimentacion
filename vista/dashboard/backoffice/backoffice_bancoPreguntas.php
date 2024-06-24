@@ -25,6 +25,8 @@ $id_login = $_SESSION['id_login'];
 
   <!-- CDN - AJAX -->
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -45,15 +47,20 @@ $id_login = $_SESSION['id_login'];
   <main>
     <!--  MODAL PARA VER LAS PREGUNTAS DEL EXAMEN SELECCIONADO  -->
     <?php @include './backoffice-principal/modal_verExamenSeleccionado.php' ?>
-    <h1>Banco de preguntas</h1>
-    <a href="backofficePreguntas.php">ACA</a>
-    <a href="prueba.php">PRUEBA</a>
+
+    <!--   <a href="backofficePreguntas.php">ACA</a>
+    <a href="prueba.php">PRUEBA</a> -->
 
     <div>
+      <!-- ***** MODAL DE ALERTA DE PROCESO EXITOSO USANDO SESSION Y SWEET ALERT2 ***** -->
+      <?php @include './backoffice-principal/modal_alerta_exitoso_conSession.php' ?>
+
       <div class="container">
+        <h2>Lista banco de preguntas:</h2>
+        <br>
         <table class="table table-bordered">
           <thead>
-            <tr style="text-align: center;">
+            <tr style="text-align: center;" class="table-info">
               <th scope="col" style="display: none;">id</th>
               <th scope="col">Examen</th>
               <th scope="col">Preguntas</th>
@@ -72,7 +79,7 @@ $id_login = $_SESSION['id_login'];
                   <td class="user_id" style="display: none;"><?php echo $fila['id_examen']; ?></td>
                   <td><?php echo $fila['titulo']; ?></td>
                   <td class="">
-                    <a href="" class=" btn-crear me-0"><i class="fas fa-plus" style="color: #488204;"></i></a>
+                    <a href="./crud-examenes/backofficeCrearPreguntas.php?id_examen=<?php echo $fila['id_examen']; ?>" class=" btn-crear me-0"><i class="fas fa-plus" style="color: #488204;"></i></a>
                     <a href="" class=" btn-ver me-0"><i class="far fa-eye" style="color: #2E59EA;"></i></a>
                     <a href="" class="btn-editar ms-0"><i class="fas fa-edit" style="color: #C6C210;"></i></a>
                   </td>
