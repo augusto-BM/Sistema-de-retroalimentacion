@@ -1,6 +1,12 @@
 <?php
-// Conexión a la base de datos
-include_once '../../../modelo/conexion.php';
+session_start();
+@include '../../../modelo/conexion.php';
+
+if(!isset($_SESSION['asesor_name'])){
+header('location:../../login/login.php');
+}
+$nombre_sesion = $_SESSION['asesor_name'];
+$id_login = $_SESSION['id_login'];
 
 // Recibir datos del cuerpo de la solicitud
 $data = json_decode(file_get_contents("php://input"), true);

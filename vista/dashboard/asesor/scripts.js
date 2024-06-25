@@ -193,10 +193,14 @@ function sendResultsToServer() {
     });
 }
 function obtenerIdColaborador() {
-    return 3; 
+    if(isset($_SESSION['id_login'])){
+        return $_SESSION['id_login'];
+    }else{
+        return null;
+    }
 }
 function obtenerIdExamen() {
-    return 1; 
+    return sessionStorage.getItem('id_examen'); 
 }
 
 function startTimer(time){

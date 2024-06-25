@@ -20,6 +20,7 @@ $id_login = $_SESSION['id_login'];
   <script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../../principal/style.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="../backoffice-css/crearExamen.css">
 
 </head>
 
@@ -29,9 +30,9 @@ $id_login = $_SESSION['id_login'];
   <main>
     <h1>Agregar Examen</h1>
     <div class="container">
-      <div class="row">
+      <div class="row cards-superior">
         <div class="col-sm-3">
-          <div class="card bg-primary">
+          <div class="card bg-primary h-100">
             <div class="card-body">
               <h5 class="card-title">Campañas</h5>
               <p class="card-text">energia</p>
@@ -39,7 +40,7 @@ $id_login = $_SESSION['id_login'];
           </div>
         </div>
         <div class="col-sm-3">
-          <div class="card bg-info">
+          <div class="card bg-info h-100">
             <div class="card-body">
               <h5 class="card-title">Creador</h5>
               <p class="card-text">Sebastian Rodriguez</p>
@@ -48,12 +49,12 @@ $id_login = $_SESSION['id_login'];
         </div>
       </div>
 
-      <div class="row">
+      <div class="container form-exam" style="padding: 0%; border: 1px solid #bee5eb;">
 
         <!-- ***** MODAL DE ALERTA DE PROCESO EXITOSO USANDO SESSION Y SWEET ALERT2 ***** -->
         <?php @include '../backoffice-principal/modal_alerta_exitoso_conSession.php' ?>
 
-        <span class="title1" style="margin-left:29%;font-size:30px;"><b>Detalles del examen</b></span><br /><br />
+        <div class="container title-1" style="padding: 0%; border: 1px solid #bee5eb;"><span class="title-1" style="margin-left:29%;font-size:30px; "><b>Detalles del examen</b></span><br /><br /></div>
         <div class="col-md-3"></div>
         <div class="col-md-6">
 
@@ -82,6 +83,7 @@ $id_login = $_SESSION['id_login'];
           }
 
           ?>
+          <div class="container formulario">
           <form class="form-horizontal title1" name="form" action="../../../../controlador/controlador-backoffice/crearExamen.php" method="POST" enctype="multipart/form-data">
             <fieldset>
               <!-- Text input-->
@@ -90,7 +92,7 @@ $id_login = $_SESSION['id_login'];
                 <label class="col-md-12 control-label" for="name"></label>
                 <div class="col-md-12">
                   <label for="tematica">Tematica del examen</label>
-                  <select name="tematica" id="tematica" class="form-select" style="margin-bottom: 5px;">
+                  <select name="tematica" id="tematica" class="form-select" style="width: 500px;">
                     <?php
                     if ($result_tematicas->num_rows > 0) {
                       while ($row_tematicas = $result_tematicas->fetch_assoc()) {
@@ -142,7 +144,7 @@ $id_login = $_SESSION['id_login'];
                 <label class="col-md-12 control-label" for="name"></label>
                 <div class="col-md-12">
                   <label for="rol_destino">Destino de examen</label>
-                  <select name="rol_destino" id="rol_destino" class="form-select" style="margin-bottom: 5px;">
+                  <select name="rol_destino" id="rol_destino" class="form-select" style="margin-bottom: 5px; width: 500px">
                     <option value="2">supervisores</option>
                     <option value="3">asesores</option>
                   </select>
@@ -150,11 +152,12 @@ $id_login = $_SESSION['id_login'];
               </div>
 
               <div class="form-group">
-                <button type="submit" name="submit" class="btn btn-success">Crear examen</button>
+                <button type="submit" name="submit" class="btn btn-success" style="margin-top: 10px; margin-bottom:10px;">Crear examen</button>
               </div>
 
             </fieldset>
           </form>
+          </div>
         </div>
 
       </div>
