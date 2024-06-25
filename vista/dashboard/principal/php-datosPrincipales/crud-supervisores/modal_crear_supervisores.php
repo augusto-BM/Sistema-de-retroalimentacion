@@ -37,11 +37,39 @@
                                 </div>
                                 <div class="">
                                     <div class="empresa-supervisor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Empresa:</label></div>
-                                    <input type="text" class="form-control" id="empresa-supervisor" name="empresa-supervisor" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
+                                    <select class="form-select" id="empresa-supervisor" name="empresa-supervisor" required>
+                                        <?php
+                                        $sql_empresas = "SELECT idempresa, razonsocial FROM empresa";
+                                        $result_empresas = $conn->query($sql_empresas);
+                                        if ($result_empresas->num_rows > 0) {
+                                            while ($row = $result_empresas->fetch_assoc()) {
+                                                $idEmpresa = $row['idempresa'];
+                                                $razonSocial = htmlspecialchars($row['razonsocial']);
+                                                echo "<option value='$idEmpresa'>$razonSocial</option>";
+                                            }
+                                        } else {
+                                            echo "<option value=''>No hay empresas disponibles</option>";
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
                                 <div class="">
                                     <div class="campaña-supervisor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Campaña:</label></div>
-                                    <input type="text" class="form-control" id="campaña-supervisor" name="campaña-supervisor" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
+                                    <select class="form-select" id="campaña-supervisor" name="campaña-supervisor" required>
+                                        <?php
+                                        $sql_campaña = "SELECT id_campaña, nombre_campaña FROM campaña";
+                                        $result_campaña = $conn->query($sql_campaña);
+                                        if ($result_campaña->num_rows > 0) {
+                                            while ($row = $result_campaña->fetch_assoc()) {
+                                                $idCampaña = $row['id_campaña'];
+                                                $nombreCampaña = htmlspecialchars($row['nombre_campaña']);
+                                                echo "<option value='$idCampaña'>$nombreCampaña</option>";
+                                            }
+                                        } else {
+                                            echo "<option value=''>No hay campañas disponibles</option>";
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
                                 <div class="">
                                     <div class="usuario-supervisor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Usuario:</label></div>

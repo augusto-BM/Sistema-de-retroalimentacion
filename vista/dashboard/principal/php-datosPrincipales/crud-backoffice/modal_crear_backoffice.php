@@ -38,38 +38,39 @@
                                 <div class="">
                                     <div class="empresa-backoffice" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Empresa:</label></div>
                                     <select class="form-select" id="nombre-empresa" name="nombre-empresa" style="margin-bottom: 5px;">
-                                        <?php
-                                        $sql_empresas = "SELECT idempresa, razonsocial FROM empresa";
-                                        $result_empresas = $conn->query($sql_empresas);
-                                        
-                                        // Generar opciones del select
-                                        if (mysqli_num_rows($result_empresas) > 0) {
-                                            while ($row = mysqli_fetch_assoc($result_empresas)) {
-                                                $idEmpresa = $row['idempresa'];
-                                                $razonSocial = htmlspecialchars($row['razonsocial']);
-                                                echo "<option value='$razonSocial'>$razonSocial</option>";
-                                            }
-                                        } else {
-                                            echo "<option value=''>No hay empresas disponibles</option>";
-                                        }
-                                        ?>  
+                                    <?php
+                                    $sql_empresas = "SELECT idempresa, razonsocial FROM empresa";
+                                    $result_empresas = $conn->query($sql_empresas);
+
+                                     if ($result_empresas->num_rows > 0) {
+                                     while ($row = $result_empresas->fetch_assoc()) {
+                                      $idEmpresa = $row['idempresa'];
+                                     $razonSocial = htmlspecialchars($row['razonsocial']);
+                                      echo "<option value='$idEmpresa'>$razonSocial</option>";
+                                     }
+                                     } else {
+                                     echo "<option value=''>No hay empresas disponibles</option>";
+                                     }
+                                     ?>
                                     </select>
                                 </div>
                                 <div class="">
                                     <div class="campaña-backoffice" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Campaña:</label></div>
                                     <select class="form-select" id="id_campaña" name="nombre-campaña" style="margin-bottom: 5px;">
-                                        <?php
-                                        $sql_campaña = "SELECT id_campaña, nombre_campaña FROM campaña";$result_campaña = $conn->query($sql_campaña);
-                                        
-                                        // Verificar si se encontraron resultados
-                                        if ($result_campaña->num_rows > 0) {
-                                            while ($row = $result_campaña->fetch_assoc()) {
-                                                echo "<option value='" . htmlspecialchars($row['id_campaña']) . "'>" . htmlspecialchars($row['nombre_campaña']) . "</option>";
-                                            }
-                                        } else {
-                                            echo "<option value=''>No hay campañas disponibles</option>";
+                                    <?php
+                                    $sql_campaña = "SELECT id_campaña, nombre_campaña FROM campaña";
+                                    $result_campaña = $conn->query($sql_campaña);
+
+                                    if ($result_campaña->num_rows > 0) {
+                                        while ($row = $result_campaña->fetch_assoc()) {
+                                            $idCampaña = $row['id_campaña'];
+                                            $nombreCampaña = htmlspecialchars($row['nombre_campaña']);
+                                            echo "<option value='$idCampaña'>$nombreCampaña</option>";
                                         }
-                                        ?>
+                                    } else {
+                                        echo "<option value=''>No hay campañas disponibles</option>";
+                                    }
+                                    ?>
                                     </select>
                                 </div>
                                 <div class="">

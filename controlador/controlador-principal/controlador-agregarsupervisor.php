@@ -56,5 +56,7 @@ if(isset($_POST['submit'])) {
 
     // Cerrar conexión
     mysqli_close($conn);
+    header("Location: ../../vista/dashboard/principal/supervisores.php");
+
 }
 ?>

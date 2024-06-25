@@ -11,8 +11,8 @@ if(isset($_POST['submit'])) {
     $direccion = $_POST['direccion-backoffice'];
     $sexo = $_POST['sexo-backoffice'];
     $fecnac = $_POST['fecnac-backoffice'];
-    $empresa = $_POST['empresa-backoffice'];
-    $campana = $_POST['campaña-backoffice'];
+    $empresa = $_POST['nombre-empresa'];
+    $campana = $_POST['nombre-campaña'];
     $usuario = $_POST['usuario-backoffice'];
     $contraseña = $_POST['contraseña-backoffice'];
     
@@ -57,5 +57,6 @@ if(isset($_POST['submit'])) {
     // Cerrar conexión
     mysqli_close($conn);
     header("Location: ../../vista/dashboard/principal/backoffice.php");
+
 }
 ?>
