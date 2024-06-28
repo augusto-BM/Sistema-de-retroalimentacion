@@ -1,21 +1,21 @@
 <?php
+
 session_start();
 @include '../../../modelo/conexion.php';
 
-if(!isset($_SESSION['asesor_name'])){
-header('location:../../login/login.php');
+// Verificar sesión de usuario
+if (!isset($_SESSION['asesor_name'])) {
+    header('location: ../../login/login.php');
+    exit;
 }
-$nombre_sesion = $_SESSION['asesor_name'];
-$id_login = $_SESSION['id_login'];
 
-// Recibir datos del cuerpo de la solicitud
+// Obtener datos del cuerpo de la solicitud (JSON)
 $data = json_decode(file_get_contents("php://input"), true);
 
-// Verificar si se recibieron datos válidos
-if (isset($data['id_colaborador'], $data['id_examen'], $data['nota'])) {
+// Verificar datos recibidos y conexión a la base de datos
+if (isset($data['id_colaborador'], $data['id_examen'], $data['nota'], $conn)) {
     // Preparar la consulta para insertar el resultado
-    $sql = "INSERT INTO resultados (id_colaborador, id_examen, nota) 
-            VALUES (?, ?, ?)";
+    $sql = "INSERT INTO resultados (id_colaborador, id_examen, nota) VALUES (?, ?, ?)";
     
     // Preparar la declaración
     $stmt = $conn->prepare($sql);
@@ -28,14 +28,12 @@ if (isset($data['id_colaborador'], $data['id_examen'], $data['nota'])) {
                 'status' => 'success',
                 'message' => 'Resultado del examen guardado correctamente.'
             ];
-            echo json_encode($response);
         } else {
             // Error al ejecutar la consulta SQL
             $response = [
                 'status' => 'error',
-                'message' => 'Error al guardar el resultado del examen.'
+                'message' => 'Error al guardar el resultado del examen: ' . $stmt->error
             ];
-            echo json_encode($response);
         }
         // Cerrar la declaración
         $stmt->close();
@@ -43,9 +41,8 @@ if (isset($data['id_colaborador'], $data['id_examen'], $data['nota'])) {
         // Error al preparar la consulta SQL
         $response = [
             'status' => 'error',
-            'message' => 'Error al preparar la consulta para guardar el resultado.'
+            'message' => 'Error al preparar la consulta para guardar el resultado: ' . $conn->error
         ];
-        echo json_encode($response);
     }
 } else {
     // Datos incompletos recibidos
@@ -53,8 +50,12 @@ if (isset($data['id_colaborador'], $data['id_examen'], $data['nota'])) {
         'status' => 'error',
         'message' => 'Datos incompletos recibidos para guardar el resultado del examen.'
     ];
-    echo json_encode($response);
 }
+
+// Devolver respuesta JSON al cliente
+echo json_encode($response);
+
 // Cerrar la conexión a la base de datos
 $conn->close();
+
 ?>

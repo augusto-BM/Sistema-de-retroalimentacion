@@ -29,11 +29,9 @@ $id_login = $_SESSION['id_login'];
     <div class="info_box">
         <div class="info-title"><span>Reglas de tu Examen en Línea</span></div>
         <div class="info-list">
-            <div class="info">1. Solo tendrás <span>15 segundos</span> para responder cada pregunta.</div>
-            <div class="info">2. Una vez que seleccionas tu respuesta, no se puede deshacer.</div>
-            <div class="info">3. No puedes seleccionar ninguna opción una vez que se acaba el tiempo.</div>
-            <div class="info">4. No puedes salir del Quiz mientras está corriendo el tiempo.</div>
-            <div class="info">5. Obtendrás puntos con base en tus respuestas correctas.</div>
+            <div class="info">1. Una vez que seleccionas tu respuesta, no se puede deshacer.</div>
+            <div class="info">2. No puedes salir del Quiz mientras está corriendo el tiempo.</div>
+            <div class="info">3. Obtendrás puntos con base en tus respuestas correctas.</div>
         </div>
         <div class="buttons">
             <button class="quit">Salir</button>
@@ -45,11 +43,6 @@ $id_login = $_SESSION['id_login'];
     <div class="quiz_box">
         <header>
             <div class="title">Examen en línea</div>
-            <div class="timer">
-                <div class="time_left_txt">Tiempo Restante</div>
-                <div class="timer_sec">15</div>
-            </div>
-            <div class="time_line"></div>
         </header>
         <section>
             <div class="que_text">
@@ -79,7 +72,6 @@ $id_login = $_SESSION['id_login'];
             <!-- Here I've inserted Score Result from JavaScript -->
         </div>
         <div class="buttons">
-            <button class="restart">Repetir</button>
             <a href="./lista_examenesPendientes.php"><button class="quit">Salir</button></a>
         </div>
     </div>

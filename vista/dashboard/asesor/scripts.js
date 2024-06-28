@@ -26,8 +26,6 @@ continue_btn.onclick = ()=>{
     quiz_box.classList.add("activeQuiz"); //show quiz box
     showQuetions(0); //calling showQestions function
     queCounter(1); //passing 1 parameter to queCounter
-    startTimer(15); //calling startTimer function
-    startTimerLine(0); //calling startTimerLine function
 }
 
 let timeValue =  15;
@@ -38,27 +36,8 @@ let counter;
 let counterLine;
 let widthValue = 0;
 
-const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 
-// if restartQuiz button clicked
-restart_quiz.onclick = ()=>{
-    quiz_box.classList.add("activeQuiz"); //show quiz box
-    result_box.classList.remove("activeResult"); //hide result box
-    timeValue = 15; 
-    que_count = 0;
-    que_numb = 1;
-    userScore = 0;
-    widthValue = 0;
-    showQuetions(que_count); //calling showQestions function
-    queCounter(que_numb); //passing que_numb value to queCounter
-    clearInterval(counter); //clear counter
-    clearInterval(counterLine); //clear counterLine
-    startTimer(timeValue); //calling startTimer function
-    startTimerLine(widthValue); //calling startTimerLine function
-    timeText.textContent = "Tiempo Faltante"; //change the text of timeText to Time Left
-    next_btn.classList.remove("show"); //hide the next button
-}
 
 // if quitQuiz button clicked
 quit_quiz.onclick = ()=>{
@@ -75,10 +54,6 @@ next_btn.onclick = ()=>{
         que_numb++; //increment the que_numb value
         showQuetions(que_count); //calling showQestions function
         queCounter(que_numb); //passing que_numb value to queCounter
-        clearInterval(counter); //clear counter
-        clearInterval(counterLine); //clear counterLine
-        startTimer(timeValue); //calling startTimer function
-        startTimerLine(widthValue); //calling startTimerLine function
         timeText.textContent = "Tiempo Faltante"; //change the timeText to Time Left
         next_btn.classList.remove("show"); //hide the next button
     }else{
@@ -191,57 +166,21 @@ function sendResultsToServer() {
     .catch((error) => {
         console.error('Error al enviar resultados:', error);
     });
-}
+
 function obtenerIdColaborador() {
-    if(isset($_SESSION['id_login'])){
-        return $_SESSION['id_login'];
-    }else{
-        return null;
-    }
+    
+        return 3;
+
 }
 function obtenerIdExamen() {
-    return sessionStorage.getItem('id_examen'); 
+    return 1; 
+}
 }
 
 function startTimer(time){
-    counter = setInterval(timer, 1000);
-    function timer(){
-        timeCount.textContent = time; //changing the value of timeCount with time value
-        time--; //decrement the time value
-        if(time < 9){ //if timer is less than 9
-            let addZero = timeCount.textContent; 
-            timeCount.textContent = "0" + addZero; //add a 0 before time value
-        }
-        if(time < 0){ //if timer is less than 0
-            clearInterval(counter); //clear counter
-            timeText.textContent = "Finalizó Tiempo"; //change the time text to time off
-            const allOptions = option_list.children.length; //getting all option items
-            let correcAns = questions[que_count].answer; //getting correct answer from array
-            for(i=0; i < allOptions; i++){
-                if(option_list.children[i].textContent == correcAns){ //if there is an option which is matched to an array answer
-                    option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
-                    option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
-                    console.log("Time Off: Auto selected correct answer.");
-                }
-            }
-            for(i=0; i < allOptions; i++){
-                option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
-            }
-            next_btn.classList.add("show"); //show the next button if user selected any option
-        }
-    }
+    clearInterval(counter); 
 }
 
-function startTimerLine(time){
-    counterLine = setInterval(timer, 29);
-    function timer(){
-        time += 1; //upgrading time value with 1
-        time_line.style.width = time + "px"; //increasing width of time_line with px by time value
-        if(time > 549){ //if time value is greater than 549
-            clearInterval(counterLine); //clear counterLine
-        }
-    }
-}
 
 function queCounter(index){
     //creating a new span tag and passing the question number and total question
