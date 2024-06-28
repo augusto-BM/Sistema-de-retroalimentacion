@@ -1,8 +1,14 @@
 <?php
 session_start();
 @include '../../../modelo/conexion.php';
+
+if(isset($GET['id_examen'])){
+    $id_examen = $_GET['id_examen'];
+}else{
+    die("Error: ID de examen no proporcionado.");
+}
 // Consulta para obtener las preguntas
-$sql = "SELECT id_pregunta, pregunta_texto, opcion_1, opcion_2, opcion_3, opcion_4, opcion_5, respuesta_correcta FROM preguntas";
+$sql = "SELECT id_pregunta, pregunta_texto, opcion_1, opcion_2, opcion_3, opcion_4, opcion_5, respuesta_correcta FROM preguntas where id_examen = $id_examen     ";
 $result = $conn->query($sql);
 
 $preguntas = [];

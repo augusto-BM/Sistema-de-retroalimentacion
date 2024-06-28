@@ -86,6 +86,29 @@ function showQuetions(index){
 // creating the new div tags which for icons
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
 let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
+// Función para cargar preguntas desde el servidor
+function loadQuestionsFromServer(idExamen) {
+    fetch('./questions.php?id_examen=' + idExamen)
+        .then(response => response.json())
+        .then(data => {
+            // Lógica para procesar los datos recibidos
+            if (data && data.length > 0) {
+                // Mostrar la primera pregunta al cargar
+                showQuetions(0);
+            } else {
+                console.error('No se recibieron datos de preguntas válidos.');
+            }
+        })
+        .catch(error => {
+            console.error('Error al cargar datos de preguntas:', error);
+        });
+}
+
+// Llamar a la función para cargar preguntas con un ID de examen específico
+// Aquí asumimos que idExamen se obtiene dinámicamente, por ejemplo desde la interfaz del usuario.
+let idExamen = 1; // Ejemplo: ID de examen que el usuario seleccionó
+loadQuestionsFromServer(idExamen);
+
 
 //if user clicked on option
 function optionSelected(answer){
