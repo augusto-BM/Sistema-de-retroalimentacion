@@ -2,14 +2,18 @@
 session_start();
 @include '../../../modelo/conexion.php';
 
-if(isset($GET['id_examen'])){
-    $id_examen = $_GET['id_examen'];
-}else{
-    die("Error: ID de examen no proporcionado.");
+if (!isset($_GET['id_examen'])){
+    die("No se proporciono el id_examen.");
 }
+
+$id_examen = $_GET['id_examen'];    
 // Consulta para obtener las preguntas
-$sql = "SELECT id_pregunta, pregunta_texto, opcion_1, opcion_2, opcion_3, opcion_4, opcion_5, respuesta_correcta FROM preguntas where id_examen = $id_examen     ";
+$sql = "SELECT p.id_pregunta, p.pregunta_texto, p.opcion_1, p.opcion_2, p.opcion_3, p.opcion_4, p.opcion_5, p.respuesta_correcta FROM preguntas p WHERE p.id_examen = $id_examen";
 $result = $conn->query($sql);
+ 
+if (!$result) {
+    die("Error en la consulta: " . $conn->error);
+}
 
 $preguntas = [];
 if ($result->num_rows > 0) {
@@ -44,5 +48,3 @@ header('Content-Type: application/javascript');
 // Salida de JavaScript que define la variable 'questions' con el contenido JSON de las preguntas
 echo "var questions = " . $preguntas_json . ";";
 ?>
-
-

@@ -98,6 +98,16 @@ $resultado = mysqli_query($conn, $sql_examenes);
                     <td><?php echo htmlspecialchars($fila['duracion_examen']); ?></td>
                     <td><a href="./resolverExamen_asesor.php?id_examen=<?php echo $fila['id_examen']; ?>"><button
                                     class="btn btn-primary">Tomar examen</button></a></td>
+                    <td><button onclick="imprimirResultado()" class="btn btn-primary">Imprimir resultado</button></td>
+                    <script>
+                        function imprimirResultado(){
+                            var url = './imprimirResultado.php';
+                            var ventana = window.open(url, '_blank');
+                            ventana.onload = function(){
+                                ventana.print();
+                            };
+                        }
+                    </script>
                 </tr>
                 <?php
                 $contador++;
