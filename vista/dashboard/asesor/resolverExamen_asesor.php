@@ -33,6 +33,7 @@ $id_colaborador = $_SESSION['id_login'];
 </head>
 
 <body>
+    <p><?php echo $id_login ?></p>
     <!-- start Quiz button -->
     <div class="start_btn"><button>Iniciar Examen</button></div>
 
