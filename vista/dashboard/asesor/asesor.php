@@ -51,7 +51,7 @@ $id_login = $_SESSION['id_login'];
         <div class="container">
           <table class="table" style="background-color: white">
             <thead>
-              <tr>
+              <tr class="table-info">
                 <th colspan="2" class="text-left">Información del Colaborador</th>
               </tr>
             </thead>

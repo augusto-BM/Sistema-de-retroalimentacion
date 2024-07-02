@@ -28,10 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Ejecutar la consulta y verificar si fue exitosa
   if ($query) {
     $_SESSION['mensaje'] = "Examen creado exitosamente";
-    header("Location: ../../vista/dashboard/backoffice/crud-examenes/backofficeCrearExamen.php");
+    header("Location: ../../vista/dashboard/supervisor/crud-supervisor/supervisorCrearExamen.php");
   } else {
     $_SESSION['mensaje'] = "Error al crear examen";
-    header("Location: ../../vista/dashboard/backoffice/crud-examenes/backofficeCrearExamen.php");
+    header("Location: ../../vista/dashboard/supervisor/crud-supervisor/supervisorCrearExamen.php");
   }
 }
 

@@ -53,7 +53,7 @@ $id_login = $_SESSION['id_login'];
       <div class="container form-exam" style="padding: 0%; border: 1px solid #bee5eb;">
 
         <!-- ***** MODAL DE ALERTA DE PROCESO EXITOSO USANDO SESSION Y SWEET ALERT2 ***** -->
-        <?php @include '../backoffice-principal/modal_alerta_exitoso_conSession.php' ?>
+        <?php @include '../supervisor-principal/modal_alerta_exitoso_conSession.php'?>
 
         <div class="container title-1" style="padding: 0%; border: 1px solid #bee5eb;"><span class="title1" style="margin-left:29%;font-size:30px;"><b>Detalles del examen</b></span><br /><br /></div>
         <div class="col-md-3"></div>

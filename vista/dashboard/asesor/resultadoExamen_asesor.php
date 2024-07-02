@@ -3,13 +3,15 @@
     window.onload = function() {
       window.print();
     };
+    </script> 
+    <script>
     function redireccionarAlCancelar() {
       /* window.location.href = '../principal.php'; */
-      window.close();
+      window.history.back();
     }
     window.onafterprint = function() {
       redireccionarAlCancelar(); // Llama a la función de redireccionamiento
-    };
+    };    
   </script> 
   
 
@@ -67,8 +69,8 @@ if (isset($_GET['id_examen'])) {
   ?>
 
       <main>
-      <h2>Id examen: <?php echo $id_examen; ?></h2>
-      <h2>Id colaborador: <?php echo $id_login; ?></h2> 
+      <!-- <h2>Id examen: <?php echo $id_examen; ?></h2>-->
+      <!-- <h2>Id colaborador: <?php echo $id_login; ?></h2> -->
 <h1 style="text-align:center">Ficha de examen</h1>
         <div class="">
           <table class="tabla">
@@ -151,7 +153,22 @@ if (isset($_GET['id_examen'])) {
             <tbody>
               <tr>
                 <th scope="row">Puntaje obtenido</th>
-                <td>15</td>
+                <td>
+                  <?php 
+                  // Consulta para obtener el puntaje obtenido
+                  $sql_resultados = "SELECT nota FROM resultados WHERE id_examen = $id_examen AND id_colaborador = $id_login";
+                  $resultado_resultados = mysqli_query($conn, $sql_resultados);
+
+                  if ($resultado_resultados) {
+                    $fila_resultados = mysqli_fetch_assoc($resultado_resultados);
+                    $puntaje_obtenido = $fila_resultados['nota'];
+                    echo isset($puntaje_obtenido) ? $puntaje_obtenido : 'No disponible';
+                    mysqli_free_result($resultado_resultados);
+                  } else {
+                    echo 'No disponible';
+                  }
+                  ?>
+                </td>
               </tr>
 
             </tbody>

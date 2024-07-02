@@ -1,27 +1,39 @@
 <?php
-    session_start();
-    @include '../../../modelo/conexion.php';
+session_start();
+@include '../../../modelo/conexion.php';
 
-if(!isset($_SESSION['supervisor_name'])){
-   header('location:../../login/login.php');
+if (!isset($_SESSION['supervisor_name'])) {
+    header('location: ../../login/login.php');
+    exit;
 }
-$nombre_sesion = $_SESSION['supervisor_name'];
-$id_login = $_SESSION['id_login'];
+
+if (isset($_GET['id_examen'])) {
+    $id_examen = (int)$_GET['id_examen'];
+} else {
+    echo "No se ha proporcionado el ID del examen.";
+    exit;
+}
+
+$id_colaborador = $_SESSION['id_login'];
+@include '../../../controlador/controlador-supervisor/listar-preguntas.php';
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examen supervisor</title>
-    <!-- FontAweome CDN Link for Icons-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <title>Mostrar Datos JSON en el Mismo Archivo PHP</title>
     <link rel="stylesheet" href="./supervisor.css">
-    <script src="./questions.php"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
 </head>
+
 <body>
+    <p><?php echo $id_login ?></p>
     <!-- start Quiz button -->
     <div class="start_btn"><button>Iniciar Examen</button></div>
 
@@ -53,17 +65,17 @@ $id_login = $_SESSION['id_login'];
         </header>
         <section>
             <div class="que_text">
-                <!-- Here I've inserted question from JavaScript -->
+                <!-- Aquí se insertará la pregunta desde JavaScript -->
             </div>
             <div class="option_list">
-                <!-- Here I've inserted options from JavaScript -->
+                <!-- Aquí se insertarán las opciones desde JavaScript -->
             </div>
         </section>
 
         <!-- footer of Quiz Box -->
         <footer>
             <div class="total_que">
-                <!-- Here I've inserted Question Count Number from JavaScript -->
+                <!-- Aquí se insertará el número de pregunta desde JavaScript -->
             </div>
             <button class="next_btn">Siguiente Pregunta</button>
         </footer>
@@ -74,20 +86,23 @@ $id_login = $_SESSION['id_login'];
         <div class="icon">
             <i class="fas fa-crown"></i>
         </div>
-        <div class="complete_text">Has finalizado tu examen!</div>
+        <div class="complete_text">¡Has finalizado tu examen!</div>
         <div class="score_text">
-            <!-- Here I've inserted Score Result from JavaScript -->
+            <!-- Aquí se insertará el resultado del puntaje desde JavaScript -->
         </div>
         <div class="buttons">
-            <button class="restart">Repetir</button>
-            <a href="./supervisorExamenesPendientes.php"><button class="quit">Salir</button></a>
+            <!-- <button class="restart">Repetir</button> -->
+            <button class="quit">Salir</button>
         </div>
     </div>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../principal/script.js"></script>
+
+    <input type="hidden" id="id_colaborador" value="<?php echo $id_colaborador; ?>">
+    <input type="hidden" id="id_examen" value="<?php echo $id_examen; ?>">
+
+    <script>
+        const questions = <?php echo $questions_json; ?>;
+    </script>
     <script src="./scripts.js"></script>
-    <script src="./questions.php"></script>
 </body>
+
 </html>
