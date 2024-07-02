@@ -1,4 +1,4 @@
-<!--   <!-- //SCRIPT PARA IMPRIMIR -->
+<!-- //SCRIPT PARA IMPRIMIR -->
    <script>
     window.onload = function() {
       window.print();
@@ -39,6 +39,7 @@ if (isset($_GET['id_examen'])) {
   <title><?php echo $_SESSION['role']; ?></title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/73c70fe811.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./imprimirficha.css">
 </head>
 
 <body>
@@ -70,7 +71,7 @@ if (isset($_GET['id_examen'])) {
       <h2>Id colaborador: <?php echo $id_login; ?></h2> 
 <h1 style="text-align:center">Ficha de examen</h1>
         <div class="">
-          <table class="table" style="background-color: white">
+          <table class="tabla">
             <thead>
               <tr>
                 <th colspan="2" class="text-left">Información del Colaborador</th>
@@ -103,11 +104,24 @@ if (isset($_GET['id_examen'])) {
     }
   }
   mysqli_free_result($resultado);
-  mysqli_close($conn);
+  $sql_examen = "SELECT titulo, cantidad_preguntas FROM examenes WHERE id_examen = $id_examen";
+
+  $resultado_examen = mysqli_query($conn, $sql_examen);
+  
+  if (!$resultado_examen) {
+      echo "Error al obtener los datos del examen: " . mysqli_error($conn);
+      exit;
+  }
+  
+  $examen = mysqli_fetch_assoc($resultado_examen);
+  
+  // Liberar el resultado del examen
+  mysqli_free_result($resultado_examen);
       ?>
         </div>
+
         <div class="">
-          <table class="table">
+          <table class="tabla">
           <thead>
               <tr>
                 <th colspan="2" class="text-left">Datos del examen</th>
@@ -115,33 +129,26 @@ if (isset($_GET['id_examen'])) {
             </thead>
             <tbody>
               <tr>
-                <th scope="col">Tematica</th>
-                <td>energia</td>
-              </tr>
-              <tr>
                 <th scope="row">Titulo del examen</th>
-                <td>Examen 1</td>
+                <td><?php echo isset($examen['titulo']) ? $examen['titulo'] : 'No disponible'; ?></td>
               </tr>
               <tr>
                 <th scope="row">Total de preguntas</th>
-                <td>5</td>
+                <td><?php echo isset($examen['cantidad_preguntas']) ? $examen['cantidad_preguntas'] : 'No disponible'; ?></td>
               </tr>
 
             </tbody>
             </table>
         </div>
+       
         <div class="">
-          <table class="table">
+          <table class="tabla">
           <thead>
               <tr>
                 <th colspan="2" class="text-left">Resultados del examen</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="col">Respuestas correctas</th>
-                <td>3</td>
-              </tr>
               <tr>
                 <th scope="row">Puntaje obtenido</th>
                 <td>15</td>
