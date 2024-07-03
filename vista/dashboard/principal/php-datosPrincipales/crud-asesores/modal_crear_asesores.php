@@ -30,6 +30,7 @@
                                 <div class="">
                                     <div class="sexo-asesor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">Sexo:</label></div>
                                     <input type="text" class="form-control" id="sexo-asesor" name="sexo-asesor" style="margin-bottom: 5px;" oninput="soloLetras(this)">
+                                    
                                 </div>
                                 <div class="">
                                     <div class="fecnac-asesor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Fecha nacimiento:</label></div>
