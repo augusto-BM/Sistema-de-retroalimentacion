@@ -87,7 +87,7 @@ $id_login = $_SESSION['id_login'];
                     $sql_examenes = "SELECT e.*, r.id_resultado 
                                     FROM examenes e
                                     LEFT JOIN resultados r ON e.id_examen = r.id_examen AND r.id_colaborador = $id_login
-                                    WHERE e.id_rol_destino = 3";
+                                    WHERE e.id_rol_destino = 2";
                     $resultado = mysqli_query($conn, $sql_examenes);
 
                     $num_filas = mysqli_num_rows($resultado);

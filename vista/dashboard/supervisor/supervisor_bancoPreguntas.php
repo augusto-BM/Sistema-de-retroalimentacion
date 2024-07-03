@@ -62,7 +62,7 @@ $id_login = $_SESSION['id_login'];
           <tbody>
             <?php
             @include '../../../modelo/conexion.php';
-            $sql = "SELECT * from examenes ";
+            $sql = "SELECT * from examenes WHERE id_rol_destino = 3";
 
             $resultado = mysqli_query($conn, $sql);
             if ($resultado && mysqli_num_rows($resultado) > 0) {

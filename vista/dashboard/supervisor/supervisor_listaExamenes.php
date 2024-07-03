@@ -89,7 +89,7 @@ $id_login = $_SESSION['id_login'];
                       INNER JOIN tematica ON examenes.id_tematica = tematica.id_tematica
                       INNER JOIN rol ON examenes.id_rol_destino = rol.id_rol
                       INNER JOIN campaña ON tematica.id_campaña = campaña.id_campaña
-                      WHERE id_rol_destino = 2"
+                      WHERE id_rol_destino = 3"
                       ;
 
             $resultado = mysqli_query($conn, $sql);
