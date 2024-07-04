@@ -84,10 +84,11 @@ $id_login = $_SESSION['id_login'];
                 <tbody>
                     <?php
                     // Consulta SQL para obtener los exámenes destinados a asesores
-                    $sql_examenes = "SELECT e.*, r.id_resultado 
-                                    FROM examenes e
-                                    LEFT JOIN resultados r ON e.id_examen = r.id_examen AND r.id_colaborador = $id_login
-                                    WHERE e.id_rol_destino = 3";
+                    $sql_examenes = "SELECT e.*, r.id_resultado, c.nombre AS nombre
+                 FROM examenes e
+                 LEFT JOIN resultados r ON e.id_examen = r.id_examen AND r.id_colaborador = $id_login
+                 LEFT JOIN colaborador c ON e.id_colaborador_creador = c.id_colaborador
+                 WHERE e.id_rol_destino = 3";
                     $resultado = mysqli_query($conn, $sql_examenes);
 
                     $num_filas = mysqli_num_rows($resultado);
@@ -114,7 +115,7 @@ $id_login = $_SESSION['id_login'];
                             <tr style="text-align: center;">
                                 <th scope="row"><?php echo $contador; ?></th>
                                 <td><?php echo htmlspecialchars($fila['titulo']); ?></td>
-                                <td><?php echo htmlspecialchars($fila['id_colaborador_creador']); ?></td>
+                                <td><?php echo htmlspecialchars($fila['nombre']); ?></td>
                                 <td><?php echo htmlspecialchars($fila['cantidad_preguntas']); ?></td>
                                 <td><?php echo htmlspecialchars($fila['duracion_examen']); ?> min</td>
                                 <td>

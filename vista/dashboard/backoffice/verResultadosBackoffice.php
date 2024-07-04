@@ -29,8 +29,21 @@ $id_login = $_SESSION['id_login'];
   if ($resultado && mysqli_num_rows($resultado) > 0) {
     while ($fila = mysqli_fetch_assoc($resultado)) {
   ?>
-      <?php @include './backoffice-principal/sidebar_backoffice.php' ?>
+      
   <?php
+    }
+  }
+  ?>
+  <?php 
+  $sql_backoffice = "SELECT e.id_examen, e.titulo, e.tematica, l.colaborador AS nombre, e.cantidad_preguntas, e.fecha_creacion FROM examenes e INNER JOIN login l ON e.id_colaborador_creador = l.id_login WHERE e.id_colaborador_creador = $id_login";
+
+
+
+  if($resultado && mysqli_num_rows($resultado)>0){
+    $contador = 1; 
+
+    while ($fila = mysqli_fetch_assoc($resultado)){
+
     }
   }
   mysqli_free_result($resultado);
@@ -45,23 +58,21 @@ $id_login = $_SESSION['id_login'];
             <tr>
               <th scope="col">#</th>
               <th scope="col">Examen</th>
-              <th scope="col">Campaña</th>
+              <th scope="col">Tematica</th>
               <th scope="col">Creador</th>
               <th scope="col">Total Preguntas</th>
-              <th scope="col">Hora</th>
               <th scope="col">Fecha</th>
-              <th scope="col"></th>
+              <th scope="col">Acción</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td scope="row"></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td scope="row"><?php echo $contador; ?></td>
+              <td><?php echo htmlspecialchars($fila['titulo']); ?></td>
+              <td><?php echo htmlspecialchars($fila['id_tematica']); ?></td>
+              <td><?php echo htmlspecialchars($fila['id_colaborador_creador']); ?></td>
+              <td><?php echo htmlspecialchars($fila['cantidad_preguntas']); ?></td>
+              <td><?php echo htmlspecialchars($fila['fecha_creacion']); ?></td>
               <td class="">Ver</td>
             </tr>
             <tr>
@@ -71,12 +82,10 @@ $id_login = $_SESSION['id_login'];
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
               <td class="">Ver</td>
             </tr>
             <tr>
               <td scope="row"></td>
-              <td></td>
               <td></td>
               <td></td>
               <td></td>

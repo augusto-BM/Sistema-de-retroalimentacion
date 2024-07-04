@@ -58,11 +58,11 @@ $id_login = $_SESSION['id_login'];
     $result_resultados = mysqli_query($conn, $sql_resultados);
     $row_resultados = mysqli_fetch_assoc($result_resultados);
     $count_resultados = $row_resultados['count_resultados'];
-    //Contar usuarios 
-    $sql_colaborador = "SELECT COUNT(*) AS count_colaborador FROM colaborador";
-    $result_colaborador = mysqli_query($conn, $sql_colaborador);
-    $row_colaborador = mysqli_fetch_assoc($result_colaborador);
-    $count_colaborador = $row_colaborador['count_colaborador'];
+    //Contar backoffice
+    $sql_backoffice = "SELECT COUNT(*) AS count_backoffice FROM colaborador WHERE id_rol = 1";
+    $result_backoffice = mysqli_query($conn, $sql_backoffice);
+    $row_backoffice = mysqli_fetch_assoc($result_backoffice);
+    $count_backoffice = $row_backoffice['count_backoffice'];
     ?>
     <main>
         <h1>Dashboard - <?php echo $nombre_sesion; ?></h1>
@@ -128,7 +128,7 @@ $id_login = $_SESSION['id_login'];
     <div class="col-sm-3">
         <div class="card bg-info">
             <div class="card-body">
-                <h5 class="card-title"><?php echo $count_colaborador ; ?></h5>
+                <h5 class="card-title"><?php echo $count_backoffice ; ?></h5>
                 <p class="card-text">Backoffice</p>
             </div>
         </div>

@@ -18,7 +18,7 @@ $id_login = $_SESSION['id_login'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asesor</title>
+    <title>Supervisor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../principal/style.css">
 </head>
@@ -106,7 +106,7 @@ $id_login = $_SESSION['id_login'];
                             } else {
                                 // Examen sin resultado (botón para tomar examen)
                                 $boton_texto = " Tomar examen";
-                                $boton_url = "./resolverExamen_asesor.php?id_examen=" . $fila['id_examen'];
+                                $boton_url = "./resolverExamen_supervisor.php?id_examen=" . $fila['id_examen'];
                                 $boton_clase = "btn-warning";
                                 $icono = "pencil-outline";
                             }
