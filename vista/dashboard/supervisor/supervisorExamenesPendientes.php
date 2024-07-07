@@ -28,46 +28,6 @@ $id_login = $_SESSION['id_login'];
     <main>
         <h1>Examenes pendientes</h1>
         <div class="container">
-            <div class="row m-3">
-
-
-                <div class="col-sm-3">
-                    <div class="card bg-primary">
-                        <div class="card-body">
-                            <h5 class="card-title">Campaña</h5>
-                            <p class="card-text"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card bg-info">
-                        <div class="card-body">
-                            <h5 class="card-title">Tematica</h5>
-                            <p class="card-text"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card bg-success">
-                        <div class="card-body">
-                            <h5 class="card-title">Fecha</h5>
-                            <p class="card-text"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card bg-danger">
-                        <div class="card-body">
-                            <h5 class="card-title">Hora</h5>
-                            <p class="card-text"></p>
-                        </div>
-                    </div>
-                </div>
-                <?php
-                ?>
-            </div>
-        </div>
-        <div class="container">
             <!-- Lista de examenes -->
             <h4>Lista de examenes</h4>
             <table class="table table-bordered">
