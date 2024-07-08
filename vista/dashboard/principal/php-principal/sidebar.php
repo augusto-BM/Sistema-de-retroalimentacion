@@ -45,53 +45,6 @@
                         </ul>
                     </div>
                 </li>
-                <li>
-                    <div class="dropdown">
-
-                        <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            Relacion
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Empresa-curso</a></li>
-                            <li><a class="dropdown-item" href="#">Clase-backoffice</a></li>
-                            <li><a class="dropdown-item" href="#">Clase-supervisor</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">
-                        <ion-icon name="copy-outline"></ion-icon>
-                        <span>Banco de preguntas</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="seccion">
-            <p><sub>Reportes</sub></p>
-            <ul>
-                <li>
-                    <a href="#">
-                        <ion-icon name="document-text-outline"></ion-icon>
-                        <span>Resultado de examenes</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="seccion">
-            <p><sub>Administrador</sub></p>
-            <ul>
-                <li>
-                    <a href="#">
-                        <ion-icon name="people-outline"></ion-icon>
-                        <span>Administrador de usuarios</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <ion-icon name="settings-outline"></ion-icon>
-                        <span>Configuracion</span>
-                    </a>
-                </li>
             </ul>
         </div>
     </nav>
