@@ -34,7 +34,7 @@ $id_login = $_SESSION['id_login'];
                 <thead>
                     <tr style="text-align: center;" class="table-info">
                         <th scope="col">#</th>
-                        <th scope="col">Campaña</th>
+                        <th scope="col">Titulo</th>
                         <th scope="col">Creador</th>
                         <th scope="col">Número de preguntas</th>
                         <th scope="col">Tiempo</th>
