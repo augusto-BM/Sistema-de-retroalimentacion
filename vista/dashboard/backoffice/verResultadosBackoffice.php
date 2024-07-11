@@ -102,7 +102,7 @@ $id_login = $_SESSION['id_login'];
                   <td><?php echo $fila['tipo_rol']; ?></td>
                   <td><?php echo $fila['cantidad_preguntas']; ?></td>
                   <td><?php echo $fila['fecha_creacion']; ?></td>
-                  <td><button class="ver-btn"><i class="fas fa-eye"></i> Ver</button></td>
+                  <td><a href="./backofficeListaResultados.php?id_examen=<?php echo $fila['id_examen'];?>"><button class="ver-btn"><i class="fas fa-eye"></i> Ver</button></a></td>
                 </tr>
             <?php
               }
