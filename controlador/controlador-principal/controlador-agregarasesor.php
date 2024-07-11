@@ -7,11 +7,13 @@ if(isset($_POST['submit'])) {
     $apellido = $_POST['apellido_asesor'];
     $celular = $_POST['celular-asesor'];
     $direccion = $_POST['direccion-asesor'];
+    $sexo = $_POST['sexo-asesor'];
     $fecnac = $_POST['fecnac-asesor'];
     $empresa = $_POST['empresa-asesor'];
     $tematica = $_POST['tematica-asesor'];
     $usuario = $_POST['usuario-asesor'];
     $contraseña = $_POST['contraseña-asesor'];
+    
     
     // Aquí deberías realizar la validación de los datos recibidos
 
@@ -22,7 +24,7 @@ if(isset($_POST['submit'])) {
     try {
         // Insertar datos en la tabla asesores
         $sql1 = "INSERT INTO colaborador (id_rol, nombre, apellido, celular, direccion, sexo, fecha_nacimiento, id_empresa, id_tematica) 
-                 VALUES (3, '$nombre', '$apellido', '$celular', '$direccion', '$fecnac', '$fecnac', '$empresa', '$tematica')";
+                 VALUES (3, '$nombre', '$apellido', '$celular', '$direccion', '$sexo', '$fecnac', '$empresa', '$tematica')";
         
         if(mysqli_query($conn, $sql1)) {
             // Obtener el id del último insert en la tabla asesores

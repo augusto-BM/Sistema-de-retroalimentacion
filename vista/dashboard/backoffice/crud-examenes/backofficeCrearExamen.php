@@ -7,6 +7,7 @@ if (!isset($_SESSION['backoffice_name'])) {
 }
 $nombre_sesion = $_SESSION['backoffice_name'];
 $id_login = $_SESSION['id_login'];
+
 ?>
 
 <!DOCTYPE html>
@@ -99,7 +100,7 @@ $id_login = $_SESSION['id_login'];
                         echo "<option value='" . $row_tematicas['id_tematica'] . "'>" . $row_tematicas['nombre_tematica'] . "</option>";
                       }
                     } else {
-                      echo "No hay tematicas dispobilbes ";
+                      echo "No hay tematicas disponibles ";
                     }
                     ?>
                   </select>

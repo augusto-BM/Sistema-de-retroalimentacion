@@ -10,7 +10,7 @@
                 <div class="modal-body">
                     <div class="card">
                         <div class="card-body">
-                            <form method="POST" action="../../../controlador/controlador-principal/controlador-agregarsupervisor.php" enctype="multipart/form-data">
+                            <form onsubmit="validarCampos(event)" method="POST" action="../../../controlador/controlador-principal/controlador-agregarsupervisor.php" enctype="multipart/form-data">
                                 <div class="">
                                     <div class="nombre-supervisor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Nombre:</label></div>
                                     <input type="text" class="form-control" id="nombre-supervisor" name="nombre-supervisor" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
@@ -29,11 +29,14 @@
                                 </div>
                                 <div class="">
                                     <div class="sexo-supervisor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">Sexo:</label>:</label></div>
-                                    <input type="text" class="form-control" id="sexo-supervisor" name="sexo-supervisor" style="margin-bottom: 5px;" oninput="soloLetras(this)">
+                                    <select class="form-select" id="sexo-supervisor" name="sexo-supervisor" style="margin-bottom: 5px;">
+                                    <option value="masculino">Masculino</option>
+                                    <option value="femenino">Femenino</option>
+                                  </select>
                                 </div>
                                 <div class="">
                                     <div class="fecnac-supervisor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Fecha nacimiento:</label></div>
-                                    <input type="text" class="form-control" id="fecnac-supervisor" name="fecnac-supervisor" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
+                                    <input type="date" class="form-control" id="fecnac-supervisor" name="fecnac-supervisor" style="margin-bottom: 5px;" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
                                 </div>
                                 <div class="">
                                     <div class="empresa-supervisor" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Empresa:</label></div>
@@ -90,4 +93,24 @@
             </div>
         </div>
     </div>
+    <script>
+                function validarCampos(event) {
+            const campos = document.querySelectorAll('.form-control');
+            let formularioValido = true;
+
+            campos.forEach(campo => {
+                if (campo.value.trim() === '') {
+                    formularioValido = false;
+                    campo.style.borderColor = 'red';
+                } else {
+                    campo.style.borderColor = '';
+                }
+            });
+
+            if (!formularioValido) {
+                alert('Todos los campos deben estar llenos.');
+                event.preventDefault();
+            }
+        }
+    </script>
 </div>
