@@ -149,7 +149,7 @@ $nombre_sesion = $_SESSION['general_name'];
                                     <td class=""><?php echo $fila['nombreCampaña']; ?></td>
                                     <td class=""><?php echo $fila['nombreEmpresa']; ?></td>
                                     <td class="">
-                                        <a href="" class=" btn-ver me-0"><i class="far fa-eye" style="color: #2E59EA;"></i></a>
+                                        <a href="./php-datosPrincipales/crud-campañas/modal_ver_campañas.php" class=" btn-ver me-0"><i class="far fa-eye" style="color: #2E59EA;"></i></a>
                                         <a href="" class="btn-editar ms-0"><i class="far fa-pen" style="color: #EAD42E;"></i></a>
                                     </td>
                                 </tr>
