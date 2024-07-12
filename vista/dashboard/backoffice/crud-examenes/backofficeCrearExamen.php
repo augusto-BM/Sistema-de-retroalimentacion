@@ -30,25 +30,6 @@ $id_login = $_SESSION['id_login'];
 
   <main>
     <h1>Agregar Examen</h1>
-    <div class="container">
-      <div class="row cards-superior">
-        <div class="col-sm-3">
-          <div class="card bg-primary h-100">
-            <div class="card-body">
-              <h5 class="card-title">Campañas</h5>
-              <p class="card-text">energia</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="card bg-info h-100">
-            <div class="card-body">
-              <h5 class="card-title">Creador</h5>
-              <p class="card-text">Sebastian Rodriguez</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div class="container form-exam" style="padding: 0%; border: 1px solid #bee5eb;">
 
