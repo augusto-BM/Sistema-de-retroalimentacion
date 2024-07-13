@@ -55,7 +55,7 @@ $nombre_sesion = $_SESSION['general_name'];
     <script src="./js-principal/estadoBotonEmpresas.js"></script>
 
     <!-- SCRIPT AJAX - VER INFORMACION EMPRESAS SELECCIONADO-->
-    <script src="./js-principal/verInformacionEmpresaSeleccionado.js"></script>
+    <script src="./js-principal/verinformacionCampaña.js"></script>
 
     <!-- SCRIPT AJAX - EDITAR INFORMACION EMPRESAS SELECCIONADO-->
     <script src="./js-principal/editarInformacionEmpresaSeleccionado.js"></script>
@@ -80,7 +80,7 @@ $nombre_sesion = $_SESSION['general_name'];
 
 
         <!-- MODAL PARA VER LA INFORMACION COMPLETA DE LA EMPRESA SELECCIONADO -->
-        <?php @include './php-principal/modal_ver_empresa_seleccionado.php' ?>
+        <?php @include './php-datosPrincipales/crud-campañas/modal_ver_campañas.php' ?>
 
         <!--  MODAL PARA EDITAR LA INFORMACION COMPLETA DE LA EMPRESA SELECCIONADO  -->
         <?php @include './php-principal/modal_editar_empresa_seleccionado.php' ?>
@@ -138,7 +138,8 @@ $nombre_sesion = $_SESSION['general_name'];
                                 FROM 
                                     campaña 
                                 INNER JOIN 
-                                    empresa ON campaña.id_empresa = empresa.idempresa ";
+                                    empresa ON campaña.id_empresa = empresa.idempresa 
+                            ";
                                     
                         $resultado = mysqli_query($conn, $sql);
                         if ($resultado && mysqli_num_rows($resultado) > 0) {
@@ -149,7 +150,7 @@ $nombre_sesion = $_SESSION['general_name'];
                                     <td class=""><?php echo $fila['nombreCampaña']; ?></td>
                                     <td class=""><?php echo $fila['nombreEmpresa']; ?></td>
                                     <td class="">
-                                        <a href="./php-datosPrincipales/crud-campañas/modal_ver_campañas.php" class=" btn-ver me-0"><i class="far fa-eye" style="color: #2E59EA;"></i></a>
+                                        <a href="" class=" btn-ver me-0" ><i class="far fa-eye" style="color: #2E59EA;"></i></a>
                                         <a href="" class="btn-editar ms-0"><i class="far fa-pen" style="color: #EAD42E;"></i></a>
                                     </td>
                                 </tr>

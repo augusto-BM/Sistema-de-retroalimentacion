@@ -55,7 +55,7 @@ $nombre_sesion = $_SESSION['general_name'];
     <script src="./js-principal/estadoBotonEmpresas.js"></script>
 
     <!-- SCRIPT AJAX - VER INFORMACION EMPRESAS SELECCIONADO-->
-    <script src="./js-principal/verInformacionEmpresaSeleccionado.js"></script>
+    <script src="./js-principal/verinformacionTematica.js"></script>
 
     <!-- SCRIPT AJAX - EDITAR INFORMACION EMPRESAS SELECCIONADO-->
     <script src="./js-principal/editarInformacionEmpresaSeleccionado.js"></script>
@@ -78,7 +78,7 @@ $nombre_sesion = $_SESSION['general_name'];
 
 
         <!-- MODAL PARA VER LA INFORMACION COMPLETA DE LA EMPRESA SELECCIONADO -->
-        <?php @include './php-principal/modal_ver_empresa_seleccionado.php' ?>
+        <?php @include './php-datosPrincipales/crud-tematica/modal_ver_tematica.php' ?>
 
         <!--  MODAL PARA EDITAR LA INFORMACION COMPLETA DE LA EMPRESA SELECCIONADO  -->
         <?php @include './php-principal/modal_editar_empresa_seleccionado.php' ?>

@@ -1,7 +1,7 @@
 <?php
 
 //La variable "conn" permitirá crear una conexión con nnuestra BD.
-$conn = mysqli_connect('localhost:8080','root','','imfca');
+$conn = mysqli_connect('localhost','root','','imfca');
 
 // Verificar si la conexión fue exitosa
 if (!$conn) {
