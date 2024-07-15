@@ -40,7 +40,7 @@ if (isset($_POST['click_btn_editar_cambios'])) {
     /* $estado = "inactivo"; */
 
     // Preparar la consulta SQL para insertar los datos en la tabla
-    $sql_editar = "UPDATE campaña SET nombre_campa{a = '$nombre_campaña', nombre_empresa = '$nombre_empresa' WHERE id_campaña = '$id'";
+    $sql_editar = "UPDATE campaña SET nombre_campaña = '$nombre_campaña', nombre_empresa = '$nombre_empresa' WHERE id_campaña = '$id'";
     
     $query = mysqli_query($conn, $sql_editar);
     if ($query) {
