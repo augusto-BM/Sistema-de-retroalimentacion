@@ -58,7 +58,7 @@ $nombre_sesion = $_SESSION['general_name'];
     <script src="./js-principal/verinformacionAsesor.js"></script>
 
     <!-- SCRIPT AJAX - EDITAR INFORMACION EMPRESAS SELECCIONADO-->
-    <script src="./js-principal/editarInformacionEmpresaSeleccionado.js"></script>
+    <script src="./js-principal/editarCampaña.js"></script>
 
     <!-- SCRIPT AJAX - VER INFORMACION DE TODOS LAS EMPRESAS DESACTIVOS -->
     <script src="./js-principal/verInformacionTablaModalEmpresasNoSeleccionado.js"></script>
@@ -81,7 +81,7 @@ $nombre_sesion = $_SESSION['general_name'];
         <?php @include './php-datosPrincipales/crud-asesores/modal_ver_asesores.php' ?>
 
         <!--  MODAL PARA EDITAR LA INFORMACION COMPLETA DE LA EMPRESA SELECCIONADO  -->
-        <?php @include './php-principal/modal_editar_empresa_seleccionado.php' ?>
+        <?php @include './php-datosPrincipales/crud-asesores/modal_editar_asesores.php' ?>
 
         <!-- start content page -->
         <div class="container-fluid px">

@@ -56,14 +56,13 @@ $nombre_sesion = $_SESSION['general_name'];
     <script src="./js-principal/estadoBotonEmpresas.js"></script>
 
     <!-- SCRIPT AJAX - VER INFORMACION EMPRESAS SELECCIONADO-->
-    <script src="./js-principal/verInformacionEmpresaSeleccionado.js"></script>
+    <script src="./js-principal/verinformacionBackoffice.js"></script>
 
     <!-- SCRIPT AJAX - EDITAR INFORMACION EMPRESAS SELECCIONADO-->
     <script src="./js-principal/editarInformacionEmpresaSeleccionado.js"></script>
 
     <!-- SCRIPT AJAX - VER INFORMACION DE TODOS LAS EMPRESAS DESACTIVOS -->
     <script src="./js-principal/verInformacionTablaModalEmpresasNoSeleccionado.js"></script>
-
 
 </head>
 
@@ -78,9 +77,8 @@ $nombre_sesion = $_SESSION['general_name'];
         <!-- MODAL PARA VER LA TABLA COMPLETA DE LAS EMPRESAS DESACTIVOS -->
         <?php @include './php-principal/modal_ver_empresas_desactivos.php' ?>
 
-
         <!-- MODAL PARA VER LA INFORMACION COMPLETA DE LA EMPRESA SELECCIONADO -->
-        <?php @include './php-principal/modal_ver_empresa_seleccionado.php' ?>
+        <?php @include './php-datosPrincipales/crud-backoffice/modal_ver_backoffice.php' ?>
 
         <!--  MODAL PARA EDITAR LA INFORMACION COMPLETA DE LA EMPRESA SELECCIONADO  -->
         <?php @include './php-principal/modal_editar_empresa_seleccionado.php' ?>

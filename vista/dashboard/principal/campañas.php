@@ -58,7 +58,7 @@ $nombre_sesion = $_SESSION['general_name'];
     <script src="./js-principal/verinformacionCampaña.js"></script>
 
     <!-- SCRIPT AJAX - EDITAR INFORMACION EMPRESAS SELECCIONADO-->
-    <script src="./js-principal/editarInformacionEmpresaSeleccionado.js"></script>
+    <script src="./js-principal/editarCampaña.js"></script>
 
     <!-- SCRIPT AJAX - VER INFORMACION DE TODOS LAS EMPRESAS DESACTIVOS -->
     <script src="./js-principal/verInformacionTablaModalEmpresasNoSeleccionado.js"></script>
@@ -83,7 +83,7 @@ $nombre_sesion = $_SESSION['general_name'];
         <?php @include './php-datosPrincipales/crud-campañas/modal_ver_campañas.php' ?>
 
         <!--  MODAL PARA EDITAR LA INFORMACION COMPLETA DE LA EMPRESA SELECCIONADO  -->
-        <?php @include './php-principal/modal_editar_empresa_seleccionado.php' ?>
+        <?php @include './php-datosPrincipales/crud-campañas/modal_editar_campañas.php' ?>
 
         <!-- start content page -->
         <div class="container-fluid px">
@@ -151,7 +151,7 @@ $nombre_sesion = $_SESSION['general_name'];
                                     <td class=""><?php echo $fila['nombreEmpresa']; ?></td>
                                     <td class="">
                                         <a href="" class=" btn-ver me-0" ><i class="far fa-eye" style="color: #2E59EA;"></i></a>
-                                        <a href="" class="btn-editar ms-0"><i class="far fa-pen" style="color: #EAD42E;"></i></a>
+                                        <a href="" class=" btn-editar ms-0"><i class="far fa-pen" style="color: #EAD42E;"></i></a>
                                     </td>
                                 </tr>
                         <?php
