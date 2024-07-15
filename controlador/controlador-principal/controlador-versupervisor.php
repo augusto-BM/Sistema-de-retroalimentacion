@@ -11,7 +11,7 @@ if (isset($_POST['click_btn_ver'])) {
     colaborador.sexo AS sexoAsesor,
     colaborador.fecha_nacimiento AS fecnacAsesor,
   empresa.razonsocial AS nombreEmpresa,
-  tematica.nombre_tematica AS nombreTematica,
+  campaña.nombre_campaña AS nombreCampaña,
   login.usuario AS usuarioAsesor,
     login.contraseña AS contraseñaAsesor 
 FROM 
@@ -19,7 +19,7 @@ FROM
 INNER JOIN 
   empresa ON colaborador.id_empresa = empresa.idempresa
   INNER JOIN
-  tematica ON colaborador.id_tematica = tematica.id_tematica
+  campaña ON colaborador.id_campaña = campaña.id_campaña
   INNER JOIN
   login ON colaborador.id_colaborador = login.id_colaborador
 WHERE 
@@ -79,8 +79,8 @@ WHERE
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="nombre-tematica" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;" ><label for="nombre-tematica" class="col-form-label">Tematica:</label></div>
-                                    <div class="input-tematica"><input style="margin-bottom: 5px"  class="form-control"  type="text" id="nombre-tematica" name="nombre-tematica" value="<?php echo $fila['nombreTematica'] ?>" readonly></div>
+                                    <div class="nombre-campaña" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;" ><label for="nombre-campaña" class="col-form-label">Campaña:</label></div>
+                                    <div class="input-nombre-campaña"><input style="margin-bottom: 5px"  class="form-control"  type="text" id="nombre-campaña" name="nombre-campaña" value="<?php echo $fila['nombreCampaña'] ?>" readonly></div>
                                 </div>
                             </div>
                             <div class="row">
