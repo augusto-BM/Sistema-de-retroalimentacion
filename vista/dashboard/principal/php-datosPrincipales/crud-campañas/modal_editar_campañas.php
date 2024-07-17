@@ -7,14 +7,13 @@
                 <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form method="POST" action="../../../controlador/controlador-principal/controlador-editarcampaña.php">
                 <div class="modal-body">
                     <div class="card">
                         <div class="card-body">
                             <input type="hidden" id="campaña_id" name="id_campaña">
                             <div class="">
                                 <div class="nombre-campaña" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px; "><label for="recipient-name" class="col-form-label">Empresa:</label></div>
-                                <input type="text" class="form-control" style="margin-bottom: 5px;" id="nombre_campaña" name="nombre_campaña" oninput="soloLetras(this)" onkeyup="validarEmpresa(this);">
+                                <input type="text" class="form-control" style="margin-bottom: 5px;" id="nombre_campaña" name="nombre_campaña" oninput="soloLetras(this)"">
                             </div>
                             <div class="">
                                 <div class="nombre-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"><label for="recipient-name" class="col-form-label">Lugar:</label></div>

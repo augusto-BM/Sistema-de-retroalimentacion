@@ -6,7 +6,7 @@ $(document).ready(function() {
         //console.log(user_id);
         $.ajax({
             method: "POST",
-            url: '../../../../controlador/controlador-principal/controlador-editarcampaña.php',
+            url: '../../../controlador/controlador-principal/controlador-editarcampaña.php',
             data: {
                 'click_btn_editar': true,
                 'user_id': user_id,

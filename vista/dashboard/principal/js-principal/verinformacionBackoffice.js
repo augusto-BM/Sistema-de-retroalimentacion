@@ -14,13 +14,13 @@ $(document).ready(function() {
             },
             success: function(response) {
                 /* console.log(response); */
-                $('.editar_info_backoffice').html(response);
-                $('#editar_info_backoffice').modal('show');
+                $('.ver_info_backoffice').html(response);
+                $('#ver_info_backoffice').modal('show');
             }
         });
         // Se limpia los valores del modal ver cuando se cierra el modal
-        $("#editar_info_backoffice").on("hidden.bs.modal", function() {
-            $(this).find(".editar_info_backoffice").empty();
+        $("#ver_info_backoffice").on("hidden.bs.modal", function() {
+            $(this).find(".ver_info_backoffice").empty();
         });
     });
     
