@@ -121,7 +121,7 @@ $nombre_sesion = $_SESSION['general_name'];
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Celular</th>
-                            <th>Fecha nacimineto</th>
+                            <th>Fecha nacimiento</th>
                             <th>Empresa</th>
                             <th>Campaña</th>
                             <th> </th>

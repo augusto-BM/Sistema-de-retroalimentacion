@@ -3,19 +3,16 @@
 
 if (isset($_POST['click_btn_ver'])) {
   $id = $_POST['user_id'];
-    $sql = "SELECT  
-                                    campaña.id_campaña as id_campaña,
-                                    campaña.nombre_campaña as nombreCampaña, 
-                                    empresa.razonsocial as nombreEmpresa 
-                                FROM 
-                                    campaña 
-                                INNER JOIN 
-                                    empresa ON campaña.id_empresa = empresa.idempresa 
-                             where id_campaña = '$id'";
+  $sql = "SELECT campaña.nombre_campaña as nombreCampaña,
+  empresa.razonsocial as nombreEmpresa
+FROM campaña
+INNER JOIN empresa ON campaña.id_empresa = empresa.idempresa
+WHERE campaña.id_campaña = '$id'";
+
     $resultado = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($resultado) > 0) {
-
+        
         while ($fila = mysqli_fetch_array($resultado)) {
 ?>
             <div>
@@ -37,13 +34,9 @@ if (isset($_POST['click_btn_ver'])) {
                         </div>
                     </div>
                 </div>
-
             </div>
-
 <?php
-
         }
-        
     }
 }
 ?>

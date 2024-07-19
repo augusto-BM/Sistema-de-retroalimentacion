@@ -101,7 +101,6 @@ $nombre_sesion = $_SESSION['general_name'];
                     <?php @include './php-datosPrincipales/crud-campañas/modal_crear_campañas.php' ?>
                     <!-- *************************************** -->
 
-                    <?php  @include './php-principal/modal_alerta_exitoso_conSession.php';?>
 
                     <div class="btn-postulantes-desactivos">
                         <a href="" class="btn-verDesactivo"><i class="fas fa-eye-slash me-5 h4"></i></a>
@@ -151,7 +150,7 @@ $nombre_sesion = $_SESSION['general_name'];
                                     <td class=""><?php echo $fila['nombreEmpresa']; ?></td>
                                     <td class="">
                                         <a href="" class=" btn-ver me-0" ><i class="far fa-eye" style="color: #2E59EA;"></i></a>
-                                        <a href="" class=" btn-editar ms-0"><i class="far fa-pen" style="color: #EAD42E;"></i></a>
+                                        <a href="" class="btn-editar ms-0"><i class="far fa-pen" style="color: #EAD42E;"></i></a>
                                     </td>
                                 </tr>
                         <?php
