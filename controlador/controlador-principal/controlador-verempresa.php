@@ -16,13 +16,13 @@ if (isset($_POST['click_btn_ver'])) {
                         <div class="card-body">
                             <div class="">
                                     <input type="hidden" id="idempresa" name="idempresa">
-                                    <div class="razonsocial" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;" ><label for="razonsocial" class="col-form-label">Razón Social:</label></div>
+                                    <div class="razonsocial" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;" ><label for="razonsocial" class="col-form-label">Razon Social:</label></div>
                                     <div class="input-nombreEnt" ;"><input style="margin-bottom: 5px" class="form-control" type="text" id="razonsocial" name="razonsocial" value="<?php echo $fila['razonsocial'] ?>" readonly>
                                     </div>
                                     </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="rucempresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;" ><label for="rucempresa" class="col-form-label">Empresa:</label></div>
+                                    <div class="rucempresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;" ><label for="rucempresa" class="col-form-label">RUC:</label></div>
                                     <div class="input-rucempresa"><input style="margin-bottom: 5px"  class="form-control"  type="text" id="rucempresa" name="rucempresa" value="<?php echo $fila['rucempresa'] ?>" readonly></div>
                                 </div>
                             </div>
@@ -40,19 +40,19 @@ if (isset($_POST['click_btn_ver'])) {
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="celular" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;" ><label for="celular" class="col-form-label">Ubicación:</label></div>
+                                    <div class="celular" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;" ><label for="celular" class="col-form-label">Celular:</label></div>
                                     <div class="input-celular"><input style="margin-bottom: 5px"  class="form-control"  type="text" id="celular" name="celular" value="<?php echo $fila['celular'] ?>" readonly></div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="estadoempresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;" ><label for="estadoempresa" class="col-form-label">Ubicación:</label></div>
+                                    <div class="estadoempresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;" ><label for="estadoempresa" class="col-form-label">Estado:</label></div>
                                     <div class="input-estadoempresa"><input style="margin-bottom: 5px"  class="form-control"  type="text" id="estadoempresa" name="estadoempresa" value="<?php echo $fila['estadoempresa'] ?>" readonly></div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="log_registroempresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;" ><label for="log_registroempresa" class="col-form-label">Ubicación:</label></div>
+                                    <div class="log_registroempresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;" ><label for="log_registroempresa" class="col-form-label">Fecha de registro:</label></div>
                                     <div class="input-log_registroempresa"><input style="margin-bottom: 5px"  class="form-control"  type="text" id="log_registroempresa" name="log_registroempresa" value="<?php echo $fila['log_registroempresa'] ?>" readonly></div>
                                 </div>
                             </div>
