@@ -15,36 +15,37 @@ if (isset($_POST['click_btn_editar'])) {
 
         while ($fila = mysqli_fetch_array($resultado)) {
             array_push($array_datos_obtenidos, $fila);
+        }
             header('Content-Type: application/json');
             echo json_encode($array_datos_obtenidos);
         }
     }
-}
 
 //AL APRETAR EL BOTON DE GUARDAR CAMBIOS EN EL MODAL EDITAR
 if (isset($_POST['click_btn_editar_cambios'])) {
 
-    $idempresa = $_POST['idempresa']; // Este es el input invisible que contiene el id de la empresa en el formulario
+    $id = $_POST['idempresa'];
+    echo $id; // Este es el input invisible que contiene el id de la empresa en el formulario
     $razonsocial = $_POST['razonsocial'];
     $rucempresa = $_POST['rucempresa'];
     $direccion = $_POST['direccion'];
     $ubicacion = $_POST['ubicacion'];
     $celular = $_POST['celular'];
-    $log_registroempresa = date("Y-m-d H:i:s"); 
+    $log_registroempresa = $_POST['log_registroempresa']; 
 
     /* $estado = "inactivo"; */
 
        // Consulta SQL para actualizar el registro
-    $sql = "UPDATE empresa SET 
+    $sql_editar = "UPDATE empresa SET 
     razonsocial='$razonsocial', 
     rucempresa='$rucempresa', 
     direccion='$direccion', 
     ubicacion='$ubicacion', 
     celular='$celular', 
     log_registroempresa='$log_registroempresa' 
-WHERE idempresa='$idempresa'";
+WHERE idempresa='$id'";
 
-
+echo "Consulta SQL: $sql_editar<br>";
     
     $query = mysqli_query($conn, $sql_editar);
     if ($query) {
