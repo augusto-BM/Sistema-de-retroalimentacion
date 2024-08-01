@@ -44,7 +44,7 @@ $(document).ready(function() {
                 $('#ubicacion').val(response[0]['ubicacion']);
                 $('#celular').val(response[0]['celular']);
                 $('#estadoempresa').val(response[0]['estadoempresa']);
-                $('#estadoempresa').val(response[0]['log_registroempresa']);
+                $('#log_registroempresa').val(response[0]['log_registroempresa']);
                 
                 $('#editar_info_empresa').modal('show');
 

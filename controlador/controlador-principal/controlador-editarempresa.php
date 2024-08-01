@@ -8,12 +8,13 @@ if (isset($_POST['click_btn_editar'])) {
     $id = $_POST['user_id'];        //Obtener el id del usuario mediante  ajax    
     $array_datos_obtenidos = [];    //Array para almacenar los datos obtenidos de la base de datos  
 
-    $sql = "SELECT razonsocial, rucempresa, direccion, ubicacion, celular, log_registroempresa FROM empresa WHERE idempresa = '$id'";
+    $sql = "SELECT * FROM empresa WHERE idempresa = '$id'";
     $resultado = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($resultado) > 0) {
 
         while ($fila = mysqli_fetch_array($resultado)) {
+            $fila['log_registroempresa'] = date('Y-m-d', strtotime($fila['log_registroempresa']));
             array_push($array_datos_obtenidos, $fila);
         }
             header('Content-Type: application/json');
