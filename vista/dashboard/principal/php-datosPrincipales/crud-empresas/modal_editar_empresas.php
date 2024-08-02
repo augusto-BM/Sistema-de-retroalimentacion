@@ -39,6 +39,12 @@
                                     <div class="input-celular"><input style="margin-bottom: 5px"  class="form-control"  type="text" id="celular" name="celular" value=""></div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="fecharegistro-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;" ><label for="fecharegistro-empresa" class="col-form-label">Fecha de registro:</label></div>
+                                    <div class="input-fecharegistro-empresa"><input style="margin-bottom: 5px"  class="form-control "  type="date" id="fecharegistro-empresa" name="fecharegistro-empresa" value=""></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

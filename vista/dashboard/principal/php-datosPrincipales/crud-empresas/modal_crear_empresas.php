@@ -44,8 +44,8 @@
                                     </select>
                                 </div>
                                 <div class="">
-                                    <div class="fecharegistro-empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">FECHA DE REGISTRO:</label></div>
-                                    <input type="text" class="form-control" id="fecha_registro" name="fecha_registro" style="margin-bottom: 5px;" oninput="soloLetras(this)">
+                                    <div class="fecharegistro_empresa" style="text-align:center; background-color:#CFE2FF; border: 1px solid #9ec5fe; margin-bottom: 5px;"> <label for="recipient-name" class="col-form-label">FECHA DE REGISTRO:</label></div>
+                                    <input type="text" class="form-control" id="fecharegistro_empresa" name="fecharegistro_empresa" style="margin-bottom: 5px;">
                                 </div>
 
                                 <div class="modal-footer d-flex justify-content-center">

@@ -12,11 +12,19 @@ if(isset($_POST['submit'])) {
     $ubicacion = $_POST['ubicacion'];
     $celular = $_POST['celular-empresa'];
     $estado = $_POST['estado-empresa'];
-    $fechaRegistro = $_POST['fecha_registro'];
+    $fecharegistro_empresa = $_POST['fecharegistro-empresa'];
+
+        // Verificar que la fecha no esté vacía
+        if (!empty($fecharegistro_empresa)) {
+            // Convertir la fecha al formato YYYY-MM-DD si es necesario
+            $fecharegistro_empresa = date("Y-m-d", strtotime($fecharegistro_empresa));
+        } else {
+            $fecharegistro_empresa = null;
+        }
 
     // Preparar consulta SQL para inserción
     $sql = "INSERT INTO `empresa`(`razonsocial`, `rucempresa`, `direccion`, `ubicacion`, `celular`, `estadoempresa`, `log_registroempresa`) 
-            VALUES ('$razonSocial', '$rucEmpresa', '$direccion', '$ubicacion', '$celular', '$estado', '$fechaRegistro')";
+            VALUES ('$razonSocial', '$rucEmpresa', '$direccion', '$ubicacion', '$celular', '$estado', '$fecharegistro_empresa')";
 
     // Ejecutar consulta
     if(mysqli_query($conn, $sql)) {
